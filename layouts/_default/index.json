@@ -1,0 +1,21 @@
+{{- $recipes := where .Site.RegularPages "Section" "recipes" -}}
+{
+  "recipes": [
+    {{- range $index, $recipe := $recipes -}}
+    {{- if $index }},{{ end }}
+    {
+      "title": {{ $recipe.Title | jsonify }},
+      "url": {{ $recipe.Permalink | jsonify }},
+      "date": {{ $recipe.Date.Format "2006-01-02" | jsonify }},
+      "prepTime": {{ $recipe.Params.prepTime | jsonify }},
+      "cookTime": {{ $recipe.Params.cookTime | jsonify }},
+      "categories": {{ $recipe.Params.categories | jsonify }},
+      "cuisines": {{ $recipe.Params.cuisines | jsonify }},
+      "carbs": {{ $recipe.Params.carbs | jsonify }},
+      "proteins": {{ $recipe.Params.proteins | jsonify }},
+      "diets": {{ $recipe.Params.diets | jsonify }},
+      "methods": {{ $recipe.Params.methods | jsonify }}
+    }
+    {{- end }}
+  ]
+}

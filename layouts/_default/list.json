@@ -1,0 +1,21 @@
+{
+  "section": {{ .Title | jsonify }},
+  "items": [
+    {{- range $index, $page := .Pages -}}
+    {{- if $index }},{{ end }}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "url": {{ $page.Permalink | jsonify }},
+      "date": {{ $page.Date.Format "2006-01-02" | jsonify }},
+      "prepTime": {{ $page.Params.prepTime | jsonify }},
+      "cookTime": {{ $page.Params.cookTime | jsonify }},
+      "categories": {{ $page.Params.categories | jsonify }},
+      "cuisines": {{ $page.Params.cuisines | jsonify }},
+      "carbs": {{ $page.Params.carbs | jsonify }},
+      "proteins": {{ $page.Params.proteins | jsonify }},
+      "diets": {{ $page.Params.diets | jsonify }},
+      "methods": {{ $page.Params.methods | jsonify }}
+    }
+    {{- end }}
+  ]
+}

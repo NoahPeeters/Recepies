@@ -11,6 +11,17 @@ theme = 'PaperMod'
   diet = "diets"
   method = "methods"
 
+[outputFormats]
+  [outputFormats.JSON]
+    baseName = "index"
+    mediaType = "application/json"
+    isPlainText = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "JSON"]
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
