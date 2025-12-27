@@ -11,6 +11,10 @@ theme = 'PaperMod'
   diet = "diets"
   method = "methods"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
   defaultTheme = "auto"
   ShowReadingTime = true
