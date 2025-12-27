@@ -332,17 +332,17 @@
   display: inline-flex;
   align-items: baseline;
   gap: 0.2em;
-  padding: 0.2em 0.5em;
-  background: rgba(0, 0, 0, 0.05);
+  padding: 0.15em 0.45em;
+  background: #fef3c7;
   border-radius: 4px;
   font-weight: 500;
-  color: var(--primary, #1e293b);
+  color: #92400e;
   transition: background-color 0.15s ease;
   text-decoration: none;
 }
 
 .ingredient-use:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: #fde68a;
 }
 
 .use-amount {
@@ -376,11 +376,11 @@
   }
 
   .ingredient-use {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--primary, #f1f5f9);
+    background: rgba(251, 191, 36, 0.2);
+    color: #fcd34d;
   }
 
   .ingredient-use:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(251, 191, 36, 0.3);
   }
 }
