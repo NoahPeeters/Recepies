@@ -22,10 +22,6 @@ theme = 'PaperMod'
   section = ["HTML", "RSS", "JSON"]
   page = ["HTML", "JSON"]
 
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
-
 [params]
   defaultTheme = "auto"
   ShowReadingTime = true
@@ -55,3 +51,9 @@ theme = 'PaperMod'
   name = "Kategorien"
   url = "/categories/"
   weight = 30
+
+[[menu.main]]
+  identifier = "search"
+  name = "Suche"
+  url = "/search/"
+  weight = 40

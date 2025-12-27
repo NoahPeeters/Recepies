@@ -4,6 +4,9 @@
 {{- $nutritionCSS := resources.Get "css/nutrition.css" | minify -}}
 <link rel="stylesheet" href="{{ $nutritionCSS.Permalink }}">
 
+{{- $searchCSS := resources.Get "css/search.css" | minify -}}
+<link rel="stylesheet" href="{{ $searchCSS.Permalink }}">
+
 {{- $ingredientsJS := resources.Get "js/ingredients.js" | minify -}}
 <script defer src="{{ $ingredientsJS.Permalink }}"></script>
 

@@ -1,0 +1,37 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+<div class="post-content">
+  <div id="search"></div>
+</div>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: true,
+      translations: {
+        placeholder: "Rezept suchen...",
+        zero_results: "Keine Rezepte gefunden für [SEARCH_TERM]",
+        many_results: "[COUNT] Rezepte gefunden",
+        one_result: "1 Rezept gefunden",
+        alt_search: "Keine Ergebnisse für [SEARCH_TERM]. Zeige Ergebnisse für [DIFFERENT_TERM]",
+        search_suggestion: "Keine Ergebnisse für [SEARCH_TERM]. Versuche eine dieser Suchen:",
+        searching: "Suche nach [SEARCH_TERM]..."
+      }
+    });
+  });
+</script>
+
+{{- end }}

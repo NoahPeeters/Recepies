@@ -1,0 +1,87 @@
+/* Pagefind UI customization for PaperMod theme */
+
+:root {
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: var(--primary, #2a99a2);
+  --pagefind-ui-text: var(--primary, #212121);
+  --pagefind-ui-background: var(--theme, #fff);
+  --pagefind-ui-border: var(--border, #ddd);
+  --pagefind-ui-tag: var(--tertiary, #f0f0f0);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 8px;
+  --pagefind-ui-image-border-radius: 8px;
+  --pagefind-ui-image-box-ratio: 3 / 2;
+  --pagefind-ui-font: inherit;
+}
+
+.dark {
+  --pagefind-ui-primary: #2a99a2;
+  --pagefind-ui-text: rgba(255, 255, 255, 0.87);
+  --pagefind-ui-background: #1d1e20;
+  --pagefind-ui-border: #3d3d3d;
+  --pagefind-ui-tag: #2d2d2d;
+}
+
+/* Search input */
+.pagefind-ui__search-input {
+  font-size: 1rem !important;
+  padding: 0.8rem 1rem !important;
+  height: auto !important;
+}
+
+/* Search results */
+.pagefind-ui__result {
+  padding: 1rem !important;
+  border-radius: var(--pagefind-ui-border-radius) !important;
+  margin-top: 1rem !important;
+}
+
+.pagefind-ui__result:hover {
+  background: var(--code-bg, #f8f8f8) !important;
+}
+
+.dark .pagefind-ui__result:hover {
+  background: #252627 !important;
+}
+
+.pagefind-ui__result-link {
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+.pagefind-ui__result-title {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Result images */
+.pagefind-ui__result-image {
+  border-radius: var(--pagefind-ui-image-border-radius) !important;
+  object-fit: cover !important;
+}
+
+/* Result excerpt */
+.pagefind-ui__result-excerpt {
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--secondary, #666) !important;
+}
+
+/* Highlighted search terms */
+.pagefind-ui__result-excerpt mark {
+  background: rgba(42, 153, 162, 0.2) !important;
+  color: inherit !important;
+  padding: 0.1em 0.2em !important;
+  border-radius: 2px !important;
+}
+
+/* Button styling */
+.pagefind-ui__button {
+  background: var(--primary, #2a99a2) !important;
+  border-radius: var(--pagefind-ui-border-radius) !important;
+}
+
+/* Message styling */
+.pagefind-ui__message {
+  font-size: 0.95rem !important;
+  padding: 1rem 0 !important;
+}

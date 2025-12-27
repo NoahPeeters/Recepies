@@ -1,0 +1,10 @@
+site: public
+root_selector: "article, .post-content, main"
+exclude_selectors:
+  - "nav"
+  - "footer"
+  - ".pagination"
+  - ".post-nav-links"
+  - ".toc"
+  - "#search"
+  - ".pagefind-ui"

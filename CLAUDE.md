@@ -64,16 +64,17 @@ The ingredients system provides an interactive serving selector that automatical
 
 ### Ingredient Parameters
 
-| Parameter  | Required | Default        | Description                                           |
-|------------|----------|----------------|-------------------------------------------------------|
-| `amount`   | No       | 0              | Linear amount (scales with portions)                  |
-| `constant` | No       | 0              | Constant amount (does not scale)                      |
-| `unit`     | No       | ""             | Unit of measurement (g, ml, kg, L, etc.)              |
-| `name`     | Yes      | -              | Ingredient name (singular form)                       |
-| `plural`   | No       | name           | Plural form of the name                               |
-| `id`       | No       | urlized name   | Unique identifier for referencing in steps            |
-| `note`     | No       | ""             | Additional info (e.g., "room temperature", "diced")   |
-| `optional` | No       | false          | Mark ingredient as optional                           |
+| Parameter          | Required | Default        | Description                                           |
+|--------------------|----------|----------------|-------------------------------------------------------|
+| `amount`           | No       | 0              | Linear amount (scales with portions)                  |
+| `constant`         | No       | 0              | Constant amount (does not scale)                      |
+| `unit`             | No       | ""             | Unit of measurement (g, ml, kg, L, etc.)              |
+| `name`             | Yes      | -              | Ingredient name (singular form)                       |
+| `plural`           | No       | name           | Plural form of the name                               |
+| `id`               | No       | urlized name   | Unique identifier for referencing in steps            |
+| `note`             | No       | ""             | Additional info (e.g., "room temperature", "diced")   |
+| `optional`         | No       | false          | Mark ingredient as optional                           |
+| `posthofProductID` | No       | ""             | Posthof Food Coop product ID for stock/price display  |
 
 ### Amount Formula
 

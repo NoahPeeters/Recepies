@@ -429,8 +429,155 @@ function initIngredients() {
   });
 }
 
+// Posthof Food Coop API integration
+const POSTHOF_API_BASE = 'https://api.app.posthof-rendsburg.de/foodcoop/products/';
+const posthofCache = new Map();
+
+async function fetchPosthofProduct(productId) {
+  if (posthofCache.has(productId)) {
+    return posthofCache.get(productId);
+  }
+
+  try {
+    const response = await fetch(`${POSTHOF_API_BASE}${productId}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const data = await response.json();
+    posthofCache.set(productId, data);
+    return data;
+  } catch (error) {
+    console.error(`Failed to fetch Posthof product ${productId}:`, error);
+    return null;
+  }
+}
+
+function formatPrice(cents) {
+  return (cents / 100).toFixed(2).replace('.', ',') + ' €';
+}
+
+function getStockClass(stock) {
+  if (stock <= 0) return 'out-of-stock';
+  if (stock <= 2) return 'low-stock';
+  return 'in-stock';
+}
+
+function getStockText(stock, unit) {
+  if (stock <= 0) return 'Nicht verfügbar';
+  return `${stock} ${unit} verfügbar`;
+}
+
+const POSTHOF_APP_BASE = 'https://app.posthof-rendsburg.de/products/';
+
+function getProductImageUrl(productId, imageId) {
+  return `${POSTHOF_API_BASE}${productId}/images/${imageId}/preview`;
+}
+
+function getProductPageUrl(productId) {
+  return `${POSTHOF_APP_BASE}${productId}`;
+}
+
+function renderPosthofInfo(container, data) {
+  container.removeAttribute('data-loading');
+  container.innerHTML = '';
+
+  if (!data) {
+    container.innerHTML = '<span class="posthof-error">Produkt nicht gefunden</span>';
+    return;
+  }
+
+  const productId = data.id;
+  const stock = data.stock || 0;
+  const stockUnit = data.stockUnit || 'Stück';
+  const price = data.productData?.price?.totalCents;
+  const productName = data.productData?.name || '';
+  const brand = data.productData?.brand || '';
+  const images = data.productData?.images || [];
+  const defaultImage = images.find(img => img.isDefault) || images[0];
+
+  const stockClass = getStockClass(stock);
+  const productUrl = getProductPageUrl(productId);
+
+  let html = `<a class="posthof-link" href="${productUrl}" target="_blank" rel="noopener" title="Im Posthof anzeigen">`;
+  html += `<div class="posthof-details">`;
+
+  // Product image
+  if (defaultImage) {
+    const imageUrl = getProductImageUrl(productId, defaultImage.id);
+    html += `<img class="posthof-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
+  }
+
+  // Stock indicator
+  html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
+  html += `<span class="posthof-stock-dot"></span>${stock}`;
+  html += `</span>`;
+
+  // Price
+  if (price) {
+    html += `<span class="posthof-price">${formatPrice(price)}</span>`;
+  }
+
+  // Brand
+  if (brand) {
+    html += `<span class="posthof-brand">${brand}</span>`;
+  }
+
+  html += `</div></a>`;
+
+  container.innerHTML = html;
+}
+
+async function updateChoicePosthofInfo(select) {
+  const ingredient = select.closest('.ingredient-choice');
+  if (!ingredient) return;
+
+  const infoContainer = ingredient.querySelector('.posthof-choice-info');
+  if (!infoContainer) return;
+
+  const selectedOption = select.options[select.selectedIndex];
+  const productId = selectedOption?.dataset?.posthofId;
+
+  if (productId) {
+    infoContainer.setAttribute('data-loading', 'true');
+    infoContainer.innerHTML = '<span class="posthof-loading">Laden...</span>';
+    const data = await fetchPosthofProduct(productId);
+    renderPosthofInfo(infoContainer, data);
+  } else {
+    infoContainer.innerHTML = '';
+  }
+}
+
+async function initPosthofProducts() {
+  // Regular ingredients with posthof ID
+  const ingredients = document.querySelectorAll('.ingredient[data-posthof-id]');
+
+  for (const ingredient of ingredients) {
+    const productId = ingredient.dataset.posthofId;
+    const infoContainer = ingredient.querySelector('.posthof-info');
+
+    if (productId && infoContainer) {
+      const data = await fetchPosthofProduct(productId);
+      renderPosthofInfo(infoContainer, data);
+    }
+  }
+
+  // Ingredient choices - check selected option for posthof ID
+  const choiceSelects = document.querySelectorAll('.ingredient-choice .ingredient-select');
+  for (const select of choiceSelects) {
+    // Initial load
+    await updateChoicePosthofInfo(select);
+
+    // Listen for changes
+    select.addEventListener('change', () => updateChoicePosthofInfo(select));
+  }
+}
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initIngredients);
+  document.addEventListener('DOMContentLoaded', () => {
+    initIngredients();
+    initPosthofProducts();
+  });
 } else {
   initIngredients();
+  initPosthofProducts();
 }

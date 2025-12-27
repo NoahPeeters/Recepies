@@ -5,11 +5,14 @@
 <li class="ingredient ingredient-choice"
     id="ingredient-{{ $id }}"
     data-ingredient-id="{{ $id }}">
-  <span class="ingredient-amount"></span>
-  <span class="ingredient-unit"></span>
-  <select class="ingredient-select" aria-label="Ingredient choice">
-    {{ .Inner }}
-  </select>
-  {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
-  {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
+  <div class="ingredient-main">
+    <span class="ingredient-amount"></span>
+    <span class="ingredient-unit"></span>
+    <select class="ingredient-select" aria-label="Ingredient choice">
+      {{ .Inner }}
+    </select>
+    {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
+    {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
+  </div>
+  <div class="posthof-info posthof-choice-info"></div>
 </li>
