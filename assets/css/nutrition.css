@@ -21,6 +21,7 @@
   border-spacing: 0;
   background: var(--code-bg, #f8fafc);
   border-radius: 12px;
+  display: block;
 }
 
 .nutrition-row {
