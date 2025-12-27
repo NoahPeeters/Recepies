@@ -17,6 +17,7 @@
 }
 
 .nutrition-table {
+  display: inline-block;
   border-collapse: collapse;
   background: var(--code-bg, #f8fafc);
   border-radius: 12px;
@@ -52,6 +53,7 @@
   text-align: right;
   white-space: nowrap;
   color: var(--secondary, #64748b);
+  width: 1%;
 }
 
 .nutrition-amount {
