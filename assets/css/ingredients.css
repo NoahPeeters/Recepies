@@ -160,20 +160,28 @@
 }
 
 .ingredient-select {
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--border, #ccc);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  background: var(--theme, #fff);
-  color: var(--primary, #333);
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.15rem 1.5rem 0.15rem 0.4rem;
+  border: none;
+  border-bottom: 1px dashed var(--border, #999);
+  border-radius: 0;
+  font-size: inherit;
+  font-family: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M2 4l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 0.25rem center;
+  color: inherit;
   cursor: pointer;
-  flex: 1;
+}
+
+.ingredient-select:hover {
+  border-bottom-color: var(--primary, #007bff);
+  border-bottom-style: solid;
 }
 
 .ingredient-select:focus {
   outline: none;
-  border-color: var(--primary, #007bff);
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-bottom-color: var(--primary, #007bff);
+  border-bottom-style: solid;
 }
 
 /* Dark mode support */
@@ -184,11 +192,15 @@
 
   .servings-btn,
   .servings-input,
-  .portion-type-select,
-  .ingredient-select {
+  .portion-type-select {
     background: var(--theme, #333);
     border-color: var(--border, #555);
     color: var(--primary, #eee);
+  }
+
+  .ingredient-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23aaa' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+    border-bottom-color: var(--border, #666);
   }
 
   .ingredient {
