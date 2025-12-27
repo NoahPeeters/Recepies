@@ -2,8 +2,12 @@
 date = '2025-12-27'
 draft = false
 title = 'Milchreis'
-categories = ['Dessert']
-tags = ['rice', 'milk', 'comfort food', 'german']
+categories = ['Dessert', 'Hauptgericht']
+cuisines = ['Deutsch']
+carbs = ['Reis']
+proteins = ['Vegetarisch']
+diets = ['Vegetarisch']
+methods = ['Kochen']
 prepTime = '5 min'
 cookTime = '30 min'
 

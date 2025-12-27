@@ -1,7 +1,15 @@
 baseURL = '/'
-languageCode = 'en-us'
-title = 'Recipe Collection'
+languageCode = 'de-de'
+title = 'Rezepte'
 theme = 'PaperMod'
+
+[taxonomies]
+  cuisine = "cuisines"
+  carb = "carbs"
+  protein = "proteins"
+  category = "categories"
+  diet = "diets"
+  method = "methods"
 
 [params]
   defaultTheme = "auto"
@@ -12,23 +20,23 @@ theme = 'PaperMod'
   ShowCodeCopyButtons = true
 
 [params.homeInfoParams]
-  Title = "Recipe Collection"
-  Content = "A collection of favorite recipes"
+  Title = "Rezepte"
+  Content = "Eine Sammlung meiner Lieblingsrezepte"
 
 [[menu.main]]
   identifier = "recipes"
-  name = "Recipes"
+  name = "Rezepte"
   url = "/recipes/"
   weight = 10
 
 [[menu.main]]
-  identifier = "categories"
-  name = "Categories"
-  url = "/categories/"
+  identifier = "cuisines"
+  name = "Küche"
+  url = "/cuisines/"
   weight = 20
 
 [[menu.main]]
-  identifier = "tags"
-  name = "Tags"
-  url = "/tags/"
+  identifier = "categories"
+  name = "Kategorien"
+  url = "/categories/"
   weight = 30
