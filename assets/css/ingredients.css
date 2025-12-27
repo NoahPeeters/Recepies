@@ -516,10 +516,6 @@
   opacity: 0.8;
 }
 
-.posthof-link * {
-  border-bottom: none !important;
-}
-
 .posthof-details {
   display: flex;
   align-items: center;
