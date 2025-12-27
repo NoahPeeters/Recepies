@@ -208,6 +208,63 @@ The system automatically converts units when scaling:
 
 Reverse conversions also work (e.g., 0.5 kg displays as 500 g).
 
+## Nutrition Shortcode
+
+Display a German-style nutrition table (Nährwerttabelle) that updates dynamically based on portion type:
+
+```markdown
+{{</* nutrition
+  kj="850"
+  kcal="200"
+  fat="8"
+  saturated="5"
+  carbs="28"
+  sugar="12"
+  fiber="0.5"
+  protein="5"
+  salt="0.2"
+*/>}}
+```
+
+### Nutrition Parameters
+
+All parameters are optional. Values are per serving at the base portion type.
+
+| Parameter   | Description                          |
+|-------------|--------------------------------------|
+| `title`     | Section heading (default: "Nährwerte") |
+| `kj`        | Energy in kilojoules                 |
+| `kcal`      | Energy in kilocalories               |
+| `fat`       | Fat in grams                         |
+| `saturated` | Saturated fat in grams               |
+| `carbs`     | Carbohydrates in grams               |
+| `sugar`     | Sugar in grams                       |
+| `fiber`     | Fiber in grams                       |
+| `protein`   | Protein in grams                     |
+| `salt`      | Salt in grams                        |
+
+### Dynamic Updates
+
+The nutrition table automatically updates when the portion type changes:
+- Values are multiplied by the portion type's multiplier
+- The portion label updates to show the current type name
+
+### Example
+
+For a recipe with two portion types:
+```markdown
+{{</* ingredients servings="4" */>}}
+{{</* portiontype name="Nachtisch" plural="Nachtische" multiplier="1" default="true" */>}}
+{{</* portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1.5" */>}}
+...
+{{</* /ingredients */>}}
+
+{{</* nutrition kj="850" kcal="200" fat="8" carbs="28" sugar="12" protein="5" salt="0.2" */>}}
+```
+
+When "Nachtisch" is selected: 200 kcal per portion
+When "Hauptgericht" is selected: 300 kcal per portion (200 × 1.5)
+
 ## LocalStorage
 
 User selections are automatically saved per recipe:
@@ -241,9 +298,11 @@ Output goes to `public/`
 │   └── recipes.md              # Template for new recipes
 ├── assets/
 │   ├── css/
-│   │   └── ingredients.css     # Styling for ingredients and steps
+│   │   ├── ingredients.css     # Styling for ingredients and steps
+│   │   └── nutrition.css       # Styling for nutrition table
 │   └── js/
-│       └── ingredients.js      # Interactive functionality
+│       ├── ingredients.js      # Interactive functionality
+│       └── nutrition.js        # Nutrition table updates
 ├── content/
 │   └── recipes/                # Recipe page bundles
 │       └── recipe-name/
@@ -256,6 +315,7 @@ Output goes to `public/`
 │       ├── ingredient.html     # Single ingredient
 │       ├── ingredient-choice.html  # Alternative ingredients
 │       ├── ingredients.html    # Wrapper with selector
+│       ├── nutrition.html      # Nutrition table
 │       ├── option.html         # Option for ingredient-choice
 │       ├── portiontype.html    # Portion type definition
 │       ├── step.html           # Single step

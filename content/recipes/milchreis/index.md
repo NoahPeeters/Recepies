@@ -63,9 +63,13 @@ Fertig, wenn der Reis die Milch aufgesogen hat und cremig ist.
 - **Verhältnis:** Pro 250 g Reis benötigt man 1 L Milch.
 - Serviervorschläge: Zimt und Zucker, Spekulatiusgewürz, Cranberries, oder klein geschnittener Bratapfel.
 
-## Nährwerte (pro Portion)
-
-- Kalorien: 469 kcal
-- Kohlenhydrate: 74 g
-- Eiweiß: 13 g
-- Fett: 12 g
+{{< nutrition
+  kj="1962"
+  kcal="469"
+  fat="12"
+  saturated="7"
+  carbs="74"
+  sugar="22"
+  protein="13"
+  salt="0.4"
+>}}

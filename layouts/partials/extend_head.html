@@ -1,5 +1,11 @@
 {{- $ingredientsCSS := resources.Get "css/ingredients.css" | minify -}}
 <link rel="stylesheet" href="{{ $ingredientsCSS.Permalink }}">
 
+{{- $nutritionCSS := resources.Get "css/nutrition.css" | minify -}}
+<link rel="stylesheet" href="{{ $nutritionCSS.Permalink }}">
+
 {{- $ingredientsJS := resources.Get "js/ingredients.js" | minify -}}
 <script defer src="{{ $ingredientsJS.Permalink }}"></script>
+
+{{- $nutritionJS := resources.Get "js/nutrition.js" | minify -}}
+<script defer src="{{ $nutritionJS.Permalink }}"></script>
