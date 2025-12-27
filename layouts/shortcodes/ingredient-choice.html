@@ -1,7 +1,10 @@
+{{- $id := .Get "id" -}}
 {{- $note := .Get "note" | default "" -}}
 {{- $optional := .Get "optional" | default false -}}
 
-<li class="ingredient ingredient-choice">
+<li class="ingredient ingredient-choice"
+    id="ingredient-{{ $id }}"
+    data-ingredient-id="{{ $id }}">
   <span class="ingredient-amount"></span>
   <span class="ingredient-unit"></span>
   <select class="ingredient-select" aria-label="Ingredient choice">

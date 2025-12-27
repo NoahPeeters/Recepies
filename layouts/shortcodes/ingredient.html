@@ -5,8 +5,11 @@
 {{- $plural := .Get "plural" | default $name -}}
 {{- $note := .Get "note" | default "" -}}
 {{- $optional := .Get "optional" | default false -}}
+{{- $id := .Get "id" | default ($name | urlize) -}}
 
 <li class="ingredient"
+    id="ingredient-{{ $id }}"
+    data-ingredient-id="{{ $id }}"
     data-base-amount="{{ $amount }}"
     data-constant="{{ $constant }}"
     data-unit="{{ $unit }}"

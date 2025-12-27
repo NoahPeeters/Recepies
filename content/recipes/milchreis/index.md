@@ -19,11 +19,11 @@ Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen 
 {{< portiontype name="Nachtisch" plural="Nachtische" multiplier="0.66" >}}
 {{< ingredient amount="250" unit="g" name="Milchreis" note="Rundkornreis" >}}
 {{< ingredient amount="1000" unit="ml" name="Milch" >}}
-{{< ingredient-choice >}}
+{{< ingredient-choice id="suesse" >}}
   {{< option amount="40" unit="g" name="Zucker" default="true" >}}
   {{< option amount="40" unit="g" name="Agavendicksaft" >}}
 {{< /ingredient-choice >}}
-{{< ingredient-choice >}}
+{{< ingredient-choice id="vanille" >}}
   {{< option amount="2" name="Päckchen Bourbon-Vanillezucker" plural="Päckchen Bourbon-Vanillezucker" default="true" >}}
   {{< option amount="1" name="Vanilleschote" plural="Vanilleschoten" >}}
   {{< option amount="4" name="Tropfen Vanilleextrakt" plural="Tropfen Vanilleextrakt" >}}

@@ -246,10 +246,14 @@ function saveSelection(container) {
   const input = container.querySelector('.servings-input');
   const select = container.querySelector('.portion-type-select');
 
-  // Collect ingredient choice selections
+  // Collect ingredient choice selections by ID
   const ingredientChoices = {};
-  container.querySelectorAll('.ingredient-select').forEach((sel, index) => {
-    ingredientChoices[index] = sel.selectedIndex;
+  container.querySelectorAll('.ingredient-choice').forEach(choice => {
+    const id = choice.dataset.ingredientId;
+    const sel = choice.querySelector('.ingredient-select');
+    if (id && sel) {
+      ingredientChoices[id] = sel.selectedIndex;
+    }
   });
 
   const data = {
@@ -297,11 +301,13 @@ function initIngredients() {
       if (select && saved.portionTypeIndex !== undefined) {
         select.value = saved.portionTypeIndex;
       }
-      // Restore ingredient choices
+      // Restore ingredient choices by ID
       if (saved.ingredientChoices) {
-        container.querySelectorAll('.ingredient-select').forEach((sel, index) => {
-          if (saved.ingredientChoices[index] !== undefined) {
-            sel.selectedIndex = saved.ingredientChoices[index];
+        container.querySelectorAll('.ingredient-choice').forEach(choice => {
+          const id = choice.dataset.ingredientId;
+          const sel = choice.querySelector('.ingredient-select');
+          if (id && sel && saved.ingredientChoices[id] !== undefined) {
+            sel.selectedIndex = saved.ingredientChoices[id];
           }
         });
       }
