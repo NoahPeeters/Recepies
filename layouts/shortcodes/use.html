@@ -1,0 +1,8 @@
+{{- $id := .Get "id" -}}
+{{- $m := .Get "m" | default "1" -}}
+{{- $b := .Get "b" | default "0" -}}
+
+<span class="ingredient-use"
+      data-ingredient-id="{{ $id }}"
+      data-m="{{ $m }}"
+      data-b="{{ $b }}"><span class="use-amount"></span><span class="use-unit"></span> <span class="use-name"></span></span>

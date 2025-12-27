@@ -188,6 +188,61 @@ function updateIngredients(container) {
     if (unitEl) {
       unitEl.textContent = displayUnit;
     }
+
+    // Store calculated values for use references
+    const ingredientId = ingredient.dataset.ingredientId;
+    if (ingredientId) {
+      ingredient.dataset.calculatedAmount = baseAmount * ratio + constant;
+      ingredient.dataset.calculatedUnit = baseUnit;
+      ingredient.dataset.calculatedName = name;
+      ingredient.dataset.calculatedPlural = plural;
+    }
+  });
+
+  // Update all ingredient-use references on the page
+  updateIngredientUses();
+}
+
+function updateIngredientUses() {
+  document.querySelectorAll('.ingredient-use').forEach(use => {
+    const ingredientId = use.dataset.ingredientId;
+    const m = parseFloat(use.dataset.m) || 1;
+    const b = parseFloat(use.dataset.b) || 0;
+
+    // Find the referenced ingredient
+    const ingredient = document.querySelector(`.ingredient[data-ingredient-id="${ingredientId}"]`);
+    if (!ingredient) return;
+
+    const calculatedAmount = parseFloat(ingredient.dataset.calculatedAmount) || 0;
+    const unit = ingredient.dataset.calculatedUnit || '';
+    const name = ingredient.dataset.calculatedName || '';
+    const plural = ingredient.dataset.calculatedPlural || name;
+
+    // Apply mx+b formula
+    let useAmount = m * calculatedAmount + b;
+    let displayUnit = unit;
+
+    // Convert units if needed
+    if (unit && useAmount > 0) {
+      const converted = convertUnit(useAmount, unit);
+      useAmount = converted.amount;
+      displayUnit = converted.unit;
+    }
+
+    // Update display
+    const amountEl = use.querySelector('.use-amount');
+    const unitEl = use.querySelector('.use-unit');
+    const nameEl = use.querySelector('.use-name');
+
+    if (amountEl) {
+      amountEl.textContent = useAmount > 0 ? formatAmount(useAmount) : '';
+    }
+    if (unitEl) {
+      unitEl.textContent = displayUnit;
+    }
+    if (nameEl) {
+      nameEl.textContent = useAmount > 1 ? plural : name;
+    }
   });
 }
 

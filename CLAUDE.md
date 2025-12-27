@@ -27,15 +27,18 @@ categories = ['Dessert']      # e.g., Dessert, Main Course, Appetizer, Soup, Sal
 tags = ['tag1', 'tag2']       # e.g., german, vegetarian, quick, comfort food
 prepTime = '10 min'
 cookTime = '30 min'
-servings = '4'
+
+[cover]
+image = 'cover.webp'
+alt = 'Recipe image description'
 +++
 ```
 
 ### Recipe Content Structure
 
 1. **Introduction** - Brief description of the dish
-2. **Ingredients** - Use the `ingredients` shortcode (see below)
-3. **Zubereitung/Instructions** - Numbered steps
+2. **Ingredients** - Use the `ingredients` shortcode
+3. **Steps** - Use the `steps` shortcode
 4. **Tipps** - Optional tips and variations
 5. **Nährwerte** - Optional nutritional info
 
@@ -61,15 +64,23 @@ The ingredients system provides an interactive serving selector that automatical
 
 ### Ingredient Parameters
 
-| Parameter  | Required | Default    | Description                                           |
-|------------|----------|------------|-------------------------------------------------------|
-| `amount`   | No       | 0          | Numeric amount (use base unit, e.g., 1000 for 1L)     |
-| `unit`     | No       | ""         | Unit of measurement (g, ml, kg, L, etc.)              |
-| `name`     | Yes      | -          | Ingredient name (singular form)                       |
-| `plural`   | No       | name       | Plural form of the name                               |
-| `note`     | No       | ""         | Additional info (e.g., "room temperature", "diced")   |
-| `optional` | No       | false      | Mark ingredient as optional                           |
-| `scalable` | No       | "true"     | Set to "false" for items that don't scale (e.g., salt)|
+| Parameter  | Required | Default        | Description                                           |
+|------------|----------|----------------|-------------------------------------------------------|
+| `amount`   | No       | 0              | Linear amount (scales with portions)                  |
+| `constant` | No       | 0              | Constant amount (does not scale)                      |
+| `unit`     | No       | ""             | Unit of measurement (g, ml, kg, L, etc.)              |
+| `name`     | Yes      | -              | Ingredient name (singular form)                       |
+| `plural`   | No       | name           | Plural form of the name                               |
+| `id`       | No       | urlized name   | Unique identifier for referencing in steps            |
+| `note`     | No       | ""             | Additional info (e.g., "room temperature", "diced")   |
+| `optional` | No       | false          | Mark ingredient as optional                           |
+
+### Amount Formula
+
+Amounts are calculated using: `total = amount × ratio + constant`
+
+- `amount` - scales with portion count and type
+- `constant` - fixed amount (e.g., "1 Prise Salz" regardless of portions)
 
 ### Examples
 
@@ -79,44 +90,49 @@ The ingredients system provides an interactive serving selector that automatical
 {{</* ingredient amount="250" unit="ml" name="Milch" */>}}
 {{</* ingredient amount="2" name="Ei" plural="Eier" */>}}
 {{</* ingredient amount="100" unit="g" name="Butter" note="zimmerwarm" */>}}
-{{</* ingredient amount="1" name="Prise Salz" plural="Prisen Salz" scalable="false" */>}}
+{{</* ingredient constant="1" name="Prise Salz" plural="Prisen Salz" */>}}
 {{</* ingredient amount="50" unit="g" name="Parmesan" optional="true" */>}}
 {{</* /ingredients */>}}
 ```
 
-### Unit Conversions
+## Ingredient Alternatives
 
-The system automatically converts units when scaling:
+Use `ingredient-choice` to offer alternative ingredients:
 
-| From   | Converts to | Threshold |
-|--------|-------------|-----------|
-| g      | kg          | >= 1000g  |
-| mg     | g           | >= 1000mg |
-| ml     | L           | >= 1000ml |
-| cl     | L           | >= 100cl  |
+```markdown
+{{</* ingredient-choice id="suesse" */>}}
+  {{</* option amount="40" unit="g" name="Zucker" default="true" */>}}
+  {{</* option amount="40" unit="g" name="Agavendicksaft" */>}}
+{{</* /ingredient-choice */>}}
+```
 
-Reverse conversions also work (e.g., 0.5 kg displays as 500 g).
+### ingredient-choice Parameters
 
-### Tips for Using Ingredients
+| Parameter  | Required | Default | Description                    |
+|------------|----------|---------|--------------------------------|
+| `id`       | Yes      | -       | Unique identifier              |
+| `note`     | No       | ""      | Additional info                |
+| `optional` | No       | false   | Mark as optional               |
 
-1. **Use base units**: Enter `1000` ml instead of `1` L - the system converts automatically
-2. **Singular/Plural**: Always provide `plural` for items where it differs (Ei/Eier)
-3. **Non-scaling items**: Use `scalable="false"` for things like "1 Prise Salz"
-4. **Notes**: Use `note` for preparation state (gehackt, gewürfelt, zimmerwarm)
+### option Parameters
+
+| Parameter  | Required | Default | Description                    |
+|------------|----------|---------|--------------------------------|
+| `amount`   | No       | 0       | Linear amount                  |
+| `constant` | No       | 0       | Constant amount                |
+| `unit`     | No       | ""      | Unit of measurement            |
+| `name`     | Yes      | -       | Ingredient name (singular)     |
+| `plural`   | No       | name    | Plural form                    |
+| `default`  | No       | false   | Set to "true" for default      |
 
 ## Portion Types
 
-Recipes can define different portion types (e.g., "Nachtisch" vs "Hauptgericht") with different multipliers. This allows users to select how they want to serve the dish.
-
-### Portiontype Shortcode
-
-Add `portiontype` entries inside the `ingredients` block to define available portion types:
+Define different portion types with multipliers:
 
 ```markdown
 {{</* ingredients servings="4" */>}}
-{{</* portiontype name="Nachtisch" plural="Nachtische" multiplier="1" default="true" */>}}
-{{</* portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1.5" */>}}
-{{</* ingredient amount="250" unit="g" name="Reis" */>}}
+{{</* portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1" default="true" */>}}
+{{</* portiontype name="Nachtisch" plural="Nachtische" multiplier="0.66" */>}}
 ...
 {{</* /ingredients */>}}
 ```
@@ -130,26 +146,74 @@ Add `portiontype` entries inside the `ingredients` block to define available por
 | `multiplier` | No       | 1       | Amount multiplier for this portion type        |
 | `default`    | No       | false   | Set to "true" for the default selection        |
 
-### How It Works
+## Steps Shortcode
 
-- A dropdown appears before the serving count when portion types are defined
-- Selecting a portion type applies its multiplier to all scalable ingredients
-- The label after the number shows the correct singular/plural form
-- Example: "4 Nachtische" or "1 Hauptgericht"
+Use structured steps with auto-numbering and ingredient references:
 
-### Example Use Cases
+```markdown
+{{</* steps */>}}
+{{</* step */>}}
+{{</* use id="butter" */>}} in einem Topf erhitzen.
+{{</* /step */>}}
+{{</* step */>}}
+{{</* use id="mehl" */>}} hinzugeben und umrühren.
+{{</* /step */>}}
+{{</* step image="step3.jpg" */>}}
+Goldbraun backen.
+{{</* /step */>}}
+{{</* /steps */>}}
+```
 
-**Milchreis (Rice Pudding):**
-- As dessert (Nachtisch): multiplier 1.0
-- As main course (Hauptgericht): multiplier 1.5
+### step Parameters
 
-**Salad:**
-- As side dish (Beilage): multiplier 1.0
-- As main course (Hauptgericht): multiplier 2.0
+| Parameter | Required | Default | Description                    |
+|-----------|----------|---------|--------------------------------|
+| `image`   | No       | ""      | Optional step image path       |
 
-**Soup:**
-- As starter (Vorspeise): multiplier 0.5
-- As main course (Hauptgericht): multiplier 1.0
+### use Shortcode
+
+Reference ingredients in steps with automatic amount calculation:
+
+```markdown
+{{</* use id="butter" */>}}          <!-- All of the butter -->
+{{</* use id="butter" m="0.5" */>}}  <!-- Half of the butter -->
+{{</* use id="salz" m="0" b="1" */>}} <!-- Exactly 1 (constant) -->
+```
+
+### use Parameters
+
+| Parameter | Required | Default | Description                                      |
+|-----------|----------|---------|--------------------------------------------------|
+| `id`      | Yes      | -       | Ingredient ID to reference                       |
+| `m`       | No       | 1       | Multiplier for ingredient amount                 |
+| `b`       | No       | 0       | Constant to add                                  |
+
+The formula is: `useAmount = m × ingredientAmount + b`
+
+Examples:
+- `m="1" b="0"` - Use all of the ingredient (default)
+- `m="0.5" b="0"` - Use half
+- `m="0" b="2"` - Use exactly 2 (ignores scaling)
+
+## Unit Conversions
+
+The system automatically converts units when scaling:
+
+| From   | Converts to | Threshold |
+|--------|-------------|-----------|
+| g      | kg          | >= 1000g  |
+| mg     | g           | >= 1000mg |
+| ml     | L           | >= 1000ml |
+| cl     | L           | >= 100cl  |
+
+Reverse conversions also work (e.g., 0.5 kg displays as 500 g).
+
+## LocalStorage
+
+User selections are automatically saved per recipe:
+- Serving count
+- Portion type
+- Ingredient alternatives
 
 ## Development
 
@@ -174,20 +238,28 @@ Output goes to `public/`
 ```
 .
 ├── archetypes/
-│   └── recipes.md          # Template for new recipes
+│   └── recipes.md              # Template for new recipes
 ├── assets/
 │   ├── css/
-│   │   └── ingredients.css # Ingredient styling
+│   │   └── ingredients.css     # Styling for ingredients and steps
 │   └── js/
-│       └── ingredients.js  # Serving selector logic
+│       └── ingredients.js      # Interactive functionality
 ├── content/
-│   └── recipes/            # Recipe markdown files
+│   └── recipes/                # Recipe page bundles
+│       └── recipe-name/
+│           ├── index.md        # Recipe content
+│           └── cover.webp      # Cover image
 ├── layouts/
 │   ├── partials/
-│   │   └── extend_head.html # Includes CSS/JS
+│   │   └── extend_head.html    # Includes CSS/JS
 │   └── shortcodes/
-│       ├── ingredient.html   # Single ingredient
-│       ├── ingredients.html  # Wrapper with selector
-│       └── portiontype.html  # Portion type definition
-└── hugo.toml               # Site configuration
+│       ├── ingredient.html     # Single ingredient
+│       ├── ingredient-choice.html  # Alternative ingredients
+│       ├── ingredients.html    # Wrapper with selector
+│       ├── option.html         # Option for ingredient-choice
+│       ├── portiontype.html    # Portion type definition
+│       ├── step.html           # Single step
+│       ├── steps.html          # Steps wrapper
+│       └── use.html            # Ingredient reference in steps
+└── hugo.toml                   # Site configuration
 ```

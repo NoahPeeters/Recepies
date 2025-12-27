@@ -1,0 +1,69 @@
+{{- $kj := .Get "kj" | default 0 -}}
+{{- $kcal := .Get "kcal" | default 0 -}}
+{{- $fat := .Get "fat" | default 0 -}}
+{{- $saturated := .Get "saturated" | default 0 -}}
+{{- $carbs := .Get "carbs" | default 0 -}}
+{{- $sugar := .Get "sugar" | default 0 -}}
+{{- $fiber := .Get "fiber" | default 0 -}}
+{{- $protein := .Get "protein" | default 0 -}}
+{{- $salt := .Get "salt" | default 0 -}}
+{{- $title := .Get "title" | default "Nährwerte" -}}
+
+<div class="nutrition-container">
+  <h2>{{ $title }}</h2>
+  <p class="nutrition-note">pro <span class="nutrition-portion-label">Portion</span></p>
+  <table class="nutrition-table">
+    <tbody>
+      {{- if or $kj $kcal }}
+      <tr class="nutrition-row" data-base-kj="{{ $kj }}" data-base-kcal="{{ $kcal }}">
+        <td class="nutrition-label">Brennwert</td>
+        <td class="nutrition-value">
+          <span class="nutrition-kj">{{ $kj }}</span> kJ / <span class="nutrition-kcal">{{ $kcal }}</span> kcal
+        </td>
+      </tr>
+      {{- end }}
+      {{- if $fat }}
+      <tr class="nutrition-row" data-base="{{ $fat }}">
+        <td class="nutrition-label">Fett</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $fat }}</span> g</td>
+      </tr>
+      {{- end }}
+      {{- if $saturated }}
+      <tr class="nutrition-row nutrition-sub" data-base="{{ $saturated }}">
+        <td class="nutrition-label">davon gesättigte Fettsäuren</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $saturated }}</span> g</td>
+      </tr>
+      {{- end }}
+      {{- if $carbs }}
+      <tr class="nutrition-row" data-base="{{ $carbs }}">
+        <td class="nutrition-label">Kohlenhydrate</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $carbs }}</span> g</td>
+      </tr>
+      {{- end }}
+      {{- if $sugar }}
+      <tr class="nutrition-row nutrition-sub" data-base="{{ $sugar }}">
+        <td class="nutrition-label">davon Zucker</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $sugar }}</span> g</td>
+      </tr>
+      {{- end }}
+      {{- if $fiber }}
+      <tr class="nutrition-row" data-base="{{ $fiber }}">
+        <td class="nutrition-label">Ballaststoffe</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $fiber }}</span> g</td>
+      </tr>
+      {{- end }}
+      {{- if $protein }}
+      <tr class="nutrition-row" data-base="{{ $protein }}">
+        <td class="nutrition-label">Eiweiß</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $protein }}</span> g</td>
+      </tr>
+      {{- end }}
+      {{- if $salt }}
+      <tr class="nutrition-row" data-base="{{ $salt }}">
+        <td class="nutrition-label">Salz</td>
+        <td class="nutrition-value"><span class="nutrition-amount">{{ $salt }}</span> g</td>
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>

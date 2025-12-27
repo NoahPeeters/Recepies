@@ -32,15 +32,29 @@ Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen 
 {{< ingredient amount="15" unit="g" name="Butter" >}}
 {{< /ingredients >}}
 
-## Zubereitung
-
-1. Butter in einem weiten Topf erhitzen.
-2. Milchreis hinzugeben und ca. 2 Minuten andünsten (bildet eine Schutzschicht gegen Anbrennen).
-3. Milch, Zucker, Vanillezucker und Salz hinzufügen.
-4. Einmal aufkochen lassen und dabei umrühren.
-5. Hitze auf niedrige Stufe reduzieren und den Reis ca. 25-30 Minuten ziehen lassen.
-6. Nach der Hälfte der Kochzeit einmal umrühren.
-7. Fertig, wenn der Reis die Milch aufgesogen hat und cremig ist.
+{{< steps >}}
+{{< step >}}
+{{< use id="butter" >}} in einem weiten Topf erhitzen.
+{{< /step >}}
+{{< step >}}
+{{< use id="milchreis" >}} hinzugeben und ca. 2 Minuten andünsten (bildet eine Schutzschicht gegen Anbrennen).
+{{< /step >}}
+{{< step >}}
+{{< use id="milch" >}}, {{< use id="suesse" >}}, {{< use id="vanille" >}} und {{< use id="prise-salz" >}} hinzufügen.
+{{< /step >}}
+{{< step >}}
+Einmal aufkochen lassen und dabei umrühren.
+{{< /step >}}
+{{< step >}}
+Hitze auf niedrige Stufe reduzieren und den Reis ca. 25-30 Minuten ziehen lassen.
+{{< /step >}}
+{{< step >}}
+Nach der Hälfte der Kochzeit einmal umrühren.
+{{< /step >}}
+{{< step >}}
+Fertig, wenn der Reis die Milch aufgesogen hat und cremig ist.
+{{< /step >}}
+{{< /steps >}}
 
 ## Tipps
 
