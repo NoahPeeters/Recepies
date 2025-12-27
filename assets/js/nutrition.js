@@ -42,22 +42,10 @@ function updateNutrition() {
 
   // Update all nutrition values
   nutritionContainer.querySelectorAll('.nutrition-row').forEach(row => {
-    // Handle energy row (kJ and kcal)
-    const kjEl = row.querySelector('.nutrition-kj');
-    const kcalEl = row.querySelector('.nutrition-kcal');
-
-    if (kjEl && kcalEl) {
-      const baseKj = parseFloat(row.dataset.baseKj) || 0;
-      const baseKcal = parseFloat(row.dataset.baseKcal) || 0;
-      kjEl.textContent = formatNutritionValue(baseKj * portionMultiplier);
-      kcalEl.textContent = formatNutritionValue(baseKcal * portionMultiplier);
-    } else {
-      // Handle regular nutrition rows
-      const amountEl = row.querySelector('.nutrition-amount');
-      if (amountEl) {
-        const baseAmount = parseFloat(row.dataset.base) || 0;
-        amountEl.textContent = formatNutritionValue(baseAmount * portionMultiplier);
-      }
+    const amountEl = row.querySelector('.nutrition-amount');
+    if (amountEl) {
+      const baseAmount = parseFloat(row.dataset.base) || 0;
+      amountEl.textContent = formatNutritionValue(baseAmount * portionMultiplier);
     }
   });
 }

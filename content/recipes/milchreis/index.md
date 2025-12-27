@@ -65,7 +65,6 @@ Fertig, wenn der Reis die Milch aufgesogen hat und cremig ist.
 
 {{< nutrition
   kj="1962"
-  kcal="469"
   fat="12"
   saturated="7"
   carbs="74"

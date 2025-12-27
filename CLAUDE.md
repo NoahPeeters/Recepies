@@ -215,7 +215,6 @@ Display a German-style nutrition table (Nährwerttabelle) that updates dynamical
 ```markdown
 {{</* nutrition
   kj="850"
-  kcal="200"
   fat="8"
   saturated="5"
   carbs="28"
@@ -234,7 +233,6 @@ All parameters are optional. Values are per serving at the base portion type.
 |-------------|--------------------------------------|
 | `title`     | Section heading (default: "Nährwerte") |
 | `kj`        | Energy in kilojoules                 |
-| `kcal`      | Energy in kilocalories               |
 | `fat`       | Fat in grams                         |
 | `saturated` | Saturated fat in grams               |
 | `carbs`     | Carbohydrates in grams               |
@@ -259,11 +257,11 @@ For a recipe with two portion types:
 ...
 {{</* /ingredients */>}}
 
-{{</* nutrition kj="850" kcal="200" fat="8" carbs="28" sugar="12" protein="5" salt="0.2" */>}}
+{{</* nutrition kj="850" fat="8" carbs="28" sugar="12" protein="5" salt="0.2" */>}}
 ```
 
-When "Nachtisch" is selected: 200 kcal per portion
-When "Hauptgericht" is selected: 300 kcal per portion (200 × 1.5)
+When "Nachtisch" is selected: 850 kJ per portion
+When "Hauptgericht" is selected: 1275 kJ per portion (850 × 1.5)
 
 ## LocalStorage
 
