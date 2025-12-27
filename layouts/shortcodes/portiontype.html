@@ -1,0 +1,11 @@
+{{- $name := .Get "name" -}}
+{{- $plural := .Get "plural" | default $name -}}
+{{- $multiplier := .Get "multiplier" | default "1" -}}
+{{- $default := .Get "default" | default "false" -}}
+
+<li class="portion-type-definition"
+    data-name="{{ $name }}"
+    data-plural="{{ $plural }}"
+    data-multiplier="{{ $multiplier }}"
+    data-default="{{ $default }}"
+    hidden></li>

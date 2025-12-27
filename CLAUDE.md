@@ -104,6 +104,53 @@ Reverse conversions also work (e.g., 0.5 kg displays as 500 g).
 3. **Non-scaling items**: Use `scalable="false"` for things like "1 Prise Salz"
 4. **Notes**: Use `note` for preparation state (gehackt, gewürfelt, zimmerwarm)
 
+## Portion Types
+
+Recipes can define different portion types (e.g., "Nachtisch" vs "Hauptgericht") with different multipliers. This allows users to select how they want to serve the dish.
+
+### Portiontype Shortcode
+
+Add `portiontype` entries inside the `ingredients` block to define available portion types:
+
+```markdown
+{{</* ingredients servings="4" */>}}
+{{</* portiontype name="Nachtisch" plural="Nachtische" multiplier="1" default="true" */>}}
+{{</* portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1.5" */>}}
+{{</* ingredient amount="250" unit="g" name="Reis" */>}}
+...
+{{</* /ingredients */>}}
+```
+
+### Portiontype Parameters
+
+| Parameter    | Required | Default | Description                                    |
+|--------------|----------|---------|------------------------------------------------|
+| `name`       | Yes      | -       | Singular name (shown when count = 1)           |
+| `plural`     | Yes      | name    | Plural name (shown when count > 1)             |
+| `multiplier` | No       | 1       | Amount multiplier for this portion type        |
+| `default`    | No       | false   | Set to "true" for the default selection        |
+
+### How It Works
+
+- A dropdown appears before the serving count when portion types are defined
+- Selecting a portion type applies its multiplier to all scalable ingredients
+- The label after the number shows the correct singular/plural form
+- Example: "4 Nachtische" or "1 Hauptgericht"
+
+### Example Use Cases
+
+**Milchreis (Rice Pudding):**
+- As dessert (Nachtisch): multiplier 1.0
+- As main course (Hauptgericht): multiplier 1.5
+
+**Salad:**
+- As side dish (Beilage): multiplier 1.0
+- As main course (Hauptgericht): multiplier 2.0
+
+**Soup:**
+- As starter (Vorspeise): multiplier 0.5
+- As main course (Hauptgericht): multiplier 1.0
+
 ## Development
 
 ### Local Preview
@@ -139,7 +186,8 @@ Output goes to `public/`
 │   ├── partials/
 │   │   └── extend_head.html # Includes CSS/JS
 │   └── shortcodes/
-│       ├── ingredient.html  # Single ingredient
-│       └── ingredients.html # Wrapper with selector
+│       ├── ingredient.html   # Single ingredient
+│       ├── ingredients.html  # Wrapper with selector
+│       └── portiontype.html  # Portion type definition
 └── hugo.toml               # Site configuration
 ```

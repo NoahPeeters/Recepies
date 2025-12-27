@@ -1,17 +1,23 @@
 +++
 date = '2025-12-27'
 draft = false
-title = 'Omas Milchreis'
+title = 'Milchreis'
 categories = ['Dessert']
 tags = ['rice', 'milk', 'comfort food', 'german']
 prepTime = '5 min'
 cookTime = '30 min'
 servings = '4'
+
+[cover]
+image = 'cover.webp'
+alt = 'Milchreis mit Zimt und Zucker'
 +++
 
 Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen wärmt.
 
 {{< ingredients servings="4" >}}
+{{< portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1" default="true" >}}
+{{< portiontype name="Nachtisch" plural="Nachtische" multiplier="0.66" >}}
 {{< ingredient amount="250" unit="g" name="Milchreis" note="Rundkornreis" >}}
 {{< ingredient amount="1000" unit="ml" name="Milch" >}}
 {{< ingredient amount="40" unit="g" name="Zucker" >}}
@@ -43,7 +49,3 @@ Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen 
 - Kohlenhydrate: 74 g
 - Eiweiß: 13 g
 - Fett: 12 g
-
----
-
-*Basierend auf dem [Rezept von emmikochteinfach.de](https://emmikochteinfach.de/omas-milchreis-ganz-einfach-kochen/)*

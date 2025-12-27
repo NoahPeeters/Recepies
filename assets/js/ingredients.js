@@ -29,13 +29,10 @@ const reverseConversions = {
 };
 
 function formatAmount(amount) {
-  // Handle very small amounts
   if (amount < 0.01) {
     return amount.toFixed(3);
   }
-  // Round to reasonable precision
   if (amount < 1) {
-    // Show fractions for small amounts
     const fractions = [
       [0.25, '¼'], [0.33, '⅓'], [0.5, '½'], [0.66, '⅔'], [0.75, '¾'],
       [0.125, '⅛'], [0.375, '⅜'], [0.625, '⅝'], [0.875, '⅞'],
@@ -45,7 +42,6 @@ function formatAmount(amount) {
         return frac;
       }
     }
-    // Check for whole + fraction
     const whole = Math.floor(amount);
     const remainder = amount - whole;
     if (whole > 0) {
@@ -67,7 +63,6 @@ function convertUnit(amount, unit) {
   let currentAmount = amount;
   let currentUnit = unit;
 
-  // Check for scale-up conversions
   if (unitConversions[currentUnit]) {
     for (const [threshold, divisor, newUnit] of unitConversions[currentUnit]) {
       if (currentAmount >= threshold) {
@@ -77,7 +72,6 @@ function convertUnit(amount, unit) {
     }
   }
 
-  // Check for scale-down conversions (e.g., 0.5 kg -> 500 g)
   if (reverseConversions[currentUnit]) {
     const [threshold, multiplier, newUnit] = reverseConversions[currentUnit];
     if (currentAmount < threshold && currentAmount > 0) {
@@ -89,11 +83,62 @@ function convertUnit(amount, unit) {
   return { amount: currentAmount, unit: currentUnit };
 }
 
+function getPortionTypes(container) {
+  const definitions = container.querySelectorAll('.portion-type-definition');
+  const portionTypes = [];
+
+  definitions.forEach(def => {
+    portionTypes.push({
+      name: def.dataset.name,
+      plural: def.dataset.plural,
+      multiplier: parseFloat(def.dataset.multiplier) || 1,
+      isDefault: def.dataset.default === 'true',
+    });
+  });
+
+  return portionTypes;
+}
+
+function getPortionTypeName(portionType, count) {
+  if (!portionType) return '';
+  return count === 1 ? portionType.name : portionType.plural;
+}
+
 function updateIngredients(container) {
   const baseServings = parseFloat(container.dataset.baseServings);
-  const currentServings = parseFloat(container.querySelector('.servings-input').value) || baseServings;
-  const ratio = currentServings / baseServings;
+  const input = container.querySelector('.servings-input');
+  const currentServings = parseFloat(input.value) || baseServings;
 
+  // Get portion type multiplier
+  const portionTypeSelect = container.querySelector('.portion-type-select');
+  const portionTypes = container.portionTypes || [];
+  let portionMultiplier = 1;
+  let currentPortionType = null;
+
+  if (portionTypeSelect && portionTypes.length > 0) {
+    const selectedIndex = parseInt(portionTypeSelect.value) || 0;
+    currentPortionType = portionTypes[selectedIndex];
+    portionMultiplier = currentPortionType ? currentPortionType.multiplier : 1;
+  }
+
+  // Update portion type display
+  const portionLabel = container.querySelector('.portion-type-label');
+  if (portionLabel) {
+    // Simple label (no portion types defined)
+    portionLabel.textContent = currentServings === 1 ? 'Portion' : 'Portionen';
+  }
+
+  // Update dropdown options with correct singular/plural
+  if (portionTypeSelect) {
+    const options = portionTypeSelect.querySelectorAll('option');
+    options.forEach(option => {
+      const singular = option.dataset.singular;
+      const plural = option.dataset.plural;
+      option.textContent = currentServings === 1 ? singular : plural;
+    });
+  }
+
+  const ratio = (currentServings / baseServings) * portionMultiplier;
   const ingredients = container.querySelectorAll('.ingredient');
 
   ingredients.forEach(ingredient => {
@@ -106,14 +151,12 @@ function updateIngredients(container) {
     let newAmount = scalable ? baseAmount * ratio : baseAmount;
     let displayUnit = baseUnit;
 
-    // Convert units if needed
     if (baseUnit && newAmount > 0) {
       const converted = convertUnit(newAmount, baseUnit);
       newAmount = converted.amount;
       displayUnit = converted.unit;
     }
 
-    // Update DOM
     const amountEl = ingredient.querySelector('.ingredient-amount');
     const unitEl = ingredient.querySelector('.ingredient-unit');
     const nameEl = ingredient.querySelector('.ingredient-name');
@@ -125,9 +168,55 @@ function updateIngredients(container) {
       unitEl.textContent = displayUnit;
     }
     if (nameEl) {
-      // Use plural if amount > 1
       nameEl.textContent = newAmount > 1 ? plural : name;
     }
+  });
+}
+
+function buildPortionTypeSelector(container, portionTypes) {
+  const selectorContainer = container.querySelector('.portion-type-selector');
+  if (!selectorContainer) return;
+
+  if (portionTypes.length === 0) {
+    // No portion types defined, show simple label
+    const label = document.createElement('span');
+    label.className = 'portion-type-label';
+    const servings = parseInt(container.querySelector('.servings-input').value) || 4;
+    label.textContent = servings === 1 ? 'Portion' : 'Portionen';
+    selectorContainer.appendChild(label);
+    return;
+  }
+
+  // Find default index
+  let defaultIndex = portionTypes.findIndex(pt => pt.isDefault);
+  if (defaultIndex === -1) defaultIndex = 0;
+
+  // Create select element
+  const select = document.createElement('select');
+  select.className = 'portion-type-select';
+  select.setAttribute('aria-label', 'Portion type');
+
+  portionTypes.forEach((pt, index) => {
+    const option = document.createElement('option');
+    option.value = index;
+    // Will be updated dynamically based on serving count
+    option.dataset.singular = pt.name;
+    option.dataset.plural = pt.plural;
+    option.textContent = pt.plural;
+    if (index === defaultIndex) {
+      option.selected = true;
+    }
+    select.appendChild(option);
+  });
+
+  selectorContainer.appendChild(select);
+
+  // Store portion types on container for later access
+  container.portionTypes = portionTypes;
+
+  // Add event listener
+  select.addEventListener('change', () => {
+    updateIngredients(container);
   });
 }
 
@@ -136,6 +225,10 @@ function initIngredients() {
     const input = container.querySelector('.servings-input');
     const decreaseBtn = container.querySelector('[data-action="decrease"]');
     const increaseBtn = container.querySelector('[data-action="increase"]');
+
+    // Parse and build portion type selector
+    const portionTypes = getPortionTypes(container);
+    buildPortionTypeSelector(container, portionTypes);
 
     if (input) {
       input.addEventListener('input', () => {
@@ -173,12 +266,11 @@ function initIngredients() {
       });
     }
 
-    // Initial update to ensure proper formatting
+    // Initial update
     updateIngredients(container);
   });
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initIngredients);
 } else {

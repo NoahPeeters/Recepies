@@ -5,10 +5,10 @@
   <div class="ingredients-header">
     <h2>{{ $title }}</h2>
     <div class="servings-selector">
-      <label for="servings-input">Portionen:</label>
       <button class="servings-btn" data-action="decrease" aria-label="Decrease servings">−</button>
-      <input type="number" id="servings-input" class="servings-input" value="{{ $servings }}" min="1" max="99">
+      <input type="number" class="servings-input" value="{{ $servings }}" min="1" max="99" aria-label="Number of servings">
       <button class="servings-btn" data-action="increase" aria-label="Increase servings">+</button>
+      <div class="portion-type-selector"></div>
     </div>
   </div>
   <ul class="ingredients-list">
