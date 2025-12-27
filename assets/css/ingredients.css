@@ -292,58 +292,30 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  position: relative;
+  gap: 1.5rem;
 }
-
 
 .step {
   counter-increment: step-counter;
-  display: flex;
-  gap: 1.25rem;
-  padding: 1rem 0;
-  position: relative;
 }
 
-.step:hover .step-content {
-  background: var(--code-bg, #f8fafc);
-}
-
-.step::before {
-  content: counter(step-counter);
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  background: var(--theme, #fff);
-  border: 2px solid #e2e8f0;
-  color: var(--secondary, #64748b);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.step-label {
+  display: block;
+  font-size: 0.8rem;
   font-weight: 600;
-  font-size: 0.85rem;
-  z-index: 1;
-  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary, #64748b);
+  margin-bottom: 0.4rem;
 }
 
-.step:hover::before {
-  border-color: #4f46e5;
-  color: #4f46e5;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
-}
-
-.step-content {
-  flex: 1;
-  min-width: 0;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  transition: background-color 0.2s ease;
+.step-label::before {
+  content: "Schritt " counter(step-counter);
 }
 
 .step-text {
   margin: 0;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--primary, #334155);
 }
 
@@ -395,20 +367,8 @@
     color: var(--secondary, #94a3b8);
   }
 
-  .step::before {
-    background: var(--theme, #1e293b);
-    border-color: #334155;
+  .step-label {
     color: var(--secondary, #94a3b8);
-  }
-
-  .step:hover::before {
-    border-color: #a5b4fc;
-    color: #a5b4fc;
-    box-shadow: 0 0 0 4px rgba(165, 180, 252, 0.15);
-  }
-
-  .step:hover .step-content {
-    background: var(--code-bg, #1e293b);
   }
 
   .step-text {
