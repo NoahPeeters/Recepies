@@ -220,6 +220,38 @@ function buildPortionTypeSelector(container, portionTypes) {
   });
 }
 
+function getStorageKey() {
+  return `recipe-servings:${window.location.pathname}`;
+}
+
+function saveSelection(container) {
+  const input = container.querySelector('.servings-input');
+  const select = container.querySelector('.portion-type-select');
+
+  const data = {
+    servings: parseInt(input.value) || parseInt(container.dataset.baseServings),
+    portionTypeIndex: select ? parseInt(select.value) : 0
+  };
+
+  try {
+    localStorage.setItem(getStorageKey(), JSON.stringify(data));
+  } catch (e) {
+    // localStorage not available or full
+  }
+}
+
+function loadSelection(container) {
+  try {
+    const saved = localStorage.getItem(getStorageKey());
+    if (saved) {
+      return JSON.parse(saved);
+    }
+  } catch (e) {
+    // localStorage not available
+  }
+  return null;
+}
+
 function initIngredients() {
   document.querySelectorAll('.ingredients-container').forEach(container => {
     const input = container.querySelector('.servings-input');
@@ -230,18 +262,32 @@ function initIngredients() {
     const portionTypes = getPortionTypes(container);
     buildPortionTypeSelector(container, portionTypes);
 
+    // Load saved selection
+    const saved = loadSelection(container);
+    if (saved) {
+      if (input && saved.servings) {
+        input.value = saved.servings;
+      }
+      const select = container.querySelector('.portion-type-select');
+      if (select && saved.portionTypeIndex !== undefined) {
+        select.value = saved.portionTypeIndex;
+      }
+    }
+
     if (input) {
       input.addEventListener('input', () => {
         let value = parseInt(input.value) || 1;
         value = Math.max(1, Math.min(99, value));
         input.value = value;
         updateIngredients(container);
+        saveSelection(container);
       });
 
       input.addEventListener('blur', () => {
         if (!input.value || parseInt(input.value) < 1) {
           input.value = container.dataset.baseServings;
           updateIngredients(container);
+          saveSelection(container);
         }
       });
     }
@@ -252,6 +298,7 @@ function initIngredients() {
         if (currentValue > 1) {
           input.value = currentValue - 1;
           updateIngredients(container);
+          saveSelection(container);
         }
       });
     }
@@ -262,7 +309,16 @@ function initIngredients() {
         if (currentValue < 99) {
           input.value = currentValue + 1;
           updateIngredients(container);
+          saveSelection(container);
         }
+      });
+    }
+
+    // Add save on portion type change
+    const select = container.querySelector('.portion-type-select');
+    if (select) {
+      select.addEventListener('change', () => {
+        saveSelection(container);
       });
     }
 
