@@ -46,7 +46,7 @@ Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen 
 Einmal aufkochen lassen und dabei umrühren.
 {{< /step >}}
 {{< step >}}
-Hitze auf niedrige Stufe reduzieren und den Reis ca. 25-30 Minuten ziehen lassen.
+Hitze auf Stufe 2 reduzieren und den Reis ca. 25-30 Minuten ziehen lassen.
 {{< /step >}}
 {{< step >}}
 Nach der Hälfte der Kochzeit einmal umrühren.
@@ -58,10 +58,9 @@ Fertig, wenn der Reis die Milch aufgesogen hat und cremig ist.
 
 ## Tipps
 
-- **Zu fest?** Etwas Milch nachgießen.
-- **Zu flüssig?** Länger ziehen lassen, bis die Milch aufgesogen ist.
-- **Verhältnis:** Pro 250 g Reis benötigt man 1 L Milch.
-- Serviervorschläge: Zimt und Zucker, Spekulatiusgewürz, Cranberries, oder klein geschnittener Bratapfel.
+- Serviervorschläge:
+  - Zimt und Zucker
+  - Apfelmus
 
 {{< nutrition
   kj="1962"
