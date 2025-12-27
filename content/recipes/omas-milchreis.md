@@ -11,14 +11,14 @@ servings = '4'
 
 Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen wärmt.
 
-## Zutaten
-
-- 250 g Milchreis (Rundkornreis)
-- 1 L Milch
-- 40 g Zucker
-- 2 Päckchen Bourbon-Vanillezucker (oder Mark einer Vanilleschote)
-- 1 Prise Salz
-- 15 g Butter
+{{< ingredients servings="4" >}}
+{{< ingredient amount="250" unit="g" name="Milchreis" note="Rundkornreis" >}}
+{{< ingredient amount="1000" unit="ml" name="Milch" >}}
+{{< ingredient amount="40" unit="g" name="Zucker" >}}
+{{< ingredient amount="2" name="Päckchen Bourbon-Vanillezucker" plural="Päckchen Bourbon-Vanillezucker" note="oder Mark einer Vanilleschote" >}}
+{{< ingredient amount="1" name="Prise Salz" plural="Prisen Salz" scalable="false" >}}
+{{< ingredient amount="15" unit="g" name="Butter" >}}
+{{< /ingredients >}}
 
 ## Zubereitung
 
