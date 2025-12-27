@@ -333,16 +333,16 @@
   align-items: baseline;
   gap: 0.2em;
   padding: 0.15em 0.45em;
-  background: var(--code-bg, #f1f5f9);
+  background: #ecfdf5;
   border-radius: 4px;
   font-weight: 600;
-  color: var(--primary, #1e293b);
+  color: #065f46;
   transition: background-color 0.15s ease;
   text-decoration: none;
 }
 
 .ingredient-use:hover {
-  background: #e2e8f0;
+  background: #d1fae5;
 }
 
 .use-amount {
@@ -376,11 +376,11 @@
   }
 
   .ingredient-use {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--primary, #f1f5f9);
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
   }
 
   .ingredient-use:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(16, 185, 129, 0.25);
   }
 }
