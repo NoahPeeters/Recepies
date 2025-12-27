@@ -17,7 +17,7 @@
 }
 
 .nutrition-table {
-  display: inline-block;
+  width: max-content;
   border-collapse: collapse;
   background: var(--code-bg, #f8fafc);
   border-radius: 12px;
