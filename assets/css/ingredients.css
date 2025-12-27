@@ -498,18 +498,8 @@
   color: #ef4444;
 }
 
-.posthof-link,
-.posthof-link:hover,
-.posthof-link:visited,
-.posthof-link:active,
-.posthof-link:focus {
-  text-decoration: none !important;
-  color: inherit !important;
-  border: none !important;
-  border-bottom: none !important;
+.posthof-link {
   box-shadow: none !important;
-  background: none !important;
-  outline: none;
 }
 
 .posthof-link:hover {
