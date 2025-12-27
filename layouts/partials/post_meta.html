@@ -4,6 +4,17 @@
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
 {{- end }}
 
+{{- if and .Params.prepTime .Params.cookTime -}}
+{{- $prep := int (replaceRE "[^0-9]" "" .Params.prepTime) -}}
+{{- $cook := int (replaceRE "[^0-9]" "" .Params.cookTime) -}}
+{{- $total := add $prep $cook -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%d min</span>" $total)) }}
+{{- else if .Params.prepTime -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .Params.prepTime)) }}
+{{- else if .Params.cookTime -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .Params.cookTime)) }}
+{{- end }}
+
 {{- if (.Param "ShowReadingTime") -}}
 {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
 {{- end }}
