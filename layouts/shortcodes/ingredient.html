@@ -1,17 +1,17 @@
 {{- $amount := .Get "amount" | default 0 -}}
+{{- $constant := .Get "constant" | default 0 -}}
 {{- $unit := .Get "unit" | default "" -}}
 {{- $name := .Get "name" -}}
 {{- $plural := .Get "plural" | default $name -}}
 {{- $note := .Get "note" | default "" -}}
 {{- $optional := .Get "optional" | default false -}}
-{{- $scalable := .Get "scalable" | default "true" -}}
 
 <li class="ingredient"
     data-base-amount="{{ $amount }}"
+    data-constant="{{ $constant }}"
     data-unit="{{ $unit }}"
     data-name="{{ $name }}"
-    data-plural="{{ $plural }}"
-    data-scalable="{{ $scalable }}">
+    data-plural="{{ $plural }}">
   <span class="ingredient-amount">{{ $amount }}</span>
   <span class="ingredient-unit">{{ $unit }}</span>
   <span class="ingredient-name">{{ if gt (float $amount) 1.0 }}{{ $plural }}{{ else }}{{ $name }}{{ end }}</span>

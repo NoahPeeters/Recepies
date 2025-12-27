@@ -159,6 +159,23 @@
   font-style: italic;
 }
 
+.ingredient-select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: var(--theme, #fff);
+  color: var(--primary, #333);
+  cursor: pointer;
+  flex: 1;
+}
+
+.ingredient-select:focus {
+  outline: none;
+  border-color: var(--primary, #007bff);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .ingredients-container {
@@ -167,7 +184,8 @@
 
   .servings-btn,
   .servings-input,
-  .portion-type-select {
+  .portion-type-select,
+  .ingredient-select {
     background: var(--theme, #333);
     border-color: var(--border, #555);
     color: var(--primary, #eee);

@@ -6,7 +6,6 @@ categories = ['Dessert']
 tags = ['rice', 'milk', 'comfort food', 'german']
 prepTime = '5 min'
 cookTime = '30 min'
-servings = '4'
 
 [cover]
 image = 'cover.webp'
@@ -21,8 +20,11 @@ Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen 
 {{< ingredient amount="250" unit="g" name="Milchreis" note="Rundkornreis" >}}
 {{< ingredient amount="1000" unit="ml" name="Milch" >}}
 {{< ingredient amount="40" unit="g" name="Zucker" >}}
-{{< ingredient amount="2" name="Päckchen Bourbon-Vanillezucker" plural="Päckchen Bourbon-Vanillezucker" note="oder Mark einer Vanilleschote" >}}
-{{< ingredient amount="1" name="Prise Salz" plural="Prisen Salz" scalable="false" >}}
+{{< ingredient-choice >}}
+  {{< option amount="2" name="Päckchen Bourbon-Vanillezucker" plural="Päckchen Bourbon-Vanillezucker" default="true" >}}
+  {{< option amount="1" name="Vanilleschote" plural="Vanilleschoten" >}}
+{{< /ingredient-choice >}}
+{{< ingredient constant="1" name="Prise Salz" plural="Prisen Salz" >}}
 {{< ingredient amount="15" unit="g" name="Butter" >}}
 {{< /ingredients >}}
 

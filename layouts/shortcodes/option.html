@@ -1,0 +1,16 @@
+{{- $amount := .Get "amount" | default 0 -}}
+{{- $constant := .Get "constant" | default 0 -}}
+{{- $unit := .Get "unit" | default "" -}}
+{{- $name := .Get "name" -}}
+{{- $plural := .Get "plural" | default $name -}}
+{{- $default := .Get "default" | default "false" -}}
+
+<option
+  data-amount="{{ $amount }}"
+  data-constant="{{ $constant }}"
+  data-unit="{{ $unit }}"
+  data-name="{{ $name }}"
+  data-plural="{{ $plural }}"
+  {{ if eq $default "true" }}selected{{ end }}>
+  {{- $name -}}
+</option>

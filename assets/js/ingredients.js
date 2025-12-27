@@ -142,13 +142,38 @@ function updateIngredients(container) {
   const ingredients = container.querySelectorAll('.ingredient');
 
   ingredients.forEach(ingredient => {
-    const baseAmount = parseFloat(ingredient.dataset.baseAmount) || 0;
-    const baseUnit = ingredient.dataset.unit || '';
-    const name = ingredient.dataset.name || '';
-    const plural = ingredient.dataset.plural || name;
-    const scalable = ingredient.dataset.scalable !== 'false';
+    const amountEl = ingredient.querySelector('.ingredient-amount');
+    const unitEl = ingredient.querySelector('.ingredient-unit');
 
-    let newAmount = scalable ? baseAmount * ratio : baseAmount;
+    // Check if this is an ingredient-choice
+    const ingredientSelect = ingredient.querySelector('.ingredient-select');
+    let baseAmount, constant, baseUnit, name, plural;
+
+    if (ingredientSelect) {
+      // Get values from selected option
+      const selectedOption = ingredientSelect.options[ingredientSelect.selectedIndex];
+      baseAmount = parseFloat(selectedOption.dataset.amount) || 0;
+      constant = parseFloat(selectedOption.dataset.constant) || 0;
+      baseUnit = selectedOption.dataset.unit || '';
+      name = selectedOption.dataset.name || '';
+      plural = selectedOption.dataset.plural || name;
+    } else {
+      // Regular ingredient
+      baseAmount = parseFloat(ingredient.dataset.baseAmount) || 0;
+      constant = parseFloat(ingredient.dataset.constant) || 0;
+      baseUnit = ingredient.dataset.unit || '';
+      name = ingredient.dataset.name || '';
+      plural = ingredient.dataset.plural || name;
+
+      const nameEl = ingredient.querySelector('.ingredient-name');
+      if (nameEl) {
+        let newAmount = baseAmount * ratio + constant;
+        nameEl.textContent = newAmount > 1 ? plural : name;
+      }
+    }
+
+    // Linear formula: total = amount * ratio + constant
+    let newAmount = baseAmount * ratio + constant;
     let displayUnit = baseUnit;
 
     if (baseUnit && newAmount > 0) {
@@ -157,18 +182,11 @@ function updateIngredients(container) {
       displayUnit = converted.unit;
     }
 
-    const amountEl = ingredient.querySelector('.ingredient-amount');
-    const unitEl = ingredient.querySelector('.ingredient-unit');
-    const nameEl = ingredient.querySelector('.ingredient-name');
-
     if (amountEl) {
       amountEl.textContent = newAmount > 0 ? formatAmount(newAmount) : '';
     }
     if (unitEl) {
       unitEl.textContent = displayUnit;
-    }
-    if (nameEl) {
-      nameEl.textContent = newAmount > 1 ? plural : name;
     }
   });
 }
@@ -228,9 +246,16 @@ function saveSelection(container) {
   const input = container.querySelector('.servings-input');
   const select = container.querySelector('.portion-type-select');
 
+  // Collect ingredient choice selections
+  const ingredientChoices = {};
+  container.querySelectorAll('.ingredient-select').forEach((sel, index) => {
+    ingredientChoices[index] = sel.selectedIndex;
+  });
+
   const data = {
     servings: parseInt(input.value) || parseInt(container.dataset.baseServings),
-    portionTypeIndex: select ? parseInt(select.value) : 0
+    portionTypeIndex: select ? parseInt(select.value) : 0,
+    ingredientChoices: ingredientChoices
   };
 
   try {
@@ -272,7 +297,23 @@ function initIngredients() {
       if (select && saved.portionTypeIndex !== undefined) {
         select.value = saved.portionTypeIndex;
       }
+      // Restore ingredient choices
+      if (saved.ingredientChoices) {
+        container.querySelectorAll('.ingredient-select').forEach((sel, index) => {
+          if (saved.ingredientChoices[index] !== undefined) {
+            sel.selectedIndex = saved.ingredientChoices[index];
+          }
+        });
+      }
     }
+
+    // Add event listeners for ingredient choice selects
+    container.querySelectorAll('.ingredient-select').forEach(sel => {
+      sel.addEventListener('change', () => {
+        updateIngredients(container);
+        saveSelection(container);
+      });
+    });
 
     if (input) {
       input.addEventListener('input', () => {

@@ -1,0 +1,12 @@
+{{- $note := .Get "note" | default "" -}}
+{{- $optional := .Get "optional" | default false -}}
+
+<li class="ingredient ingredient-choice">
+  <span class="ingredient-amount"></span>
+  <span class="ingredient-unit"></span>
+  <select class="ingredient-select" aria-label="Ingredient choice">
+    {{ .Inner }}
+  </select>
+  {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
+  {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
+</li>
