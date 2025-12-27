@@ -8,8 +8,8 @@ carbs = ['Reis']
 proteins = ['Vegetarisch']
 diets = ['Vegetarisch']
 methods = ['Kochen']
-prepTime = '5 min'
-cookTime = '30 min'
+prepTime = 5
+cookTime = 30
 
 [cover]
 image = 'cover.webp'

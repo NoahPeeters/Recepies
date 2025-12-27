@@ -3,19 +3,19 @@
   {{- with .Params.prepTime }}
   <div class="recipe-info-item">
     <span class="recipe-info-label">Vorbereitung</span>
-    <span class="recipe-info-value">{{ . }}</span>
+    <span class="recipe-info-value">{{ . }} min</span>
   </div>
   {{- end }}
   {{- with .Params.cookTime }}
   <div class="recipe-info-item">
     <span class="recipe-info-label">Kochzeit</span>
-    <span class="recipe-info-value">{{ . }}</span>
+    <span class="recipe-info-value">{{ . }} min</span>
   </div>
   {{- end }}
   {{- if and .Params.prepTime .Params.cookTime }}
   <div class="recipe-info-item recipe-info-total">
     <span class="recipe-info-label">Gesamt</span>
-    <span class="recipe-info-value">{{ partial "total_time.html" . }}</span>
+    <span class="recipe-info-value">{{ add .Params.prepTime .Params.cookTime }} min</span>
   </div>
   {{- end }}
 </div>

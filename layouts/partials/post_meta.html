@@ -5,14 +5,12 @@
 {{- end }}
 
 {{- if and .Params.prepTime .Params.cookTime -}}
-{{- $prep := int (replaceRE "[^0-9]" "" .Params.prepTime) -}}
-{{- $cook := int (replaceRE "[^0-9]" "" .Params.cookTime) -}}
-{{- $total := add $prep $cook -}}
+{{- $total := add .Params.prepTime .Params.cookTime -}}
 {{- $scratch.Add "meta" (slice (printf "<span>%d min</span>" $total)) }}
 {{- else if .Params.prepTime -}}
-{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .Params.prepTime)) }}
+{{- $scratch.Add "meta" (slice (printf "<span>%d min</span>" .Params.prepTime)) }}
 {{- else if .Params.cookTime -}}
-{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .Params.cookTime)) }}
+{{- $scratch.Add "meta" (slice (printf "<span>%d min</span>" .Params.cookTime)) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
