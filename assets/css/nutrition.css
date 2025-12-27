@@ -17,11 +17,10 @@
 }
 
 .nutrition-table {
-  width: max-content;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background: var(--code-bg, #f8fafc);
   border-radius: 12px;
-  overflow: hidden;
 }
 
 .nutrition-row {
@@ -40,6 +39,7 @@
 .nutrition-label {
   font-weight: 500;
   color: var(--primary, #1e293b);
+  white-space: nowrap;
 }
 
 .nutrition-sub .nutrition-label {
@@ -53,7 +53,6 @@
   text-align: right;
   white-space: nowrap;
   color: var(--secondary, #64748b);
-  width: 1%;
 }
 
 .nutrition-amount {
