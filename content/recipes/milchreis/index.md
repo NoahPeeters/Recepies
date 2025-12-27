@@ -18,6 +18,8 @@ alt = 'Milchreis mit Zimt und Zucker'
 
 Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen wärmt.
 
+{{< recipeinfo >}}
+
 {{< ingredients servings="4" >}}
 {{< portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1" default="true" >}}
 {{< portiontype name="Nachtisch" plural="Nachtische" multiplier="0.66" >}}
