@@ -767,10 +767,10 @@
   display: none;
 }
 
-/* Mobile: Stack stock and price vertically, image stays left */
+/* Mobile: Stack stock and price, image on right */
 @media (max-width: 500px) {
   .posthof-details {
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 0.5rem;
   }
