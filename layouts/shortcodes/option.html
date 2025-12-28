@@ -31,7 +31,7 @@
   data-plural="{{ $plural }}"
   {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
   {{ if $price }}data-price="{{ $price }}"{{ end }}
-  {{ if $altUnits }}data-alt-units="{{ $altUnits }}"{{ end }}
+  {{ if $altUnits }}data-alt-units="{{ $altUnits | jsonify }}"{{ end }}
   {{ if eq $default "true" }}selected{{ end }}>
   {{- $name -}}
 </option>

@@ -59,18 +59,23 @@ function formatAmount(amount) {
   return Math.round(amount).toString();
 }
 
-function parseAltUnits(altUnitsStr) {
-  // Parse format: "TL:3,EL:9" -> [{unit: "TL", factor: 3}, {unit: "EL", factor: 9}]
-  if (!altUnitsStr) return [];
-  return altUnitsStr.split(',').map(item => {
-    const [unit, factor] = item.trim().split(':');
-    return { unit: unit.trim(), factor: parseFloat(factor) || 1 };
-  });
+function parseAltUnits(altUnitsData) {
+  // Parse format: {"TL": 3, "EL": 9} -> [{unit: "TL", factor: 3}, {unit: "EL", factor: 9}]
+  if (!altUnitsData) return [];
+  try {
+    const obj = typeof altUnitsData === 'string' ? JSON.parse(altUnitsData) : altUnitsData;
+    return Object.entries(obj).map(([unit, factor]) => ({
+      unit,
+      factor: parseFloat(factor) || 1
+    }));
+  } catch {
+    return [];
+  }
 }
 
-function formatAltUnits(amount, altUnitsStr) {
+function formatAltUnits(amount, altUnitsData) {
   // Convert amount to alternative units and format for display
-  const altUnits = parseAltUnits(altUnitsStr);
+  const altUnits = parseAltUnits(altUnitsData);
   if (altUnits.length === 0 || amount <= 0) return '';
 
   const parts = altUnits.map(({ unit, factor }) => {

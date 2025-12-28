@@ -50,7 +50,7 @@
         data-plural="{{ $plural }}"
         {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
         {{ if $price }}data-price="{{ $price }}"{{ end }}
-        {{ if $altUnits }}data-alt-units="{{ $altUnits }}"{{ end }}
+        {{ if $altUnits }}data-alt-units="{{ $altUnits | jsonify }}"{{ end }}
         selected>
         {{- $name -}}
       </option>
@@ -70,7 +70,7 @@
             data-plural="{{ $altIngredient.plural | default ($altIngredient.name | default $altRef) }}"
             {{ with $altIngredient.posthof }}data-posthof="{{ . }}"{{ end }}
             {{ with $altIngredient.price }}data-price="{{ . }}"{{ end }}
-            {{ with $altIngredient.altUnits }}data-alt-units="{{ . }}"{{ end }}>
+            {{ with $altIngredient.altUnits }}data-alt-units="{{ . | jsonify }}"{{ end }}>
             {{- $altIngredient.name | default $altRef -}}
           </option>
         {{- end -}}
@@ -93,7 +93,7 @@
     data-plural="{{ $plural }}"
     {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
     {{ if $price }}data-price="{{ $price }}"{{ end }}
-    {{ if $altUnits }}data-alt-units="{{ $altUnits }}"{{ end }}>
+    {{ if $altUnits }}data-alt-units="{{ $altUnits | jsonify }}"{{ end }}>
   <div class="ingredient-main">
     <span class="ingredient-amount">{{ $amount }}</span>
     <span class="ingredient-unit">{{ $unit }}</span>

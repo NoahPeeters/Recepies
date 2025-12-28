@@ -63,26 +63,30 @@ salz:
   name: Salz
   unit: g
   posthof: "54664:500,43622:500"
-  altUnits: "TL:6"
+  altUnits:
+    TL: 6
 
 prise-salz:
   name: Salz
   plural: Salz
   unit: g
-  altUnits: "Prise:0.4"
+  altUnits:
+    Prise: 0.4
 
 kurkuma:
   name: Kurkuma
   unit: g
   posthof: "49907:40"
-  altUnits: "TL:3"
+  altUnits:
+    TL: 3
 
 # Oils & Fats
 oel:
   name: Öl
   unit: g
   posthof: "49764:500,49790:500"
-  altUnits: "TL:5"
+  altUnits:
+    TL: 5
 
 # Liquids
 wasser:
@@ -108,7 +112,8 @@ puderzucker:
 zimt:
   name: Zimt
   unit: g
-  altUnits: "TL:3"
+  altUnits:
+    TL: 3
   posthof: "49991:40"
 
 frischkaese:
@@ -127,3 +132,74 @@ mineralwasser:
   name: EL Mineralwasser
   plural: EL Mineralwasser
   posthof: "50335:1000"
+
+# Vegetables
+zwiebel:
+  name: Zwiebel
+  plural: Zwiebeln
+  unit: g
+  altUnits:
+    Stück: 80
+
+knoblauch:
+  name: Knoblauchzehe
+  plural: Knoblauchzehen
+  unit: g
+  altUnits:
+    Zehe: 5
+
+kartoffel:
+  name: Kartoffel
+  plural: Kartoffeln
+  unit: g
+  altUnits:
+    Stück: 150
+
+karotte:
+  name: Karotte
+  plural: Karotten
+  unit: g
+  altUnits:
+    Stück: 80
+
+tomate:
+  name: Tomate
+  plural: Tomaten
+  unit: g
+  altUnits:
+    Stück: 120
+
+paprika:
+  name: Paprika
+  plural: Paprikas
+  unit: g
+  altUnits:
+    Stück: 150
+
+zucchini:
+  name: Zucchini
+  plural: Zucchini
+  unit: g
+  altUnits:
+    Stück: 200
+
+aubergine:
+  name: Aubergine
+  plural: Auberginen
+  unit: g
+  altUnits:
+    Stück: 300
+
+gurke:
+  name: Gurke
+  plural: Gurken
+  unit: g
+  altUnits:
+    Stück: 400
+
+champignons:
+  name: Champignon
+  plural: Champignons
+  unit: g
+  altUnits:
+    Stück: 20
