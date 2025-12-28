@@ -525,12 +525,17 @@ function getProductPageUrl(productId) {
 }
 
 function parsePosthofParam(posthofParam) {
-  // Parse format: "id:amount,id:amount,..."
+  // Parse format: [{id: "123", unit: 500}, ...]
   if (!posthofParam) return [];
-  return posthofParam.split(',').map(item => {
-    const [id, amount] = item.trim().split(':');
-    return { id: id.trim(), amount: parseFloat(amount) || 0 };
-  });
+  try {
+    const arr = typeof posthofParam === 'string' ? JSON.parse(posthofParam) : posthofParam;
+    return arr.map(item => ({
+      id: String(item.id),
+      amount: parseFloat(item.unit) || 0
+    }));
+  } catch {
+    return [];
+  }
 }
 
 async function fetchAllProducts(products) {
