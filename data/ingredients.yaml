@@ -43,6 +43,11 @@ vanillezucker:
   name: Päckchen Bourbon-Vanillezucker
   plural: Päckchen Bourbon-Vanillezucker
   posthof: "50165"
+  alternatives:
+    - ref: vanilleschote
+      factor: 0.5
+    - ref: vanilleextrakt
+      factor: 2.0
 
 vanilleschote:
   name: Vanilleschote
