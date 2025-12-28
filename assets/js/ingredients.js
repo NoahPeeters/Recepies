@@ -892,7 +892,11 @@ async function initPosthofProducts() {
     await updateChoicePosthofInfo(select);
 
     // Listen for changes
-    select.addEventListener('change', () => updateChoicePosthofInfo(select));
+    select.addEventListener('change', async () => {
+      await updateChoicePosthofInfo(select);
+      updateTotalPrice();
+      updateUsePopups();
+    });
   }
 }
 
