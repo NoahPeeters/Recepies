@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "posthof": {
+      "type": "http",
+      "url": "https://api.app.posthof-rendsburg.de/mcp"
+    }
+  }
+}
