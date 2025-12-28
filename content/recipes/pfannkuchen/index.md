@@ -57,7 +57,6 @@ Den Pfannkuchen mit einem Pfannenwender wenden und noch ca. 30 Sekunden weiterbr
 
 ## Tipps
 
-- Der erste Pfannkuchen ist oft Glückssache, bis sich Hitze und Teig eingespielt haben
 - Fertige Pfannkuchen auf einem Teller stapeln und bei 60 °C im Backofen warmhalten
 - Süße Varianten: Marmelade, Apfelmus, Zimt und Zucker, Nuss-Nougat-Creme
 - Herzhafte Varianten: Käse, Schinken, Kräuterquark
