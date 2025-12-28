@@ -1,14 +1,14 @@
 {{- $ingredientsCSS := resources.Get "css/ingredients.css" | minify -}}
-<link rel="stylesheet" href="{{ $ingredientsCSS.Permalink }}">
+<link rel="stylesheet" href="{{ $ingredientsCSS.RelPermalink }}">
 
 {{- $nutritionCSS := resources.Get "css/nutrition.css" | minify -}}
-<link rel="stylesheet" href="{{ $nutritionCSS.Permalink }}">
+<link rel="stylesheet" href="{{ $nutritionCSS.RelPermalink }}">
 
 {{- $searchCSS := resources.Get "css/search.css" | minify -}}
-<link rel="stylesheet" href="{{ $searchCSS.Permalink }}">
+<link rel="stylesheet" href="{{ $searchCSS.RelPermalink }}">
 
 {{- $ingredientsJS := resources.Get "js/ingredients.js" | minify -}}
-<script defer src="{{ $ingredientsJS.Permalink }}"></script>
+<script defer src="{{ $ingredientsJS.RelPermalink }}"></script>
 
 {{- $nutritionJS := resources.Get "js/nutrition.js" | minify -}}
-<script defer src="{{ $nutritionJS.Permalink }}"></script>
+<script defer src="{{ $nutritionJS.RelPermalink }}"></script>
