@@ -28,6 +28,7 @@ butter:
 zucker:
   name: Zucker
   unit: g
+  posthof: "50118:1000"
 
 agavendicksaft:
   name: Agavendicksaft
@@ -61,7 +62,6 @@ prise-salz:
   plural: Salz
   unit: g
   altUnits: "Prise:0.4"
-  price: "100000:100"
 
 kurkuma:
   name: Kurkuma
@@ -80,3 +80,30 @@ oel:
 wasser:
   name: Wasser
   unit: ml
+
+# Baking
+mehl:
+  name: Mehl
+  unit: g
+  posthof: "47267:1000,47260:1000"
+
+hefe:
+  name: Würfel frische Hefe
+  plural: Würfel frische Hefe
+  posthof: "46041"
+
+puderzucker:
+  name: Puderzucker
+  unit: g
+  posthof: "43035:200"
+
+zimt:
+  name: Zimt
+  unit: g
+  altUnits: "TL:3"
+  posthof: "49991:40"
+
+frischkaese:
+  name: Frischkäse
+  unit: g
+  posthof: "45698:125,139403:125"

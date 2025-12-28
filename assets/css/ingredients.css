@@ -191,6 +191,7 @@
 .portion-type-selector {
   display: flex;
   align-items: center;
+  margin-left: 0.5rem;
 }
 
 .portion-type-select {
@@ -213,6 +214,7 @@
 
 .portion-type-label {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   font-weight: 500;
   font-size: 0.9rem;
   color: var(--secondary, #64748b);
@@ -225,28 +227,57 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: var(--code-bg, #f8fafc);
-  border-radius: 12px;
   overflow: visible;
+}
+
+.ingredient-section-header {
+  padding: 0.75rem 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary, #64748b);
+  margin-top: 0 !important; /* Override .post-content li margin */
+}
+
+.ingredient-section-header:first-child {
+  padding-top: 0;
+}
+
+/* First ingredient in list or after section header gets top radius */
+.ingredients-list > .ingredient:first-child,
+.ingredient-section-header + .ingredient {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Ingredient before section header or last ingredient gets bottom radius */
+.ingredient:has(+ .ingredient-section-header),
+.ingredients-list > .ingredient:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: none;
+}
+
+/* Add margin between sections */
+.ingredient-section-header:not(:first-child) {
+  margin-top: 1rem;
 }
 
 .ingredient {
   padding: 0.6rem 1rem;
-  background: transparent;
+  background: var(--code-bg, #f8fafc);
   display: flex;
   flex-wrap: nowrap;
   gap: 0.4rem;
   align-items: center;
   border-bottom: 1px solid var(--border, #e2e8f0);
-  transition: background-color 0.15s ease;
+  margin: 0;
+  margin-top: 0 !important; /* Override .post-content li margin */
 }
 
 .ingredient:last-child {
   border-bottom: none;
-}
-
-.ingredient:hover {
-  background: rgba(0, 0, 0, 0.02);
 }
 
 .ingredient-amount {
@@ -344,16 +375,13 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 
-  .ingredients-list {
-    background: var(--code-bg, #1e293b);
+  .ingredient-section-header {
+    color: var(--secondary, #94a3b8);
   }
 
   .ingredient {
+    background: var(--code-bg, #1e293b);
     border-bottom-color: var(--border, #334155);
-  }
-
-  .ingredient:hover {
-    background: rgba(255, 255, 255, 0.03);
   }
 
   .ingredient-amount {
@@ -467,7 +495,6 @@
   position: absolute;
   left: 0;
   bottom: 100%;
-  margin-bottom: 0.5rem;
   background: var(--theme, #fff);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -479,6 +506,16 @@
   transform: translateY(5px);
   transition: all 0.15s ease;
   pointer-events: none;
+}
+
+/* Invisible bridge to prevent popup from closing when moving mouse */
+.use-posthof-popup::before {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
 }
 
 .use-posthof-popup:empty {
@@ -670,8 +707,12 @@
 .ingredient:nth-last-child(2) .posthof-popup {
   top: auto;
   bottom: 100%;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+}
+
+.ingredient:last-child .posthof-popup::before,
+.ingredient:nth-last-child(2) .posthof-popup::before {
+  top: auto;
+  bottom: -0.5rem;
 }
 
 .posthof-popup-item {
@@ -680,7 +721,6 @@
   gap: 0.6rem;
   padding: 0.5rem;
   border-radius: 8px;
-  cursor: pointer;
   transition: all 0.15s ease;
   text-decoration: none !important;
   border: 2px solid transparent;
@@ -688,14 +728,14 @@
   background-image: none !important;
 }
 
-.posthof-popup-item:hover {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(42, 153, 162, 0.3);
-  transform: translateX(2px);
+.posthof-popup-item.clickable {
+  cursor: pointer;
 }
 
 .posthof-popup-item.clickable:hover {
+  background: rgba(0, 0, 0, 0.05);
   border-color: rgba(42, 153, 162, 0.5);
+  transform: translateX(2px);
 }
 
 .posthof-popup-item.selected {

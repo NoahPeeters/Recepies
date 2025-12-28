@@ -669,7 +669,7 @@ function updateMultiPosthofDisplay(container, ingredientElement) {
   // Hover popup showing selected product details
   const selectedProduct = data;
   html += `<div class="posthof-popup">`;
-  html += `<a href="${productUrl}" target="_blank" rel="noopener" class="posthof-popup-item selected">`;
+  html += `<div class="posthof-popup-item selected">`;
   if (defaultImage) {
     const imageUrl = getProductImageUrl(productId, defaultImage.id);
     html += `<img class="posthof-popup-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
@@ -683,7 +683,7 @@ function updateMultiPosthofDisplay(container, ingredientElement) {
   }
   html += `</span>`;
   html += `</div>`;
-  html += `</a>`;
+  html += `</div>`;
 
   // Show other product options if multiple available
   if (allProducts.length > 1) {
