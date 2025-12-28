@@ -1,6 +1,6 @@
 {{- define "main" }}
 
-<article class="post-single">
+<article class="post-single" data-pagefind-body>
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent" data-pagefind-meta="title">
@@ -35,7 +35,7 @@
   {{- end }}
 
   {{- if .Content }}
-  <div class="post-content" data-pagefind-body>
+  <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}

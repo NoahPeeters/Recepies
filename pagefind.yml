@@ -1,5 +1,4 @@
 site: public
-root_selector: "article, .post-content, main"
 exclude_selectors:
   - "nav"
   - "footer"
@@ -8,3 +7,12 @@ exclude_selectors:
   - ".toc"
   - "#search"
   - ".pagefind-ui"
+  - ".posthof-popup"
+  - ".servings-selector"
+  - ".breadcrumbs"
+  - ".post-meta"
+  - ".post-footer"
+  - ".recipe-info-wrapper"
+  - ".portion-type-definition"
+  - ".ingredient-amount"
+  - ".ingredient-unit"
