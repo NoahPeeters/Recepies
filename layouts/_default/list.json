@@ -7,14 +7,14 @@
       "title": {{ $page.Title | jsonify }},
       "url": {{ $page.Permalink | jsonify }},
       "date": {{ $page.Date.Format "2006-01-02" | jsonify }},
-      "prepTime": {{ $page.Params.prepTime | jsonify }},
-      "cookTime": {{ $page.Params.cookTime | jsonify }},
-      "categories": {{ $page.Params.categories | jsonify }},
-      "cuisines": {{ $page.Params.cuisines | jsonify }},
-      "carbs": {{ $page.Params.carbs | jsonify }},
-      "proteins": {{ $page.Params.proteins | jsonify }},
-      "diets": {{ $page.Params.diets | jsonify }},
-      "methods": {{ $page.Params.methods | jsonify }}
+      "prepTime": {{ $page.Params.prepTime | default 0 | jsonify }},
+      "cookTime": {{ $page.Params.cookTime | default 0 | jsonify }},
+      "categories": {{ $page.Params.categories | default slice | jsonify }},
+      "cuisines": {{ $page.Params.cuisines | default slice | jsonify }},
+      "carbs": {{ $page.Params.carbs | default slice | jsonify }},
+      "proteins": {{ $page.Params.proteins | default slice | jsonify }},
+      "diets": {{ $page.Params.diets | default slice | jsonify }},
+      "methods": {{ $page.Params.methods | default slice | jsonify }}
     }
     {{- end }}
   ]

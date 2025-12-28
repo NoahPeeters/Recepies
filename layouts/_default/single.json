@@ -2,13 +2,13 @@
   "title": {{ .Title | jsonify }},
   "url": {{ .Permalink | jsonify }},
   "date": {{ .Date.Format "2006-01-02" | jsonify }},
-  "description": {{ .Summary | plainify | jsonify }},
-  "prepTime": {{ .Params.prepTime | jsonify }},
-  "cookTime": {{ .Params.cookTime | jsonify }},
-  "categories": {{ .Params.categories | jsonify }},
-  "cuisines": {{ .Params.cuisines | jsonify }},
-  "carbs": {{ .Params.carbs | jsonify }},
-  "proteins": {{ .Params.proteins | jsonify }},
-  "diets": {{ .Params.diets | jsonify }},
-  "methods": {{ .Params.methods | jsonify }}
+  "description": {{ .Description | default (.Summary | plainify | truncate 200) | jsonify }},
+  "prepTime": {{ .Params.prepTime | default 0 | jsonify }},
+  "cookTime": {{ .Params.cookTime | default 0 | jsonify }},
+  "categories": {{ .Params.categories | default slice | jsonify }},
+  "cuisines": {{ .Params.cuisines | default slice | jsonify }},
+  "carbs": {{ .Params.carbs | default slice | jsonify }},
+  "proteins": {{ .Params.proteins | default slice | jsonify }},
+  "diets": {{ .Params.diets | default slice | jsonify }},
+  "methods": {{ .Params.methods | default slice | jsonify }}
 }

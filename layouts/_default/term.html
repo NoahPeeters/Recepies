@@ -1,0 +1,58 @@
+{{- define "main" }}
+
+{{- $cover := .Resources.GetMatch "cover.*" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if $cover }}
+  <div class="term-cover">
+    <img src="{{ $cover.RelPermalink }}" alt="{{ .Title }}">
+  </div>
+  {{- end }}
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  <div class="term-recipes">
+    <h2>Rezepte</h2>
+    {{- $pages := .Pages }}
+    {{- if gt (len $pages) 0 }}
+    <div class="recipe-grid">
+      {{- range $pages }}
+      <article class="recipe-card">
+        {{- $recipeCover := .Resources.GetMatch "cover.*" }}
+        <a href="{{ .Permalink }}">
+          {{- if $recipeCover }}
+          <div class="recipe-card-image">
+            <img src="{{ $recipeCover.RelPermalink }}" alt="{{ .Title }}">
+          </div>
+          {{- end }}
+          <div class="recipe-card-content">
+            <h3>{{ .Title }}</h3>
+            {{- if .Description }}
+            <p>{{ .Description | truncate 100 }}</p>
+            {{- end }}
+          </div>
+        </a>
+      </article>
+      {{- end }}
+    </div>
+    {{- else }}
+    <p>Noch keine Rezepte in dieser Kategorie.</p>
+    {{- end }}
+  </div>
+</article>
+
+{{- end }}{{/* end main */}}
