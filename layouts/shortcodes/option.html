@@ -1,10 +1,27 @@
+{{- $ref := .Get "ref" -}}
 {{- $amount := .Get "amount" | default 0 -}}
 {{- $constant := .Get "constant" | default 0 -}}
-{{- $unit := .Get "unit" | default "" -}}
-{{- $name := .Get "name" -}}
-{{- $plural := .Get "plural" | default $name -}}
 {{- $default := .Get "default" | default "false" -}}
-{{- $posthof := .Get "posthof" | default "" -}}
+
+{{- /* Look up ingredient from global data */ -}}
+{{- $ingredient := index site.Data.ingredients $ref -}}
+
+{{- /* Get values from global data, with fallbacks */ -}}
+{{- $unit := "" -}}
+{{- $name := $ref -}}
+{{- $plural := $ref -}}
+{{- $posthof := "" -}}
+{{- $price := "" -}}
+{{- $altUnits := "" -}}
+
+{{- with $ingredient -}}
+  {{- $unit = .unit | default "" -}}
+  {{- $name = .name | default $ref -}}
+  {{- $plural = .plural | default $name -}}
+  {{- $posthof = .posthof | default "" -}}
+  {{- $price = .price | default "" -}}
+  {{- $altUnits = .altUnits | default "" -}}
+{{- end -}}
 
 <option
   data-amount="{{ $amount }}"
@@ -13,6 +30,8 @@
   data-name="{{ $name }}"
   data-plural="{{ $plural }}"
   {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
+  {{ if $price }}data-price="{{ $price }}"{{ end }}
+  {{ if $altUnits }}data-alt-units="{{ $altUnits }}"{{ end }}
   {{ if eq $default "true" }}selected{{ end }}>
   {{- $name -}}
 </option>

@@ -1,0 +1,82 @@
+# Global ingredient definitions
+# Each ingredient can be referenced by its key in recipes
+
+# Rice & Grains
+milchreis:
+  name: Milchreis
+  unit: g
+  posthof: "47293:500"
+
+rote-linsen:
+  name: Rote Linsen
+  plural: Rote Linsen
+  unit: g
+  posthof: "43713:500"
+
+# Dairy
+milch:
+  name: Milch
+  unit: ml
+  posthof: "44576:1000,53451:1000"
+
+butter:
+  name: Butter
+  unit: g
+  posthof: "53549:250,53558:250"
+
+# Sweeteners
+zucker:
+  name: Zucker
+  unit: g
+
+agavendicksaft:
+  name: Agavendicksaft
+  unit: g
+  posthof: "50130:700"
+
+# Vanilla
+vanillezucker:
+  name: Päckchen Bourbon-Vanillezucker
+  plural: Päckchen Bourbon-Vanillezucker
+  posthof: "50165"
+
+vanilleschote:
+  name: Vanilleschote
+  plural: Vanilleschoten
+
+vanilleextrakt:
+  name: Tropfen Vanilleextrakt
+  plural: Tropfen Vanilleextrakt
+  posthof: "50225:200"
+
+# Spices & Seasonings
+salz:
+  name: Salz
+  unit: g
+  posthof: "54664:500,43622:500"
+  altUnits: "TL:6"
+
+prise-salz:
+  name: Salz
+  plural: Salz
+  unit: g
+  altUnits: "Prise:0.4"
+  price: "100000:100"
+
+kurkuma:
+  name: Kurkuma
+  unit: g
+  posthof: "49907:40"
+  altUnits: "TL:3"
+
+# Oils & Fats
+oel:
+  name: Öl
+  unit: g
+  posthof: "49764:500,49790:500"
+  altUnits: "TL:5"
+
+# Liquids
+wasser:
+  name: Wasser
+  unit: ml

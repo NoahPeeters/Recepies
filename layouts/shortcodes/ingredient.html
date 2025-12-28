@@ -1,14 +1,39 @@
+{{- $ref := .Get "ref" -}}
 {{- $amount := .Get "amount" | default 0 -}}
 {{- $constant := .Get "constant" | default 0 -}}
-{{- $unit := .Get "unit" | default "" -}}
-{{- $name := .Get "name" -}}
-{{- $plural := .Get "plural" | default $name -}}
 {{- $note := .Get "note" | default "" -}}
-{{- $optional := .Get "optional" | default false -}}
-{{- $id := .Get "id" | default ($name | urlize) -}}
-{{- $posthof := .Get "posthof" | default "" -}}
+{{- $id := .Get "id" -}}
 
-<li class="ingredient{{ if $posthof }} has-posthof{{ end }}{{ if $note }} has-note{{ end }}"
+{{- /* Look up ingredient from global data */ -}}
+{{- $ingredient := index site.Data.ingredients $ref -}}
+
+{{- /* Get values from global data, with fallbacks */ -}}
+{{- $unit := "" -}}
+{{- $name := $ref -}}
+{{- $plural := $ref -}}
+{{- $posthof := "" -}}
+{{- $price := "" -}}
+
+{{- $altUnits := "" -}}
+
+{{- with $ingredient -}}
+  {{- $unit = .unit | default "" -}}
+  {{- $name = .name | default $ref -}}
+  {{- $plural = .plural | default $name -}}
+  {{- $posthof = .posthof | default "" -}}
+  {{- $price = .price | default "" -}}
+  {{- $altUnits = .altUnits | default "" -}}
+{{- end -}}
+
+{{- /* Use ref as local id if not specified */ -}}
+{{- if not $id -}}
+  {{- $id = $ref -}}
+{{- end -}}
+
+{{- /* Determine if we have price info (posthof or manual price) */ -}}
+{{- $hasPrice := or $posthof $price -}}
+
+<li class="ingredient{{ if $posthof }} has-posthof{{ end }}{{ if $price }} has-price{{ end }}{{ if $note }} has-note{{ end }}"
     id="ingredient-{{ $id }}"
     data-ingredient-id="{{ $id }}"
     data-base-amount="{{ $amount }}"
@@ -16,19 +41,22 @@
     data-unit="{{ $unit }}"
     data-name="{{ $name }}"
     data-plural="{{ $plural }}"
-    {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}>
+    {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
+    {{ if $price }}data-price="{{ $price }}"{{ end }}
+    {{ if $altUnits }}data-alt-units="{{ $altUnits }}"{{ end }}>
   <div class="ingredient-main">
     <span class="ingredient-amount">{{ $amount }}</span>
     <span class="ingredient-unit">{{ $unit }}</span>
     <span class="ingredient-name-wrapper">
       <span class="ingredient-name">{{ if gt (float $amount) 1.0 }}{{ $plural }}{{ else }}{{ $name }}{{ end }}</span>
-      {{- if $note -}}<span class="ingredient-note">{{ $note }}</span>{{- end -}}
+      {{- if or $altUnits $note -}}<span class="ingredient-meta">{{- if $altUnits -}}<span class="ingredient-alt-units"></span>{{- end -}}{{- if $note -}}<span class="ingredient-note">{{ $note }}</span>{{- end -}}</span>{{- end -}}
     </span>
-    {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
   </div>
   {{- if $posthof -}}
   <div class="posthof-info" data-loading="true">
     <span class="posthof-loading">Laden...</span>
   </div>
+  {{- else if $price -}}
+  <div class="price-info"></div>
   {{- end -}}
 </li>

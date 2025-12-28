@@ -59,6 +59,28 @@ function formatAmount(amount) {
   return Math.round(amount).toString();
 }
 
+function parseAltUnits(altUnitsStr) {
+  // Parse format: "TL:3,EL:9" -> [{unit: "TL", factor: 3}, {unit: "EL", factor: 9}]
+  if (!altUnitsStr) return [];
+  return altUnitsStr.split(',').map(item => {
+    const [unit, factor] = item.trim().split(':');
+    return { unit: unit.trim(), factor: parseFloat(factor) || 1 };
+  });
+}
+
+function formatAltUnits(amount, altUnitsStr) {
+  // Convert amount to alternative units and format for display
+  const altUnits = parseAltUnits(altUnitsStr);
+  if (altUnits.length === 0 || amount <= 0) return '';
+
+  const parts = altUnits.map(({ unit, factor }) => {
+    const altAmount = amount / factor;
+    return `${formatAmount(altAmount)} ${unit}`;
+  });
+
+  return parts.join(' · ');
+}
+
 function convertUnit(amount, unit) {
   let currentAmount = amount;
   let currentUnit = unit;
@@ -187,6 +209,23 @@ function updateIngredients(container) {
     }
     if (unitEl) {
       unitEl.textContent = displayUnit;
+    }
+
+    // Update alternative units display
+    const altUnitsEl = ingredient.querySelector('.ingredient-alt-units');
+    if (altUnitsEl) {
+      // Get altUnits from ingredient or selected option
+      let altUnitsStr = '';
+      if (ingredientSelect) {
+        const selectedOption = ingredientSelect.options[ingredientSelect.selectedIndex];
+        altUnitsStr = selectedOption.dataset.altUnits || '';
+      } else {
+        altUnitsStr = ingredient.dataset.altUnits || '';
+      }
+      // Use the raw calculated amount (before unit conversion) for alt units
+      const rawAmount = baseAmount * ratio + constant;
+      const altUnitsText = formatAltUnits(rawAmount, altUnitsStr);
+      altUnitsEl.textContent = altUnitsText;
     }
 
     // Store calculated values for use references
@@ -813,26 +852,62 @@ function updateAllPosthofPrices() {
     }
   });
 
-  // Update total price
+  // Update manual prices and total
+  updateManualPrices();
   updateTotalPrice();
 }
 
+function parsePrice(priceStr) {
+  // Parse format: "cents:unitAmount" -> {cents, unitAmount}
+  if (!priceStr) return null;
+  const [cents, unitAmount] = priceStr.split(':');
+  return {
+    cents: parseFloat(cents) || 0,
+    unitAmount: parseFloat(unitAmount) || 0
+  };
+}
+
 function calculateIngredientPrice(ingredient) {
-  const infoContainer = ingredient.querySelector('.posthof-info') || ingredient.querySelector('.posthof-choice-info');
-  if (!infoContainer?.posthofData) return 0;
-
-  const { pricePerUnit, productUnit } = infoContainer.posthofData;
   const calculatedAmount = parseFloat(ingredient.dataset.calculatedAmount) || 0;
+  if (calculatedAmount <= 0) return 0;
 
-  if (!pricePerUnit || calculatedAmount <= 0) return 0;
+  // Check for posthof data first
+  const infoContainer = ingredient.querySelector('.posthof-info') || ingredient.querySelector('.posthof-choice-info');
+  if (infoContainer?.posthofData) {
+    const { pricePerUnit, productUnit } = infoContainer.posthofData;
+    if (!pricePerUnit) return 0;
 
-  if (productUnit > 0) {
-    // Calculate proportional price based on unit size
-    return Math.round((calculatedAmount / productUnit) * pricePerUnit);
-  } else {
-    // No unit specified - use base product price as-is
-    return pricePerUnit;
+    if (productUnit > 0) {
+      return Math.round((calculatedAmount / productUnit) * pricePerUnit);
+    } else {
+      return pricePerUnit;
+    }
   }
+
+  // Check for manual price data
+  const priceData = parsePrice(ingredient.dataset.price);
+  if (priceData && priceData.cents > 0 && priceData.unitAmount > 0) {
+    return Math.round((calculatedAmount / priceData.unitAmount) * priceData.cents);
+  }
+
+  return 0;
+}
+
+function updateManualPrices() {
+  document.querySelectorAll('.ingredient[data-price]').forEach(ingredient => {
+    const priceInfo = ingredient.querySelector('.price-info');
+    if (!priceInfo) return;
+
+    const calculatedAmount = parseFloat(ingredient.dataset.calculatedAmount) || 0;
+    const priceData = parsePrice(ingredient.dataset.price);
+
+    if (priceData && priceData.cents > 0 && priceData.unitAmount > 0 && calculatedAmount > 0) {
+      const displayPrice = Math.round((calculatedAmount / priceData.unitAmount) * priceData.cents);
+      priceInfo.innerHTML = `<span class="manual-price">${formatPrice(displayPrice)}</span>`;
+    } else {
+      priceInfo.innerHTML = '';
+    }
+  });
 }
 
 function updateTotalPrice() {
@@ -843,8 +918,8 @@ function updateTotalPrice() {
   let totalCents = 0;
   let hasAnyPrice = false;
 
-  // Sum prices from regular ingredients
-  document.querySelectorAll('.ingredient[data-posthof]').forEach(ingredient => {
+  // Sum prices from regular ingredients (posthof or manual price)
+  document.querySelectorAll('.ingredient[data-posthof], .ingredient[data-price]').forEach(ingredient => {
     const price = calculateIngredientPrice(ingredient);
     if (price > 0) {
       totalCents += price;
@@ -943,6 +1018,7 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initIngredients();
     initPosthofProducts().then(() => {
+      updateManualPrices();
       updateUsePopups();
       updateTotalPrice();
     });
@@ -950,6 +1026,7 @@ if (document.readyState === 'loading') {
 } else {
   initIngredients();
   initPosthofProducts().then(() => {
+    updateManualPrices();
     updateUsePopups();
     updateTotalPrice();
   });

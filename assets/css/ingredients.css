@@ -272,10 +272,20 @@
   color: var(--primary, #1e293b);
 }
 
+.ingredient-meta {
+  display: inline;
+}
+
+.ingredient-alt-units,
 .ingredient-note {
   color: var(--secondary, #94a3b8);
   font-size: 0.8rem;
   line-height: 1.3;
+}
+
+.ingredient-alt-units:not(:empty) + .ingredient-note::before {
+  content: '·';
+  margin: 0 0.4em;
 }
 
 .ingredient-optional {
@@ -572,6 +582,12 @@
   gap: 0.5rem;
 }
 
+.price-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .posthof-image {
   width: 56px;
   height: 56px;
@@ -607,11 +623,13 @@
   background: currentColor;
 }
 
-.posthof-price {
+.posthof-price,
+.manual-price {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--secondary, #64748b);
 }
+
 
 .posthof-brand {
   display: none;
@@ -804,7 +822,8 @@
     color: #f87171;
   }
 
-  .posthof-price {
+  .posthof-price,
+  .manual-price {
     color: var(--secondary, #94a3b8);
   }
 }

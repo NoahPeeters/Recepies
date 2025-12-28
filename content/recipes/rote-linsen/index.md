@@ -20,11 +20,11 @@ Einfache rote Linsen mit Kurkuma - schnell, nahrhaft und vielseitig als Beilage 
 {{< recipeinfo >}}
 
 {{< ingredients servings="3" >}}
-{{< ingredient amount="200" unit="g" name="Rote Linsen" posthof="43713:500" >}}
-{{< ingredient amount="600" unit="ml" name="Wasser" >}}
-{{< ingredient amount="3" unit="g" name="Kurkuma" note="1 TL" id="kurkuma" posthof="49907:40" >}}
-{{< ingredient amount="5" unit="g" name="Öl" note="1 TL" id="oel" posthof="49764:500,49790:500" >}}
-{{< ingredient amount="9" unit="g" name="Salz" note="1.5 TL" id="salz" posthof="54664:500,43622:500" >}}
+{{< ingredient ref="rote-linsen" amount="200" >}}
+{{< ingredient ref="wasser" amount="600" >}}
+{{< ingredient ref="kurkuma" amount="3" note="gemahlen" >}}
+{{< ingredient ref="oel" amount="5" >}}
+{{< ingredient ref="salz" amount="9" >}}
 {{< /ingredients >}}
 
 {{< steps >}}
