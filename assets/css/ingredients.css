@@ -148,6 +148,32 @@
   }
 }
 
+/* Mobile: Recipe info boxes */
+@media (max-width: 500px) {
+  .recipe-info-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .recipe-info-box {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .recipe-info-item {
+    padding: 0.75rem 0.5rem;
+    flex: 1;
+  }
+
+  .recipe-info-label {
+    font-size: 0.65rem;
+  }
+
+  .recipe-info-value {
+    font-size: 1rem;
+  }
+}
+
 /* Generic section header */
 .recipe-section-header,
 .post-content h2 {
@@ -737,9 +763,38 @@
   color: var(--secondary, #64748b);
 }
 
-
 .posthof-brand {
   display: none;
+}
+
+/* Mobile: Stack stock and price vertically */
+@media (max-width: 500px) {
+  .posthof-info {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.1rem;
+  }
+
+  .posthof-details {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+  }
+
+  .price-info {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.1rem;
+  }
+
+  .posthof-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ingredient.has-posthof {
+    gap: 0.3rem;
+  }
 }
 
 /* Posthof multi-product wrapper with hover popup */
