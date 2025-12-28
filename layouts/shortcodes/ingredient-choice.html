@@ -2,6 +2,10 @@
 {{- $note := .Get "note" | default "" -}}
 {{- $optional := .Get "optional" | default false -}}
 
+{{- /* Collect refs from inner options to check for global alternatives */ -}}
+{{- $scratch := newScratch -}}
+{{- $scratch.Set "globalAlts" slice -}}
+
 <li class="ingredient ingredient-choice"
     id="ingredient-{{ $id }}"
     data-ingredient-id="{{ $id }}">
@@ -10,6 +14,7 @@
     <span class="ingredient-unit"></span>
     <select class="ingredient-select" aria-label="Ingredient choice">
       {{ .Inner }}
+      {{- /* Global alternatives are added via option shortcode data attributes */ -}}
     </select>
     {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
     {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}

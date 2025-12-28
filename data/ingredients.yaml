@@ -29,6 +29,9 @@ zucker:
   name: Zucker
   unit: g
   posthof: "50118:1000"
+  alternatives:
+    - ref: agavendicksaft
+      factor: 1.0
 
 agavendicksaft:
   name: Agavendicksaft

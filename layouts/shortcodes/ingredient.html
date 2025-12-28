@@ -3,6 +3,7 @@
 {{- $constant := .Get "constant" | default 0 -}}
 {{- $note := .Get "note" | default "" -}}
 {{- $id := .Get "id" -}}
+{{- $optional := .Get "optional" | default false -}}
 
 {{- /* Look up ingredient from global data */ -}}
 {{- $ingredient := index site.Data.ingredients $ref -}}
@@ -13,8 +14,8 @@
 {{- $plural := $ref -}}
 {{- $posthof := "" -}}
 {{- $price := "" -}}
-
 {{- $altUnits := "" -}}
+{{- $alternatives := slice -}}
 
 {{- with $ingredient -}}
   {{- $unit = .unit | default "" -}}
@@ -23,6 +24,7 @@
   {{- $posthof = .posthof | default "" -}}
   {{- $price = .price | default "" -}}
   {{- $altUnits = .altUnits | default "" -}}
+  {{- $alternatives = .alternatives | default slice -}}
 {{- end -}}
 
 {{- /* Use ref as local id if not specified */ -}}
@@ -30,9 +32,57 @@
   {{- $id = $ref -}}
 {{- end -}}
 
-{{- /* Determine if we have price info (posthof or manual price) */ -}}
-{{- $hasPrice := or $posthof $price -}}
-
+{{- /* Check if ingredient has alternatives - render as choice */ -}}
+{{- if gt (len $alternatives) 0 -}}
+<li class="ingredient ingredient-choice"
+    id="ingredient-{{ $id }}"
+    data-ingredient-id="{{ $id }}">
+  <div class="ingredient-main">
+    <span class="ingredient-amount"></span>
+    <span class="ingredient-unit"></span>
+    <select class="ingredient-select" aria-label="Ingredient choice">
+      {{- /* Primary ingredient as first/default option */ -}}
+      <option
+        data-amount="{{ $amount }}"
+        data-constant="{{ $constant }}"
+        data-unit="{{ $unit }}"
+        data-name="{{ $name }}"
+        data-plural="{{ $plural }}"
+        {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
+        {{ if $price }}data-price="{{ $price }}"{{ end }}
+        {{ if $altUnits }}data-alt-units="{{ $altUnits }}"{{ end }}
+        selected>
+        {{- $name -}}
+      </option>
+      {{- /* Alternative ingredients */ -}}
+      {{- range $alternatives -}}
+        {{- $altRef := .ref -}}
+        {{- $factor := .factor | default 1.0 -}}
+        {{- $altIngredient := index site.Data.ingredients $altRef -}}
+        {{- if $altIngredient -}}
+          {{- $altAmount := mul (float $amount) (float $factor) -}}
+          {{- $altConstant := mul (float $constant) (float $factor) -}}
+          <option
+            data-amount="{{ $altAmount }}"
+            data-constant="{{ $altConstant }}"
+            data-unit="{{ $altIngredient.unit | default "" }}"
+            data-name="{{ $altIngredient.name | default $altRef }}"
+            data-plural="{{ $altIngredient.plural | default ($altIngredient.name | default $altRef) }}"
+            {{ with $altIngredient.posthof }}data-posthof="{{ . }}"{{ end }}
+            {{ with $altIngredient.price }}data-price="{{ . }}"{{ end }}
+            {{ with $altIngredient.altUnits }}data-alt-units="{{ . }}"{{ end }}>
+            {{- $altIngredient.name | default $altRef -}}
+          </option>
+        {{- end -}}
+      {{- end -}}
+    </select>
+    {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
+    {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
+  </div>
+  <div class="posthof-info posthof-choice-info"></div>
+</li>
+{{- else -}}
+{{- /* Regular ingredient without alternatives */ -}}
 <li class="ingredient{{ if $posthof }} has-posthof{{ end }}{{ if $price }} has-price{{ end }}{{ if $note }} has-note{{ end }}"
     id="ingredient-{{ $id }}"
     data-ingredient-id="{{ $id }}"
@@ -60,3 +110,4 @@
   <div class="price-info"></div>
   {{- end -}}
 </li>
+{{- end -}}

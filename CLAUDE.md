@@ -60,7 +60,36 @@ ingredient-key:
   unit: g                   # optional
   posthof: "12345:500"      # optional, product-id:package-size
   altUnits: "TL:5"          # optional, unit:grams-per-unit
+  alternatives:             # optional, auto-creates ingredient choice
+    - ref: other-ingredient # reference to another global ingredient
+      factor: 1.0           # amount multiplier (alt_amount = amount * factor)
 ```
+
+### Global Alternatives
+
+When an ingredient has `alternatives` defined, it automatically renders as an ingredient choice dropdown instead of a single ingredient. This eliminates the need to manually define `ingredient-choice` in recipes.
+
+Example:
+```yaml
+zucker:
+  name: Zucker
+  unit: g
+  posthof: "50118:1000"
+  alternatives:
+    - ref: agavendicksaft
+      factor: 1.0
+    - ref: honig
+      factor: 0.8
+```
+
+When a recipe uses `{{</* ingredient ref="zucker" amount="100" */>}}`:
+- Zucker (100g) - default option
+- Agavendicksaft (100g × 1.0 = 100g) - alternative
+- Honig (100g × 0.8 = 80g) - alternative
+
+Notes:
+- Alternatives are NOT applied recursively (alternatives of alternatives are ignored)
+- For `ingredient-choice`, global alternatives are not merged (use manual options)
 
 ### Step 4: Check Taxonomy Images
 
