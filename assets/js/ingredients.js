@@ -824,13 +824,15 @@ function calculateIngredientPrice(ingredient) {
   const { pricePerUnit, productUnit } = infoContainer.posthofData;
   const calculatedAmount = parseFloat(ingredient.dataset.calculatedAmount) || 0;
 
-  if (productUnit > 0 && calculatedAmount > 0 && pricePerUnit) {
+  if (!pricePerUnit || calculatedAmount <= 0) return 0;
+
+  if (productUnit > 0) {
+    // Calculate proportional price based on unit size
     return Math.round((calculatedAmount / productUnit) * pricePerUnit);
-  } else if (pricePerUnit && calculatedAmount > 0) {
-    // No unit conversion, use base price (for items like "2 Päckchen")
-    return Math.round(calculatedAmount * pricePerUnit);
+  } else {
+    // No unit specified - use base product price as-is
+    return pricePerUnit;
   }
-  return 0;
 }
 
 function updateTotalPrice() {
