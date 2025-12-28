@@ -1,12 +1,28 @@
+/* Recipe info wrapper */
+.recipe-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
 /* Recipe info box */
 .recipe-info-box {
   display: flex;
   gap: 0;
-  margin: 1.5rem 0;
+  margin: 0;
   background: var(--code-bg, #f8fafc);
   border-radius: 12px;
   overflow: hidden;
   width: fit-content;
+}
+
+.recipe-price-box {
+  background: rgba(42, 153, 162, 0.1);
+}
+
+.recipe-price-box .recipe-info-value {
+  color: #2a99a2;
 }
 
 .recipe-info-item {
@@ -211,7 +227,7 @@
   gap: 0;
   background: var(--code-bg, #f8fafc);
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ingredient {
@@ -220,7 +236,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 0.4rem;
-  align-items: baseline;
+  align-items: center;
   border-bottom: 1px solid var(--border, #e2e8f0);
   transition: background-color 0.15s ease;
 }
@@ -245,17 +261,21 @@
   font-size: 0.9rem;
 }
 
-.ingredient-name {
+.ingredient-name-wrapper {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.ingredient-name {
   font-weight: 500;
   color: var(--primary, #1e293b);
 }
 
 .ingredient-note {
-  margin-left: auto;
   color: var(--secondary, #94a3b8);
-  font-size: 0.85rem;
-  text-align: right;
+  font-size: 0.8rem;
+  line-height: 1.3;
 }
 
 .ingredient-optional {
@@ -270,6 +290,7 @@
 }
 
 .ingredient-select {
+  height: 2rem;
   padding: 0 0.5rem;
   border: none;
   border-radius: 6px;
@@ -410,6 +431,11 @@
 }
 
 /* Ingredient use references */
+.ingredient-use-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
 .ingredient-use {
   display: inline-flex;
   align-items: baseline;
@@ -425,6 +451,35 @@
 
 .ingredient-use:hover {
   opacity: 0.85;
+}
+
+.use-posthof-popup {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 0.5rem;
+  background: var(--theme, #fff);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  z-index: 100;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  transition: all 0.15s ease;
+  pointer-events: none;
+}
+
+.use-posthof-popup:empty {
+  display: none;
+}
+
+.ingredient-use-wrapper:hover .use-posthof-popup:not(:empty) {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .use-amount {
@@ -460,6 +515,11 @@
   .ingredient-use {
     background: #2a99a2;
     color: #000;
+  }
+
+  .use-posthof-popup {
+    background: var(--code-bg, #1e293b);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -513,10 +573,14 @@
 }
 
 .posthof-image {
-  width: 28px;
-  height: 28px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
-  border-radius: 3px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #000;
+  margin: 0 !important;
+  padding: 2px;
 }
 
 .posthof-stock {
@@ -553,7 +617,181 @@
   display: none;
 }
 
+/* Posthof multi-product wrapper with hover popup */
+.posthof-multi-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.posthof-popup {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  background: var(--theme, #fff);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  z-index: 100;
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: all 0.15s ease;
+}
+
+.posthof-multi-wrapper:hover .posthof-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Position popup above for last items to avoid overflow */
+.ingredient:last-child .posthof-popup,
+.ingredient:nth-last-child(2) .posthof-popup {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.posthof-popup-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none !important;
+  border: 2px solid transparent;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.posthof-popup-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(42, 153, 162, 0.3);
+  transform: translateX(2px);
+}
+
+.posthof-popup-item.clickable:hover {
+  border-color: rgba(42, 153, 162, 0.5);
+}
+
+.posthof-popup-item.selected {
+  background: rgba(42, 153, 162, 0.15);
+  border-color: rgba(42, 153, 162, 0.4);
+}
+
+.posthof-popup-item.selected:hover {
+  background: rgba(42, 153, 162, 0.2);
+}
+
+.posthof-popup-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 2px;
+  margin: 0 !important;
+  flex-shrink: 0;
+}
+
+.posthof-popup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.posthof-popup-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary, #1e293b);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.posthof-popup-meta {
+  font-size: 0.7rem;
+  color: var(--secondary, #64748b);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.posthof-popup-divider {
+  height: 1px;
+  background: var(--border, #e2e8f0);
+  margin: 0.4rem 0;
+}
+
+.posthof-popup-alternatives {
+  opacity: 0.7;
+}
+
+.posthof-popup-alternatives .posthof-popup-item {
+  padding: 0.35rem 0.5rem;
+}
+
+.posthof-popup-alternatives .posthof-popup-image {
+  width: 28px;
+  height: 28px;
+}
+
+.posthof-popup-alternatives .posthof-popup-name {
+  font-size: 0.7rem;
+}
+
+.posthof-popup-alternatives .posthof-popup-meta {
+  font-size: 0.65rem;
+}
+
 @media (prefers-color-scheme: dark) {
+  .posthof-popup {
+    background: var(--code-bg, #1e293b);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .posthof-popup-divider {
+    background: var(--border, #334155);
+  }
+
+  .posthof-popup-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(42, 153, 162, 0.4);
+  }
+
+  .posthof-popup-item.clickable:hover {
+    border-color: rgba(42, 153, 162, 0.6);
+  }
+
+  .posthof-popup-item.selected {
+    background: rgba(42, 153, 162, 0.25);
+    border-color: rgba(42, 153, 162, 0.5);
+  }
+
+  .posthof-popup-item.selected:hover {
+    background: rgba(42, 153, 162, 0.3);
+  }
+
+  .posthof-popup-image {
+    border-color: #334155;
+  }
+
+  .posthof-popup-name {
+    color: var(--primary, #f1f5f9);
+  }
+
+  .posthof-popup-meta {
+    color: var(--secondary, #94a3b8);
+  }
+
   .posthof-stock {
     color: #4ade80;
   }

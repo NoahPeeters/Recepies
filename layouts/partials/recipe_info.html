@@ -1,3 +1,4 @@
+<div class="recipe-info-wrapper">
 {{- if or .Params.prepTime .Params.cookTime -}}
 <div class="recipe-info-box">
   {{- with .Params.prepTime }}
@@ -20,3 +21,10 @@
   {{- end }}
 </div>
 {{- end -}}
+<div class="recipe-info-box recipe-price-box" style="display: none;">
+  <div class="recipe-info-item">
+    <span class="recipe-info-label">Ca. Kosten</span>
+    <span class="recipe-info-value recipe-total-price">--</span>
+  </div>
+</div>
+</div>

@@ -201,6 +201,9 @@ function updateIngredients(container) {
 
   // Update all ingredient-use references on the page
   updateIngredientUses();
+
+  // Update posthof prices based on new amounts
+  updateAllPosthofPrices();
 }
 
 function updateIngredientUses() {
@@ -477,7 +480,42 @@ function getProductPageUrl(productId) {
   return `${POSTHOF_APP_BASE}${productId}`;
 }
 
-function renderPosthofInfo(container, data) {
+function parsePosthofParam(posthofParam) {
+  // Parse format: "id:amount,id:amount,..."
+  if (!posthofParam) return [];
+  return posthofParam.split(',').map(item => {
+    const [id, amount] = item.trim().split(':');
+    return { id: id.trim(), amount: parseFloat(amount) || 0 };
+  });
+}
+
+async function fetchAllProducts(products) {
+  const results = [];
+  for (const product of products) {
+    const data = await fetchPosthofProduct(product.id);
+    if (data) {
+      results.push({ data, productUnit: product.amount });
+    }
+  }
+  return results;
+}
+
+async function findFirstInStock(products) {
+  for (const product of products) {
+    const data = await fetchPosthofProduct(product.id);
+    if (data && data.stock > 0) {
+      return { data, productUnit: product.amount };
+    }
+  }
+  // If none in stock, return first one anyway
+  if (products.length > 0) {
+    const data = await fetchPosthofProduct(products[0].id);
+    return { data, productUnit: products[0].amount };
+  }
+  return { data: null, productUnit: 0 };
+}
+
+function renderPosthofInfo(container, data, productUnit, ingredientElement) {
   container.removeAttribute('data-loading');
   container.innerHTML = '';
 
@@ -489,23 +527,87 @@ function renderPosthofInfo(container, data) {
   const productId = data.id;
   const stock = data.stock || 0;
   const stockUnit = data.stockUnit || 'Stück';
-  const price = data.productData?.price?.totalCents;
+  const pricePerUnit = data.productData?.price?.totalCents;
   const productName = data.productData?.name || '';
-  const brand = data.productData?.brand || '';
   const images = data.productData?.images || [];
   const defaultImage = images.find(img => img.isDefault) || images[0];
+
+  // Store product data on container for price recalculation
+  container.posthofData = {
+    pricePerUnit,
+    productId,
+    defaultImage,
+    productName,
+    stock,
+    stockUnit,
+    productUnit
+  };
+
+  updatePosthofDisplay(container, ingredientElement);
+}
+
+function renderMultiplePosthofProducts(container, allProducts, ingredientElement) {
+  container.removeAttribute('data-loading');
+  container.innerHTML = '';
+
+  if (!allProducts || allProducts.length === 0) {
+    container.innerHTML = '<span class="posthof-error">Produkt nicht gefunden</span>';
+    return;
+  }
+
+  // Check for saved selection
+  const ingredientId = ingredientElement.dataset.ingredientId;
+  let defaultIndex = loadProductSelection(ingredientId);
+
+  // If no saved selection, find first in-stock product
+  if (defaultIndex === undefined || defaultIndex >= allProducts.length) {
+    defaultIndex = allProducts.findIndex(p => p.data.stock > 0);
+    if (defaultIndex === -1) defaultIndex = 0;
+  }
+
+  // Store all products data
+  container.allPosthofProducts = allProducts.map(p => {
+    const data = p.data;
+    return {
+      pricePerUnit: data.productData?.price?.totalCents,
+      productId: data.id,
+      defaultImage: (data.productData?.images || []).find(img => img.isDefault) || (data.productData?.images || [])[0],
+      productName: data.productData?.name || '',
+      stock: data.stock || 0,
+      stockUnit: data.stockUnit || 'Stück',
+      productUnit: p.productUnit
+    };
+  });
+  container.selectedProductIndex = defaultIndex;
+  container.posthofData = container.allPosthofProducts[defaultIndex];
+
+  updateMultiPosthofDisplay(container, ingredientElement);
+}
+
+function updateMultiPosthofDisplay(container, ingredientElement) {
+  const allProducts = container.allPosthofProducts;
+  if (!allProducts || allProducts.length === 0) return;
+
+  const selectedIndex = container.selectedProductIndex || 0;
+  const data = allProducts[selectedIndex];
+  const { pricePerUnit, productId, defaultImage, productName, stock, stockUnit, productUnit } = data;
+  const calculatedAmount = parseFloat(ingredientElement?.dataset?.calculatedAmount) || 0;
 
   const stockClass = getStockClass(stock);
   const productUrl = getProductPageUrl(productId);
 
-  let html = `<a class="posthof-link" href="${productUrl}" target="_blank" rel="noopener" title="Im Posthof anzeigen">`;
-  html += `<div class="posthof-details">`;
-
-  // Product image
-  if (defaultImage) {
-    const imageUrl = getProductImageUrl(productId, defaultImage.id);
-    html += `<img class="posthof-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
+  // Calculate price based on ingredient amount if productUnit is defined
+  let displayPrice = pricePerUnit;
+  if (productUnit > 0 && calculatedAmount > 0 && pricePerUnit) {
+    displayPrice = Math.round((calculatedAmount / productUnit) * pricePerUnit);
   }
+
+  let html = '';
+
+  // Main product display (clickable link)
+  html += `<div class="posthof-multi-wrapper">`;
+  html += `<a class="posthof-link" href="${productUrl}" target="_blank" rel="noopener" title="Im Posthof anzeigen">`;
+  html += `<div class="posthof-details">`;
 
   // Stock indicator
   html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
@@ -513,13 +615,162 @@ function renderPosthofInfo(container, data) {
   html += `</span>`;
 
   // Price
-  if (price) {
-    html += `<span class="posthof-price">${formatPrice(price)}</span>`;
+  if (displayPrice) {
+    html += `<span class="posthof-price">${formatPrice(displayPrice)}</span>`;
   }
 
-  // Brand
-  if (brand) {
-    html += `<span class="posthof-brand">${brand}</span>`;
+  // Product image (at the end)
+  if (defaultImage) {
+    const imageUrl = getProductImageUrl(productId, defaultImage.id);
+    html += `<img class="posthof-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
+  }
+
+  html += `</div></a>`;
+
+  // Hover popup showing selected product details
+  const selectedProduct = data;
+  html += `<div class="posthof-popup">`;
+  html += `<a href="${productUrl}" target="_blank" rel="noopener" class="posthof-popup-item selected">`;
+  if (defaultImage) {
+    const imageUrl = getProductImageUrl(productId, defaultImage.id);
+    html += `<img class="posthof-popup-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
+  }
+  html += `<div class="posthof-popup-info">`;
+  html += `<span class="posthof-popup-name">${productName}</span>`;
+  html += `<span class="posthof-popup-meta">`;
+  html += `<span class="posthof-stock ${stockClass}"><span class="posthof-stock-dot"></span>${stock} verfügbar</span>`;
+  if (displayPrice) {
+    html += ` · <span class="posthof-price">${formatPrice(displayPrice)}</span>`;
+  }
+  html += `</span>`;
+  html += `</div>`;
+  html += `</a>`;
+
+  // Show other product options if multiple available
+  if (allProducts.length > 1) {
+    html += `<div class="posthof-popup-divider"></div>`;
+    html += `<div class="posthof-popup-alternatives">`;
+    allProducts.forEach((p, idx) => {
+      if (idx === selectedIndex) return; // Skip selected
+      const pStockClass = getStockClass(p.stock);
+      const pImage = p.defaultImage;
+
+      let pDisplayPrice = p.pricePerUnit;
+      if (p.productUnit > 0 && calculatedAmount > 0 && p.pricePerUnit) {
+        pDisplayPrice = Math.round((calculatedAmount / p.productUnit) * p.pricePerUnit);
+      }
+
+      html += `<div class="posthof-popup-item clickable" data-index="${idx}">`;
+      if (pImage) {
+        const pImageUrl = getProductImageUrl(p.productId, pImage.id);
+        html += `<img class="posthof-popup-image" src="${pImageUrl}" alt="${p.productName}" loading="lazy">`;
+      }
+      html += `<div class="posthof-popup-info">`;
+      html += `<span class="posthof-popup-name">${p.productName}</span>`;
+      html += `<span class="posthof-popup-meta">`;
+      html += `<span class="posthof-stock ${pStockClass}"><span class="posthof-stock-dot"></span>${p.stock}</span>`;
+      if (pDisplayPrice) {
+        html += ` · <span class="posthof-price">${formatPrice(pDisplayPrice)}</span>`;
+      }
+      html += `</span>`;
+      html += `</div>`;
+      html += `</div>`;
+    });
+    html += `</div>`;
+  }
+  html += `</div>`;
+
+  html += `</div>`;
+
+  container.innerHTML = html;
+
+  // Add click listeners for popup items (only for multi-product)
+  if (allProducts.length > 1) {
+    container.querySelectorAll('.posthof-popup-item.clickable').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const idx = parseInt(item.dataset.index);
+        container.selectedProductIndex = idx;
+        container.posthofData = container.allPosthofProducts[idx];
+
+        // Save selection to storage
+        const ingredientId = ingredientElement.dataset.ingredientId;
+        if (ingredientId) {
+          saveProductSelection(ingredientId, idx);
+        }
+
+        updateMultiPosthofDisplay(container, ingredientElement);
+        updateTotalPrice();
+        updateUsePopups();
+      });
+    });
+  }
+}
+
+function getProductStorageKey() {
+  return `recipe-products:${window.location.pathname}`;
+}
+
+function saveProductSelection(ingredientId, productIndex) {
+  try {
+    const key = getProductStorageKey();
+    const saved = localStorage.getItem(key);
+    const data = saved ? JSON.parse(saved) : {};
+    data[ingredientId] = productIndex;
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (e) {
+    // localStorage not available
+  }
+}
+
+function loadProductSelection(ingredientId) {
+  try {
+    const key = getProductStorageKey();
+    const saved = localStorage.getItem(key);
+    if (saved) {
+      const data = JSON.parse(saved);
+      return data[ingredientId];
+    }
+  } catch (e) {
+    // localStorage not available
+  }
+  return undefined;
+}
+
+function updatePosthofDisplay(container, ingredientElement) {
+  const data = container.posthofData;
+  if (!data) return;
+
+  const { pricePerUnit, productId, defaultImage, productName, stock, stockUnit, productUnit } = data;
+  const calculatedAmount = parseFloat(ingredientElement?.dataset?.calculatedAmount) || 0;
+
+  const stockClass = getStockClass(stock);
+  const productUrl = getProductPageUrl(productId);
+
+  // Calculate price based on ingredient amount if productUnit is defined
+  let displayPrice = pricePerUnit;
+  if (productUnit > 0 && calculatedAmount > 0 && pricePerUnit) {
+    displayPrice = Math.round((calculatedAmount / productUnit) * pricePerUnit);
+  }
+
+  let html = `<a class="posthof-link" href="${productUrl}" target="_blank" rel="noopener" title="Im Posthof anzeigen">`;
+  html += `<div class="posthof-details">`;
+
+  // Stock indicator
+  html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
+  html += `<span class="posthof-stock-dot"></span>${stock}`;
+  html += `</span>`;
+
+  // Price
+  if (displayPrice) {
+    html += `<span class="posthof-price">${formatPrice(displayPrice)}</span>`;
+  }
+
+  // Product image (at the end)
+  if (defaultImage) {
+    const imageUrl = getProductImageUrl(productId, defaultImage.id);
+    html += `<img class="posthof-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
   }
 
   html += `</div></a>`;
@@ -535,29 +786,100 @@ async function updateChoicePosthofInfo(select) {
   if (!infoContainer) return;
 
   const selectedOption = select.options[select.selectedIndex];
-  const productId = selectedOption?.dataset?.posthofId;
+  const posthofParam = selectedOption?.dataset?.posthof;
 
-  if (productId) {
+  if (posthofParam) {
     infoContainer.setAttribute('data-loading', 'true');
     infoContainer.innerHTML = '<span class="posthof-loading">Laden...</span>';
-    const data = await fetchPosthofProduct(productId);
-    renderPosthofInfo(infoContainer, data);
+    const products = parsePosthofParam(posthofParam);
+    // Always use multi-product rendering (shows popup on hover)
+    const allProducts = await fetchAllProducts(products);
+    renderMultiplePosthofProducts(infoContainer, allProducts, ingredient);
   } else {
     infoContainer.innerHTML = '';
   }
 }
 
+function updateAllPosthofPrices() {
+  // Update all posthof displays with current calculated amounts
+  document.querySelectorAll('.ingredient[data-posthof]').forEach(ingredient => {
+    const infoContainer = ingredient.querySelector('.posthof-info');
+    if (infoContainer?.allPosthofProducts) {
+      // Multi-product display
+      updateMultiPosthofDisplay(infoContainer, ingredient);
+    } else if (infoContainer?.posthofData) {
+      // Single product display
+      updatePosthofDisplay(infoContainer, ingredient);
+    }
+  });
+
+  // Update total price
+  updateTotalPrice();
+}
+
+function calculateIngredientPrice(ingredient) {
+  const infoContainer = ingredient.querySelector('.posthof-info') || ingredient.querySelector('.posthof-choice-info');
+  if (!infoContainer?.posthofData) return 0;
+
+  const { pricePerUnit, productUnit } = infoContainer.posthofData;
+  const calculatedAmount = parseFloat(ingredient.dataset.calculatedAmount) || 0;
+
+  if (productUnit > 0 && calculatedAmount > 0 && pricePerUnit) {
+    return Math.round((calculatedAmount / productUnit) * pricePerUnit);
+  } else if (pricePerUnit && calculatedAmount > 0) {
+    // No unit conversion, use base price (for items like "2 Päckchen")
+    return Math.round(calculatedAmount * pricePerUnit);
+  }
+  return 0;
+}
+
+function updateTotalPrice() {
+  const priceBox = document.querySelector('.recipe-price-box');
+  const priceValue = document.querySelector('.recipe-total-price');
+  if (!priceBox || !priceValue) return;
+
+  let totalCents = 0;
+  let hasAnyPrice = false;
+
+  // Sum prices from regular ingredients
+  document.querySelectorAll('.ingredient[data-posthof]').forEach(ingredient => {
+    const price = calculateIngredientPrice(ingredient);
+    if (price > 0) {
+      totalCents += price;
+      hasAnyPrice = true;
+    }
+  });
+
+  // Sum prices from ingredient choices (only selected options)
+  document.querySelectorAll('.ingredient-choice').forEach(choice => {
+    const price = calculateIngredientPrice(choice);
+    if (price > 0) {
+      totalCents += price;
+      hasAnyPrice = true;
+    }
+  });
+
+  if (hasAnyPrice) {
+    priceBox.style.display = '';
+    priceValue.textContent = formatPrice(totalCents);
+  } else {
+    priceBox.style.display = 'none';
+  }
+}
+
 async function initPosthofProducts() {
-  // Regular ingredients with posthof ID
-  const ingredients = document.querySelectorAll('.ingredient[data-posthof-id]');
+  // Regular ingredients with posthof parameter
+  const ingredients = document.querySelectorAll('.ingredient[data-posthof]');
 
   for (const ingredient of ingredients) {
-    const productId = ingredient.dataset.posthofId;
+    const posthofParam = ingredient.dataset.posthof;
     const infoContainer = ingredient.querySelector('.posthof-info');
 
-    if (productId && infoContainer) {
-      const data = await fetchPosthofProduct(productId);
-      renderPosthofInfo(infoContainer, data);
+    if (posthofParam && infoContainer) {
+      const products = parsePosthofParam(posthofParam);
+      // Always use multi-product rendering (shows popup on hover)
+      const allProducts = await fetchAllProducts(products);
+      renderMultiplePosthofProducts(infoContainer, allProducts, ingredient);
     }
   }
 
@@ -572,12 +894,57 @@ async function initPosthofProducts() {
   }
 }
 
+function updateUsePopups() {
+  document.querySelectorAll('.ingredient-use-wrapper').forEach(wrapper => {
+    const use = wrapper.querySelector('.ingredient-use');
+    const popup = wrapper.querySelector('.use-posthof-popup');
+    if (!use || !popup) return;
+
+    const ingredientId = use.dataset.ingredientId;
+    const ingredient = document.querySelector(`.ingredient[data-ingredient-id="${ingredientId}"]`);
+    if (!ingredient) return;
+
+    // Get posthof data from the ingredient
+    const infoContainer = ingredient.querySelector('.posthof-info');
+    if (!infoContainer?.posthofData) {
+      popup.innerHTML = '';
+      return;
+    }
+
+    const data = infoContainer.posthofData;
+    const { productId, defaultImage, productName, stock, stockUnit } = data;
+    const stockClass = getStockClass(stock);
+    const productUrl = getProductPageUrl(productId);
+
+    let html = `<a href="${productUrl}" target="_blank" rel="noopener" class="posthof-popup-item selected">`;
+    if (defaultImage) {
+      const imageUrl = getProductImageUrl(productId, defaultImage.id);
+      html += `<img class="posthof-popup-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
+    }
+    html += `<div class="posthof-popup-info">`;
+    html += `<span class="posthof-popup-name">${productName}</span>`;
+    html += `<span class="posthof-popup-meta">`;
+    html += `<span class="posthof-stock ${stockClass}"><span class="posthof-stock-dot"></span>${stock} verfügbar</span>`;
+    html += `</span>`;
+    html += `</div>`;
+    html += `</a>`;
+
+    popup.innerHTML = html;
+  });
+}
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     initIngredients();
-    initPosthofProducts();
+    initPosthofProducts().then(() => {
+      updateUsePopups();
+      updateTotalPrice();
+    });
   });
 } else {
   initIngredients();
-  initPosthofProducts();
+  initPosthofProducts().then(() => {
+    updateUsePopups();
+    updateTotalPrice();
+  });
 }

@@ -2,7 +2,7 @@
 {{- $m := .Get "m" | default "1" -}}
 {{- $b := .Get "b" | default "0" -}}
 
-<span class="ingredient-use"
+<span class="ingredient-use-wrapper"><span class="ingredient-use"
       data-ingredient-id="{{ $id }}"
       data-m="{{ $m }}"
-      data-b="{{ $b }}"><span class="use-amount"></span><span class="use-unit"></span> <span class="use-name"></span></span>
+      data-b="{{ $b }}"><span class="use-amount"></span><span class="use-unit"></span> <span class="use-name"></span></span><span class="use-posthof-popup"></span></span>
