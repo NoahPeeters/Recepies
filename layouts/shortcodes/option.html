@@ -4,7 +4,7 @@
 {{- $name := .Get "name" -}}
 {{- $plural := .Get "plural" | default $name -}}
 {{- $default := .Get "default" | default "false" -}}
-{{- $posthofProductID := .Get "posthofProductID" | default "" -}}
+{{- $posthof := .Get "posthof" | default "" -}}
 
 <option
   data-amount="{{ $amount }}"
@@ -12,7 +12,7 @@
   data-unit="{{ $unit }}"
   data-name="{{ $name }}"
   data-plural="{{ $plural }}"
-  {{ if $posthofProductID }}data-posthof-id="{{ $posthofProductID }}"{{ end }}
+  {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}
   {{ if eq $default "true" }}selected{{ end }}>
   {{- $name -}}
 </option>

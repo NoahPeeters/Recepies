@@ -6,9 +6,9 @@
 {{- $note := .Get "note" | default "" -}}
 {{- $optional := .Get "optional" | default false -}}
 {{- $id := .Get "id" | default ($name | urlize) -}}
-{{- $posthofProductID := .Get "posthofProductID" | default "" -}}
+{{- $posthof := .Get "posthof" | default "" -}}
 
-<li class="ingredient{{ if $posthofProductID }} has-posthof{{ end }}"
+<li class="ingredient{{ if $posthof }} has-posthof{{ end }}{{ if $note }} has-note{{ end }}"
     id="ingredient-{{ $id }}"
     data-ingredient-id="{{ $id }}"
     data-base-amount="{{ $amount }}"
@@ -16,15 +16,17 @@
     data-unit="{{ $unit }}"
     data-name="{{ $name }}"
     data-plural="{{ $plural }}"
-    {{ if $posthofProductID }}data-posthof-id="{{ $posthofProductID }}"{{ end }}>
+    {{ if $posthof }}data-posthof="{{ $posthof }}"{{ end }}>
   <div class="ingredient-main">
     <span class="ingredient-amount">{{ $amount }}</span>
     <span class="ingredient-unit">{{ $unit }}</span>
-    <span class="ingredient-name">{{ if gt (float $amount) 1.0 }}{{ $plural }}{{ else }}{{ $name }}{{ end }}</span>
-    {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
+    <span class="ingredient-name-wrapper">
+      <span class="ingredient-name">{{ if gt (float $amount) 1.0 }}{{ $plural }}{{ else }}{{ $name }}{{ end }}</span>
+      {{- if $note -}}<span class="ingredient-note">{{ $note }}</span>{{- end -}}
+    </span>
     {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
   </div>
-  {{- if $posthofProductID -}}
+  {{- if $posthof -}}
   <div class="posthof-info" data-loading="true">
     <span class="posthof-loading">Laden...</span>
   </div>

@@ -64,17 +64,17 @@ The ingredients system provides an interactive serving selector that automatical
 
 ### Ingredient Parameters
 
-| Parameter          | Required | Default        | Description                                           |
-|--------------------|----------|----------------|-------------------------------------------------------|
-| `amount`           | No       | 0              | Linear amount (scales with portions)                  |
-| `constant`         | No       | 0              | Constant amount (does not scale)                      |
-| `unit`             | No       | ""             | Unit of measurement (g, ml, kg, L, etc.)              |
-| `name`             | Yes      | -              | Ingredient name (singular form)                       |
-| `plural`           | No       | name           | Plural form of the name                               |
-| `id`               | No       | urlized name   | Unique identifier for referencing in steps            |
-| `note`             | No       | ""             | Additional info (e.g., "room temperature", "diced")   |
-| `optional`         | No       | false          | Mark ingredient as optional                           |
-| `posthofProductID` | No       | ""             | Posthof Food Coop product ID for stock/price display  |
+| Parameter  | Required | Default        | Description                                           |
+|------------|----------|----------------|-------------------------------------------------------|
+| `amount`   | No       | 0              | Linear amount (scales with portions)                  |
+| `constant` | No       | 0              | Constant amount (does not scale)                      |
+| `unit`     | No       | ""             | Unit of measurement (g, ml, kg, L, etc.)              |
+| `name`     | Yes      | -              | Ingredient name (singular form)                       |
+| `plural`   | No       | name           | Plural form of the name                               |
+| `id`       | No       | urlized name   | Unique identifier for referencing in steps            |
+| `note`     | No       | ""             | Additional info (e.g., "room temperature", "diced")   |
+| `optional` | No       | false          | Mark ingredient as optional                           |
+| `posthof`  | No       | ""             | Posthof Food Coop products (see Posthof Integration)  |
 
 ### Amount Formula
 
@@ -117,14 +117,15 @@ Use `ingredient-choice` to offer alternative ingredients:
 
 ### option Parameters
 
-| Parameter  | Required | Default | Description                    |
-|------------|----------|---------|--------------------------------|
-| `amount`   | No       | 0       | Linear amount                  |
-| `constant` | No       | 0       | Constant amount                |
-| `unit`     | No       | ""      | Unit of measurement            |
-| `name`     | Yes      | -       | Ingredient name (singular)     |
-| `plural`   | No       | name    | Plural form                    |
-| `default`  | No       | false   | Set to "true" for default      |
+| Parameter  | Required | Default | Description                                          |
+|------------|----------|---------|------------------------------------------------------|
+| `amount`   | No       | 0       | Linear amount                                        |
+| `constant` | No       | 0       | Constant amount                                      |
+| `unit`     | No       | ""      | Unit of measurement                                  |
+| `name`     | Yes      | -       | Ingredient name (singular)                           |
+| `plural`   | No       | name    | Plural form                                          |
+| `default`  | No       | false   | Set to "true" for default                            |
+| `posthof`  | No       | ""      | Posthof Food Coop products (see Posthof Integration) |
 
 ## Portion Types
 
@@ -270,6 +271,48 @@ User selections are automatically saved per recipe:
 - Serving count
 - Portion type
 - Ingredient alternatives
+
+## Posthof Food Coop Integration
+
+Ingredients can link to products from the Posthof Food Coop. The integration shows product images, stock status, and calculated prices.
+
+### Parameter Format
+
+The `posthof` parameter accepts a comma-separated list of products in the format `id:amount`:
+
+```
+posthof="47293:500"              # Single product, 500g per unit
+posthof="47293:500,47294:1000"   # Multiple products (first in stock is used)
+posthof="50225"                  # Product without amount (shows base price)
+```
+
+### Format Explanation
+
+| Format           | Description                                           |
+|------------------|-------------------------------------------------------|
+| `id:amount`      | Product ID with unit size for price calculation       |
+| `id`             | Product ID only (displays base product price)         |
+| `id:a,id:a,...`  | Multiple products; first in-stock product is shown    |
+
+### Price Calculation
+
+When `amount` is specified, the price is calculated based on the ingredient amount:
+
+```
+displayPrice = (ingredientAmount / productUnitAmount) × productPrice
+```
+
+Example: If a product costs 2€ per 500g package, and you need 250g:
+```
+displayPrice = (250 / 500) × 200 cents = 100 cents = 1€
+```
+
+### Examples
+
+```markdown
+{{</* ingredient amount="250" unit="g" name="Milchreis" posthof="47293:500" */>}}
+{{</* option amount="4" name="Tropfen Vanilleextrakt" posthof="50225" */>}}
+```
 
 ## Development
 
