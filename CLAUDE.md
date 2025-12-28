@@ -2,6 +2,144 @@
 
 This is a Hugo-based recipe collection website using the PaperMod theme.
 
+## Adding a New Recipe (Step-by-Step)
+
+### Step 1: Create the Recipe Folder
+
+Create a new folder in `content/recipes/` with the recipe name (lowercase, hyphens):
+
+```bash
+mkdir content/recipes/recipe-name
+```
+
+### Step 2: Add Cover Image
+
+Add a cover image to the recipe folder. Convert to WebP format for best performance:
+
+```bash
+cwebp -q 80 source-image.jpg -o content/recipes/recipe-name/cover.webp
+```
+
+### Step 3: Check Global Ingredients
+
+**First, check if the ingredient already exists** in `data/ingredients.yaml`. Common ingredients like butter, milk, sugar, flour, salt are already defined. Reuse them with the `ref` parameter.
+
+**All ingredients must be defined globally** in `data/ingredients.yaml`. Each ingredient can have:
+- `name` / `plural`: Display names
+- `unit`: Base unit (g, ml, etc.)
+- `posthof`: Product IDs for Posthof Food Coop integration
+- `altUnits`: Alternative unit display (e.g., `"TL:6"` means 1 TL = 6g)
+
+### Step 3b: Search Posthof Products
+
+For new ingredients, search the Posthof Food Coop database for matching products. Use the MCP tool `mcp__posthof__getProductsTable` with a search query:
+
+```
+searchQuery: "Mehl"
+```
+
+This returns product IDs, names, prices, and package sizes. Use the format `productId:packageSize` for the `posthof` field:
+
+```yaml
+mehl:
+  name: Mehl
+  unit: g
+  posthof: "47267:1000,47260:1000"  # Multiple products as fallbacks
+```
+
+Multiple product IDs (comma-separated) provide fallbacks if one is out of stock.
+
+### Step 3c: Add New Ingredients
+
+If a new global ingredient is needed, add it to `data/ingredients.yaml`:
+
+```yaml
+ingredient-key:
+  name: Ingredient Name
+  plural: Ingredient Names  # optional, defaults to name
+  unit: g                   # optional
+  posthof: "12345:500"      # optional, product-id:package-size
+  altUnits: "TL:5"          # optional, unit:grams-per-unit
+```
+
+### Step 4: Write the Recipe
+
+Create `content/recipes/recipe-name/index.md`:
+
+```markdown
++++
+date = '2025-12-28'
+draft = false
+title = 'Recipe Title'
+categories = ['Dessert']
+cuisines = ['Deutsch']
+proteins = ['Vegetarisch']
+diets = ['Vegetarisch']
+methods = ['Backen']
+prepTime = 15
+cookTime = 30
+
+[cover]
+image = 'cover.webp'
+alt = 'Description of the dish'
++++
+
+Brief introduction to the dish.
+
+{{</* recipeinfo */>}}
+
+{{</* ingredients servings="4" */>}}
+{{</* ingredient ref="butter" amount="100" */>}}
+{{</* ingredient ref="zucker" amount="50" id="zucker" */>}}
+{{</* ingredient ref="ei" amount="2" */>}}
+{{</* /ingredients */>}}
+
+{{</* steps */>}}
+
+{{</* step */>}}
+{{</* use id="butter" */>}} schmelzen und {{</* use id="zucker" */>}} einrühren.
+{{</* /step */>}}
+
+{{</* step */>}}
+Next step instructions...
+{{</* /step */>}}
+
+{{</* /steps */>}}
+
+## Tipps
+
+- Optional tips and variations
+
+{{</* nutrition kj="850" fat="8" carbs="28" protein="5" */>}}
+```
+
+### Step 5: Using Ingredients
+
+Reference global ingredients with `ref`:
+```markdown
+{{</* ingredient ref="butter" amount="100" */>}}
+```
+- Uses `ref` to reference the global definition in `data/ingredients.yaml`
+- Inherits name, unit, posthof, altUnits automatically
+- Use `id` parameter if the same ingredient appears multiple times
+
+### Step 6: Ingredient Sections
+
+Group ingredients with section headers:
+
+```markdown
+{{</* ingredients servings="4" */>}}
+{{</* ingredient-section "Teig" */>}}
+{{</* ingredient ref="mehl" amount="500" */>}}
+{{</* ingredient ref="butter" amount="100" id="butter-teig" */>}}
+{{</* ingredient-section "Füllung" */>}}
+{{</* ingredient ref="zucker" amount="200" */>}}
+{{</* ingredient ref="butter" amount="50" id="butter-fuellung" */>}}
+{{</* /ingredients */>}}
+```
+
+---
+
 ## Creating Recipes
 
 ### Using the Hugo CLI
