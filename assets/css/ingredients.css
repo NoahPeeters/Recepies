@@ -789,6 +789,17 @@
   .ingredient.has-posthof {
     gap: 0.3rem;
   }
+
+  /* Limit ingredient choice selector width */
+  .ingredient-select {
+    max-width: 120px;
+    text-overflow: ellipsis;
+  }
+
+  .ingredient-name-wrapper {
+    min-width: 0;
+    flex-shrink: 1;
+  }
 }
 
 /* Posthof multi-product wrapper with hover popup */
