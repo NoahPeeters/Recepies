@@ -7,6 +7,12 @@
 {{- $searchCSS := resources.Get "css/search.css" | minify -}}
 <link rel="stylesheet" href="{{ $searchCSS.RelPermalink }}">
 
+{{- $menuCSS := resources.Get "css/menu.css" | minify -}}
+<link rel="stylesheet" href="{{ $menuCSS.RelPermalink }}">
+
+{{- $taxonomyCSS := resources.Get "css/taxonomy.css" | minify -}}
+<link rel="stylesheet" href="{{ $taxonomyCSS.RelPermalink }}">
+
 {{- $ingredientsJS := resources.Get "js/ingredients.js" | minify -}}
 <script defer src="{{ $ingredientsJS.RelPermalink }}"></script>
 

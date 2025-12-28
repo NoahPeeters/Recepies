@@ -41,19 +41,54 @@ theme = 'PaperMod'
   weight = 10
 
 [[menu.main]]
-  identifier = "cuisines"
-  name = "Küche"
-  url = "/cuisines/"
+  identifier = "filter"
+  name = "Filter"
   weight = 20
 
 [[menu.main]]
   identifier = "categories"
   name = "Kategorien"
   url = "/categories/"
+  parent = "filter"
+  weight = 10
+
+[[menu.main]]
+  identifier = "cuisines"
+  name = "Küche"
+  url = "/cuisines/"
+  parent = "filter"
+  weight = 20
+
+[[menu.main]]
+  identifier = "proteins"
+  name = "Proteine"
+  url = "/proteins/"
+  parent = "filter"
   weight = 30
+
+[[menu.main]]
+  identifier = "diets"
+  name = "Ernährung"
+  url = "/diets/"
+  parent = "filter"
+  weight = 40
+
+[[menu.main]]
+  identifier = "methods"
+  name = "Methoden"
+  url = "/methods/"
+  parent = "filter"
+  weight = 50
+
+[[menu.main]]
+  identifier = "carbs"
+  name = "Kohlenhydrate"
+  url = "/carbs/"
+  parent = "filter"
+  weight = 60
 
 [[menu.main]]
   identifier = "search"
   name = "Suche"
   url = "/search/"
-  weight = 40
+  weight = 30
