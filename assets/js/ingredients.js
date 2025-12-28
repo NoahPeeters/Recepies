@@ -648,17 +648,19 @@ function updateMultiPosthofDisplay(container, ingredientElement) {
   html += `<a class="posthof-link" href="${productUrl}" target="_blank" rel="noopener" title="Im Posthof anzeigen">`;
   html += `<div class="posthof-details">`;
 
-  // Stock indicator
-  html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
-  html += `<span class="posthof-stock-dot"></span>${stock}`;
-  html += `</span>`;
-
-  // Price
+  // Price and stock info (left side)
+  html += `<div class="price-info">`;
+  // Price (top)
   if (displayPrice) {
     html += `<span class="posthof-price">${formatPrice(displayPrice)}</span>`;
   }
+  // Stock indicator (bottom)
+  html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
+  html += `<span class="posthof-stock-dot"></span>${stock}`;
+  html += `</span>`;
+  html += `</div>`;
 
-  // Product image (at the end)
+  // Product image (right side)
   if (defaultImage) {
     const imageUrl = getProductImageUrl(productId, defaultImage.id);
     html += `<img class="posthof-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;
@@ -796,17 +798,19 @@ function updatePosthofDisplay(container, ingredientElement) {
   let html = `<a class="posthof-link" href="${productUrl}" target="_blank" rel="noopener" title="Im Posthof anzeigen">`;
   html += `<div class="posthof-details">`;
 
-  // Stock indicator
-  html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
-  html += `<span class="posthof-stock-dot"></span>${stock}`;
-  html += `</span>`;
-
-  // Price
+  // Price and stock info (left side)
+  html += `<div class="price-info">`;
+  // Price (top)
   if (displayPrice) {
     html += `<span class="posthof-price">${formatPrice(displayPrice)}</span>`;
   }
+  // Stock indicator (bottom)
+  html += `<span class="posthof-stock ${stockClass}" title="${getStockText(stock, stockUnit)}">`;
+  html += `<span class="posthof-stock-dot"></span>${stock}`;
+  html += `</span>`;
+  html += `</div>`;
 
-  // Product image (at the end)
+  // Product image (right side)
   if (defaultImage) {
     const imageUrl = getProductImageUrl(productId, defaultImage.id);
     html += `<img class="posthof-image" src="${imageUrl}" alt="${productName}" loading="lazy">`;

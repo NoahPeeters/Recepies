@@ -711,14 +711,16 @@
 
 .posthof-details {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
 
 .price-info {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
 }
 
 .posthof-image {
@@ -767,20 +769,8 @@
   display: none;
 }
 
-/* Mobile: Stack stock and price, image on right */
+/* Mobile adjustments */
 @media (max-width: 500px) {
-  .posthof-details {
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .price-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.1rem;
-  }
-
   .posthof-image {
     width: 40px;
     height: 40px;
