@@ -107,3 +107,15 @@ frischkaese:
   name: Frischkäse
   unit: g
   posthof: "45698:125,139403:125"
+
+# Eggs
+ei:
+  name: Ei
+  plural: Eier
+  posthof: "136922:1"
+
+# Liquids (misc)
+mineralwasser:
+  name: EL Mineralwasser
+  plural: EL Mineralwasser
+  posthof: "50335:1000"
