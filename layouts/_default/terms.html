@@ -20,7 +20,7 @@
     {{- $cover := .Resources.GetMatch "cover.*" }}
     <a href="{{ .Permalink }}" class="taxonomy-item{{ if $cover }} has-cover{{ end }}"
        {{- if $cover }} style="background-image: url('{{ $cover.RelPermalink }}')"{{ end }}>
-        <span class="taxonomy-name">{{ .Name }}</span>
+        <span class="taxonomy-name">{{ .Title }}</span>
         <span class="taxonomy-count" data-count="{{ $count }}">{{ $count }}</span>
     </a>
     {{- end }}

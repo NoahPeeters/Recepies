@@ -3,6 +3,71 @@
   min-height: auto;
 }
 
+/* Recipe taxonomy tags */
+.recipe-taxonomies {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-taxonomy-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.recipe-taxonomy-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary, #64748b);
+  min-width: 6rem;
+  flex-shrink: 0;
+}
+
+.recipe-taxonomy-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.recipe-taxonomy-tag {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background: var(--code-bg, #f1f5f9);
+  color: var(--primary, #1e293b);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: none !important;
+}
+
+.recipe-taxonomy-tag:hover {
+  background: var(--primary, #1e293b);
+  color: var(--theme, #fff);
+}
+
+@media (prefers-color-scheme: dark) {
+  .recipe-taxonomy-label {
+    color: var(--secondary, #94a3b8);
+  }
+
+  .recipe-taxonomy-tag {
+    background: var(--code-bg, #1e293b);
+    color: var(--primary, #f1f5f9);
+  }
+
+  .recipe-taxonomy-tag:hover {
+    background: var(--secondary, #94a3b8);
+    color: var(--code-bg, #1e293b);
+  }
+}
+
 /* Recipe info wrapper */
 .recipe-info-wrapper {
   display: flex;

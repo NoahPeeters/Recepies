@@ -4,7 +4,6 @@ draft = false
 title = 'Pfannkuchen'
 categories = ['Hauptgericht']
 cuisines = ['Deutsch']
-proteins = ['Vegetarisch']
 diets = ['Vegetarisch']
 methods = ['Braten']
 prepTime = 10

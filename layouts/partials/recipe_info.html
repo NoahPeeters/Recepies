@@ -1,3 +1,30 @@
+{{- $taxonomyLabels := dict "categories" "Kategorie" "cuisines" "Küche" "proteins" "Protein" "diets" "Ernährung" "methods" "Methode" "carbs" "Kohlenhydrate" -}}
+{{- $taxonomies := slice "categories" "cuisines" "proteins" "diets" "methods" "carbs" -}}
+{{- $hasTaxonomies := false -}}
+{{- range $taxonomies -}}
+  {{- if index $.Params . -}}
+    {{- $hasTaxonomies = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $hasTaxonomies -}}
+<div class="recipe-taxonomies">
+  {{- range $taxonomy := $taxonomies -}}
+    {{- $terms := index $.Params $taxonomy -}}
+    {{- if $terms -}}
+    <div class="recipe-taxonomy-group">
+      <span class="recipe-taxonomy-label">{{ index $taxonomyLabels $taxonomy }}</span>
+      <div class="recipe-taxonomy-values">
+        {{- range $term := $terms -}}
+        <a href="{{ printf "/%s/%s/" $taxonomy ($term | urlize) }}" class="recipe-taxonomy-tag">{{ $term }}</a>
+        {{- end -}}
+      </div>
+    </div>
+    {{- end -}}
+  {{- end -}}
+</div>
+{{- end -}}
+
 <div class="recipe-info-wrapper">
 {{- if or .Params.prepTime .Params.cookTime -}}
 <div class="recipe-info-box">

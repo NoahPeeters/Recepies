@@ -5,7 +5,6 @@ title = 'Milchreis'
 categories = ['Dessert', 'Hauptgericht']
 cuisines = ['Deutsch']
 carbs = ['Reis']
-proteins = ['Vegetarisch']
 diets = ['Vegetarisch']
 methods = ['Kochen']
 prepTime = 5

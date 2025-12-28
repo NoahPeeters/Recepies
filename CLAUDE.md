@@ -62,7 +62,29 @@ ingredient-key:
   altUnits: "TL:5"          # optional, unit:grams-per-unit
 ```
 
-### Step 4: Write the Recipe
+### Step 4: Check Taxonomy Images
+
+Before creating a recipe, verify that all taxonomy values you'll use have cover images. Check each taxonomy folder:
+
+```bash
+ls content/cuisines/
+ls content/categories/
+ls content/proteins/
+ls content/diets/
+ls content/methods/
+```
+
+For each taxonomy value in your recipe (e.g., `cuisines = ['Deutsch']`), ensure a folder exists with a cover image:
+
+```
+content/cuisines/deutsch/
+├── _index.md
+└── cover.webp
+```
+
+If the folder or image is missing, create it following the [Taxonomy Cover Images](#taxonomy-cover-images) section.
+
+### Step 5: Write the Recipe
 
 Create `content/recipes/recipe-name/index.md`:
 
@@ -113,7 +135,7 @@ Next step instructions...
 {{</* nutrition kj="850" fat="8" carbs="28" protein="5" */>}}
 ```
 
-### Step 5: Using Ingredients
+### Step 6: Using Ingredients
 
 Reference global ingredients with `ref`:
 ```markdown
@@ -123,7 +145,7 @@ Reference global ingredients with `ref`:
 - Inherits name, unit, posthof, altUnits automatically
 - Use `id` parameter if the same ingredient appears multiple times
 
-### Step 6: Ingredient Sections
+### Step 7: Ingredient Sections
 
 Group ingredients with section headers:
 
@@ -451,6 +473,65 @@ displayPrice = (250 / 500) × 200 cents = 100 cents = 1€
 {{</* ingredient amount="250" unit="g" name="Milchreis" posthof="47293:500" */>}}
 {{</* option amount="4" name="Tropfen Vanilleextrakt" posthof="50225" */>}}
 ```
+
+## Taxonomy Cover Images
+
+Taxonomy terms (cuisines, categories, etc.) can have cover images displayed as card backgrounds.
+
+### Folder Structure
+
+Each taxonomy term with an image needs to be a folder with `_index.md` and `cover.webp`:
+
+```
+content/cuisines/deutsch/
+├── _index.md
+└── cover.webp
+```
+
+The `_index.md` contains:
+```yaml
+---
+title: "Deutsch"
+description: "Traditionelle deutsche Küche"
+---
+```
+
+### Finding Images on Unsplash
+
+Unsplash provides free images. To find and download images:
+
+1. **Search for a specific Unsplash photo ID** if you know it:
+   ```bash
+   curl -L -o /tmp/image.jpg "https://images.unsplash.com/photo-PHOTO_ID?w=800&q=80"
+   ```
+
+2. **Known working photo IDs for food:**
+   - Schnitzel: `photo-1599921841143-819065a55cc6`
+   - Burger: `photo-1568901346375-23c9450c58cd`
+   - Curry/Indian: `photo-1585937421612-70a008356fbe`
+   - Meatballs/Nordic: `photo-1529042410759-befb1204b468`
+
+3. **Convert to WebP:**
+   ```bash
+   cwebp -q 80 /tmp/image.jpg -o content/cuisines/deutsch/cover.webp
+   ```
+
+### Full Example
+
+```bash
+# Download image
+curl -L -o /tmp/german.jpg "https://images.unsplash.com/photo-1599921841143-819065a55cc6?w=800&q=80"
+
+# Convert to WebP
+cwebp -q 80 /tmp/german.jpg -o content/cuisines/deutsch/cover.webp
+```
+
+### Image Guidelines
+
+- Use landscape orientation (wider than tall)
+- Food images work best with the gradient overlay
+- Aim for ~800px width for good quality without large file sizes
+- WebP format provides best compression
 
 ## Development
 

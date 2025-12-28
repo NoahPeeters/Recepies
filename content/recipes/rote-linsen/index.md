@@ -4,7 +4,6 @@ draft = false
 title = 'Rote Linsen'
 categories = ['Hauptgericht', 'Beilage']
 cuisines = ['Indisch']
-proteins = ['Vegan', 'Vegetarisch']
 diets = ['Vegan', 'Vegetarisch']
 methods = ['Kochen']
 prepTime = 5

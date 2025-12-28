@@ -4,7 +4,6 @@ draft = false
 title = 'Zimtschnecken'
 categories = ['Gebäck', 'Dessert']
 cuisines = ['Amerikanisch', 'Schwedisch']
-proteins = ['Vegetarisch']
 diets = ['Vegetarisch']
 methods = ['Backen']
 prepTime = 30
