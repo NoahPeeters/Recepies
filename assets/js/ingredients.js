@@ -151,8 +151,10 @@ function updateIngredients(container) {
   // Update portion type display
   const portionLabel = container.querySelector('.portion-type-label');
   if (portionLabel) {
-    // Simple label (no portion types defined)
-    portionLabel.textContent = currentServings === 1 ? 'Portion' : 'Portionen';
+    // Use custom singular/plural if defined, otherwise default to Portion/Portionen
+    const singular = portionLabel.dataset.singular || 'Portion';
+    const plural = portionLabel.dataset.plural || 'Portionen';
+    portionLabel.textContent = currentServings === 1 ? singular : plural;
   }
 
   // Update dropdown options with correct singular/plural
@@ -304,6 +306,19 @@ function buildPortionTypeSelector(container, portionTypes) {
     const servings = parseInt(container.querySelector('.servings-input').value) || 4;
     label.textContent = servings === 1 ? 'Portion' : 'Portionen';
     selectorContainer.appendChild(label);
+    return;
+  }
+
+  if (portionTypes.length === 1) {
+    // Only one portion type, show label instead of dropdown
+    const label = document.createElement('span');
+    label.className = 'portion-type-label';
+    label.dataset.singular = portionTypes[0].name;
+    label.dataset.plural = portionTypes[0].plural;
+    const servings = parseInt(container.querySelector('.servings-input').value) || 4;
+    label.textContent = servings === 1 ? portionTypes[0].name : portionTypes[0].plural;
+    selectorContainer.appendChild(label);
+    container.portionTypes = portionTypes;
     return;
   }
 
