@@ -20,31 +20,31 @@ Saftige und fluffige Zimtschnecken mit Frischkäse-Glasur - ein Klassiker, der e
 
 {{< ingredients servings="10" >}}
 {{< ingredient-section "Teig" >}}
-{{< ingredient ref="milch" amount="270" id="milch-teig" >}}
-{{< ingredient ref="butter" amount="60" id="butter-teig" >}}
-{{< ingredient ref="mehl" amount="500" >}}
-{{< ingredient ref="zucker" amount="50" id="zucker-teig" >}}
-{{< ingredient ref="vanillezucker" amount="1" >}}
-{{< ingredient ref="prise-salz" amount="0.4" >}}
-{{< ingredient ref="hefe" amount="0.5" >}}
+{{< ingredient ref="1140100.milch" amount="270" id="milch-teig" >}}
+{{< ingredient ref="1140700.butter" amount="60" id="butter-teig" >}}
+{{< ingredient ref="2040202.mehl" amount="500" >}}
+{{< ingredient ref="2130100.zucker" amount="50" id="zucker-teig" >}}
+{{< ingredient ref="2130400.vanillezucker" amount="1" >}}
+{{< ingredient ref="2120100.prise-salz" amount="0.4" >}}
+{{< ingredient ref="1531200.hefe" amount="0.5" >}}
 {{< ingredient-section "Füllung" >}}
-{{< ingredient ref="butter" amount="100" id="butter-fuellung" note="weich" >}}
-{{< ingredient ref="zucker" amount="70" id="zucker-fuellung" >}}
-{{< ingredient ref="zimt" amount="7.5" >}}
+{{< ingredient ref="1140700.butter" amount="100" id="butter-fuellung" note="weich" >}}
+{{< ingredient ref="2130100.zucker" amount="70" id="zucker-fuellung" >}}
+{{< ingredient ref="2120200.zimt" amount="7.5" >}}
 {{< ingredient-section "Glasur" >}}
-{{< ingredient ref="frischkaese" amount="70" >}}
-{{< ingredient ref="butter" amount="15" id="butter-glasur" note="weich" >}}
-{{< ingredient ref="puderzucker" amount="10" note="1 EL gehäuft" >}}
+{{< ingredient ref="1520101.frischkaese" amount="70" >}}
+{{< ingredient ref="1140700.butter" amount="15" id="butter-glasur" note="weich" >}}
+{{< ingredient ref="2130100.puderzucker" amount="10" note="1 EL gehäuft" >}}
 {{< /ingredients >}}
 
 {{< steps >}}
 
 {{< step >}}
-{{< use id="milch-teig" >}} mit {{< use id="butter-teig" >}} in einem Topf erwärmen, Butter dabei zerlassen. {{< use id="mehl" >}} mit {{< use id="zucker-teig" >}}, {{< use id="vanillezucker" >}} und {{< use id="prise-salz" >}} in einer Schüssel vermischen. {{< use id="hefe" >}} hineinbröckeln. Lauwarme Milch zugeben und 5 Min. mit den Knethaken zu einem glatten Teig kneten. 45 Minuten zugedeckt ruhen lassen. Große Auflaufform fetten.
+{{< use id="milch-teig" >}} mit {{< use id="butter-teig" >}} in einem Topf erwärmen, Butter dabei zerlassen. {{< use id="2040202.mehl" >}} mit {{< use id="zucker-teig" >}}, {{< use id="2130400.vanillezucker" >}} und {{< use id="2120100.prise-salz" >}} in einer Schüssel vermischen. {{< use id="1531200.hefe" >}} hineinbröckeln. Lauwarme Milch zugeben und 5 Min. mit den Knethaken zu einem glatten Teig kneten. 45 Minuten zugedeckt ruhen lassen. Große Auflaufform fetten.
 {{< /step >}}
 
 {{< step >}}
-Teig auf einer leicht bemehlten Arbeitsfläche durchkneten und zu einem Rechteck (ca. 40 x 30 cm) ausrollen. {{< use id="butter-fuellung" >}} aufschlagen, {{< use id="zucker-fuellung" >}} und {{< use id="zimt" >}} zugeben. Zimt-Butter dünn auf das Rechteck streichen, dabei einen ca. 1 cm Rand freilassen. Von der langen Seite aufrollen.
+Teig auf einer leicht bemehlten Arbeitsfläche durchkneten und zu einem Rechteck (ca. 40 x 30 cm) ausrollen. {{< use id="butter-fuellung" >}} aufschlagen, {{< use id="zucker-fuellung" >}} und {{< use id="2120200.zimt" >}} zugeben. Zimt-Butter dünn auf das Rechteck streichen, dabei einen ca. 1 cm Rand freilassen. Von der langen Seite aufrollen.
 {{< /step >}}
 
 {{< step >}}
@@ -52,7 +52,7 @@ Mit einem scharfen Messer in 10 Scheiben schneiden. Einzelne Scheiben in die For
 {{< /step >}}
 
 {{< step >}}
-Für die Glasur {{< use id="frischkaese" >}}, {{< use id="butter-glasur" >}} und {{< use id="puderzucker" >}} aufschlagen und dünn auf die lauwarmen Zimtschnecken auftragen. Am besten direkt servieren.
+Für die Glasur {{< use id="1520101.frischkaese" >}}, {{< use id="butter-glasur" >}} und {{< use id="2130100.puderzucker" >}} aufschlagen und dünn auf die lauwarmen Zimtschnecken auftragen. Am besten direkt servieren.
 {{< /step >}}
 
 {{< /steps >}}

@@ -22,13 +22,29 @@ cwebp -q 80 source-image.jpg -o content/recipes/recipe-name/cover.webp
 
 ### Step 3: Check Global Ingredients
 
-**First, check if the ingredient already exists** in `data/ingredients.yaml`. Common ingredients like butter, milk, sugar, flour, salt are already defined. Reuse them with the `ref` parameter.
+**Ingredients are organized hierarchically** in `data/ingredients/` based on Posthof product categories. The folder structure is:
 
-**All ingredients must be defined globally** in `data/ingredients.yaml`. Each ingredient can have:
-- `name` / `plural`: Display names
-- `unit`: Base unit (g, ml, etc.)
-- `posthof`: Product IDs for Posthof Food Coop integration
-- `altUnits`: Alternative unit display (e.g., `"TL:6"` means 1 TL = 6g)
+```
+data/ingredients/
+├── category_index.yaml    # Full category hierarchy reference
+├── 01/                    # Frische (1000000)
+│   ├── 14/                # Mopro (1140000)
+│   │   ├── 01.yaml        # Milch (1140100)
+│   │   └── 07.yaml        # Butter (1140700)
+│   └── ...
+├── 02/                    # Trocken (2000000)
+│   ├── 13/                # Backzutaten (2130000)
+│   │   ├── 01.yaml        # Zucker (2130100)
+│   │   └── ...
+│   └── ...
+└── 08/                    # Obst, Gemüse (8000000)
+    └── 23/                # Pilze (8230000)
+        └── 02.yaml        # Kultur-, Speisepilze (8230200)
+```
+
+**Reference format**: `{category_id}.{ingredient_key}` (e.g., `8230201.champignons`)
+
+**First, check if the ingredient already exists** by searching the appropriate category file. Use `category_index.yaml` to find the right category.
 
 ### Step 3b: Search Posthof Products
 
@@ -38,51 +54,50 @@ For new ingredients, search the Posthof Food Coop database for matching products
 searchQuery: "Mehl"
 ```
 
-This returns product IDs, names, prices, and package sizes. Use the format `productId:packageSize` for the `posthof` field:
-
-```yaml
-mehl:
-  name: Mehl
-  unit: g
-  posthof: "47267:1000,47260:1000"  # Multiple products as fallbacks
-```
-
-Multiple product IDs (comma-separated) provide fallbacks if one is out of stock.
+This returns product IDs, names, prices, and package sizes.
 
 ### Step 3c: Add New Ingredients
 
-If a new global ingredient is needed, add it to `data/ingredients.yaml`:
+1. Find the appropriate category ID from `category_index.yaml`
+2. Locate the file: category `8230201` → `data/ingredients/08/23/02.yaml`
+3. Add the ingredient with the full reference key:
 
 ```yaml
-ingredient-key:
-  name: Ingredient Name
-  plural: Ingredient Names  # optional, defaults to name
-  unit: g                   # optional
-  posthof: "12345:500"      # optional, product-id:package-size
-  altUnits: "TL:5"          # optional, unit:grams-per-unit
-  alternatives:             # optional, auto-creates ingredient choice
-    - ref: other-ingredient # reference to another global ingredient
-      factor: 1.0           # amount multiplier (alt_amount = amount * factor)
+# In data/ingredients/08/23/02.yaml
+8230201.champignons:
+  name: Champignon
+  plural: Champignons
+  unit: g
+  posthof:
+    - id: 12345
+      unit: 250
+  altUnits:
+    Stück: 20
+  alternatives:                        # optional, auto-creates ingredient choice
+    - ref: 8230202.austernpilze        # reference to another ingredient
+      factor: 1.0                      # amount multiplier
 ```
 
 ### Global Alternatives
 
-When an ingredient has `alternatives` defined, it automatically renders as an ingredient choice dropdown instead of a single ingredient. This eliminates the need to manually define `ingredient-choice` in recipes.
+When an ingredient has `alternatives` defined, it automatically renders as an ingredient choice dropdown.
 
-Example:
+Example in `data/ingredients/02/13/01.yaml`:
 ```yaml
-zucker:
+2130100.zucker:
   name: Zucker
   unit: g
-  posthof: "50118:1000"
+  posthof:
+    - id: 50118
+      unit: 1000
   alternatives:
-    - ref: agavendicksaft
+    - ref: 2130200.agavendicksaft
       factor: 1.0
-    - ref: honig
+    - ref: 2020500.honig
       factor: 0.8
 ```
 
-When a recipe uses `{{</* ingredient ref="zucker" amount="100" */>}}`:
+When a recipe uses `{{</* ingredient ref="2130100.zucker" amount="100" */>}}`:
 - Zucker (100g) - default option
 - Agavendicksaft (100g × 1.0 = 100g) - alternative
 - Honig (100g × 0.8 = 80g) - alternative
@@ -140,9 +155,9 @@ Brief introduction to the dish.
 {{</* recipeinfo */>}}
 
 {{</* ingredients servings="4" */>}}
-{{</* ingredient ref="butter" amount="100" */>}}
-{{</* ingredient ref="zucker" amount="50" id="zucker" */>}}
-{{</* ingredient ref="ei" amount="2" */>}}
+{{</* ingredient ref="1140700.butter" amount="100" */>}}
+{{</* ingredient ref="2130100.zucker" amount="50" id="zucker" */>}}
+{{</* ingredient ref="1180100.ei" amount="2" */>}}
 {{</* /ingredients */>}}
 
 {{</* steps */>}}
@@ -166,11 +181,11 @@ Next step instructions...
 
 ### Step 6: Using Ingredients
 
-Reference global ingredients with `ref`:
+Reference global ingredients with `ref` using the format `{category_id}.{key}`:
 ```markdown
-{{</* ingredient ref="butter" amount="100" */>}}
+{{</* ingredient ref="1140700.butter" amount="100" */>}}
 ```
-- Uses `ref` to reference the global definition in `data/ingredients.yaml`
+- Uses `ref` to reference the global definition in `data/ingredients/{l1}/{l2}/{l3}.yaml`
 - Inherits name, unit, posthof, altUnits automatically
 - Use `id` parameter if the same ingredient appears multiple times
 
@@ -181,11 +196,11 @@ Group ingredients with section headers:
 ```markdown
 {{</* ingredients servings="4" */>}}
 {{</* ingredient-section "Teig" */>}}
-{{</* ingredient ref="mehl" amount="500" */>}}
-{{</* ingredient ref="butter" amount="100" id="butter-teig" */>}}
+{{</* ingredient ref="2040202.mehl" amount="500" */>}}
+{{</* ingredient ref="1140700.butter" amount="100" id="butter-teig" */>}}
 {{</* ingredient-section "Füllung" */>}}
-{{</* ingredient ref="zucker" amount="200" */>}}
-{{</* ingredient ref="butter" amount="50" id="butter-fuellung" */>}}
+{{</* ingredient ref="2130100.zucker" amount="200" */>}}
+{{</* ingredient ref="1140700.butter" amount="50" id="butter-fuellung" */>}}
 {{</* /ingredients */>}}
 ```
 
@@ -598,6 +613,16 @@ Output goes to `public/`
 │       └── recipe-name/
 │           ├── index.md        # Recipe content
 │           └── cover.webp      # Cover image
+├── data/
+│   └── ingredients/            # Hierarchical ingredient definitions
+│       ├── category_index.yaml # Full category hierarchy
+│       ├── 01/                 # Frische (1000000)
+│       │   └── 14/             # Mopro (1140000)
+│       │       └── 01.yaml     # Milch (1140100) - contains 1140100.milch
+│       ├── 02/                 # Trocken (2000000)
+│       └── 08/                 # Obst, Gemüse (8000000)
+│           └── 23/             # Pilze (8230000)
+│               └── 02.yaml     # Kultur-Speisepilze - contains 8230201.champignons
 ├── layouts/
 │   ├── partials/
 │   │   └── extend_head.html    # Includes CSS/JS

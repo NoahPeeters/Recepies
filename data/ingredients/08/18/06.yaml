@@ -1,0 +1,15 @@
+# 8180600 - Gurken
+# Sub-categories:
+#   8180601: Schlangengurken
+#   8180602: Minigurken
+#   8180603: Landgurken
+#   8180604: Einlege- / Schmor- / Gewürzgurken
+#   8180609: Sonstige Gurken
+
+8180600.gurke:
+  name: Gurke
+  plural: Gurken
+  unit: g
+  altUnits:
+    Stück: 400
+

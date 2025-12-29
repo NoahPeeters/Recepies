@@ -1,0 +1,15 @@
+# 2020200 - Brotaufstriche, Fruchtaufstriche (süß)
+# Sub-categories:
+#   2020200: Brotaufstriche, Fruchtaufstriche (süß)
+
+2020200.marmelade:
+  name: Marmelade
+  unit: g
+  posthof:
+    - id: 43989
+      unit: 250
+    - id: 122654
+      unit: 250
+    - id: 46852
+      unit: 250
+

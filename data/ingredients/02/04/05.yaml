@@ -1,0 +1,40 @@
+# 2040500 - Ölsaaten
+# Sub-categories:
+#   2040500: Ölsaaten
+
+2040500.sonnenblumenkerne:
+  name: Sonnenblumenkerne
+  plural: Sonnenblumenkerne
+  unit: g
+  posthof:
+    - id: 47378
+      unit: 500
+    - id: 91085
+      unit: 500
+
+2040500.kuerbiskerne:
+  name: Kürbiskerne
+  plural: Kürbiskerne
+  unit: g
+  posthof:
+    - id: 43593
+      unit: 200
+    - id: 43558
+      unit: 200
+
+2040500.sesam:
+  name: Sesam
+  unit: g
+  posthof:
+    - id: 43697
+      unit: 500
+
+2040500.leinsamen:
+  name: Leinsamen
+  unit: g
+  posthof:
+    - id: 43704
+      unit: 500
+    - id: 91066
+      unit: 250
+

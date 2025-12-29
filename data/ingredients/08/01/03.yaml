@@ -1,0 +1,11 @@
+# 8010300 - Himbeeren
+# Sub-categories:
+#   8010300: Himbeeren
+
+8010300.himbeeren:
+  name: Himbeere
+  plural: Himbeeren
+  unit: g
+  altUnits:
+    Stück: 5
+

@@ -22,26 +22,26 @@ Cremiger Milchreis wie von Oma - ein deutsches Klassiker-Dessert, das von innen 
 {{< ingredients servings="4" >}}
 {{< portiontype name="Hauptgericht" plural="Hauptgerichte" multiplier="1" default="true" >}}
 {{< portiontype name="Nachtisch" plural="Nachtische" multiplier="0.66" >}}
-{{< ingredient ref="milchreis" amount="250" note="Rundkornreis" >}}
-{{< ingredient ref="milch" amount="1000" >}}
+{{< ingredient ref="2040300.milchreis" amount="250" note="Rundkornreis" >}}
+{{< ingredient ref="1140100.milch" amount="1000" >}}
 {{< ingredient-choice id="suesse" >}}
-  {{< option ref="zucker" amount="40" default="true" >}}
-  {{< option ref="agavendicksaft" amount="40" >}}
+  {{< option ref="2130100.zucker" amount="40" default="true" >}}
+  {{< option ref="2130200.agavendicksaft" amount="40" >}}
 {{< /ingredient-choice >}}
-{{< ingredient ref="vanillezucker" amount="2" id="vanille" >}}
-{{< ingredient ref="prise-salz" amount="0.4" >}}
-{{< ingredient ref="butter" amount="15" >}}
+{{< ingredient ref="2130400.vanillezucker" amount="2" id="vanille" >}}
+{{< ingredient ref="2120100.prise-salz" amount="0.4" >}}
+{{< ingredient ref="1140700.butter" amount="15" >}}
 {{< /ingredients >}}
 
 {{< steps >}}
 {{< step >}}
-{{< use id="butter" >}} in einem weiten Topf erhitzen.
+{{< use id="1140700.butter" >}} in einem weiten Topf erhitzen.
 {{< /step >}}
 {{< step >}}
-{{< use id="milchreis" >}} hinzugeben und ca. 2 Minuten andünsten (bildet eine Schutzschicht gegen Anbrennen).
+{{< use id="2040300.milchreis" >}} hinzugeben und ca. 2 Minuten andünsten (bildet eine Schutzschicht gegen Anbrennen).
 {{< /step >}}
 {{< step >}}
-{{< use id="milch" >}}, {{< use id="suesse" >}}, {{< use id="vanille" >}} und {{< use id="prise-salz" >}} hinzufügen.
+{{< use id="1140100.milch" >}}, {{< use id="suesse" >}}, {{< use id="vanille" >}} und {{< use id="2120100.prise-salz" >}} hinzufügen.
 {{< /step >}}
 {{< step >}}
 Einmal aufkochen lassen und dabei umrühren.

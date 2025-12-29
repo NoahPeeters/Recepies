@@ -19,19 +19,19 @@ Einfache rote Linsen mit Kurkuma - schnell, nahrhaft und vielseitig als Beilage 
 {{< recipeinfo >}}
 
 {{< ingredients servings="3" >}}
-{{< ingredient ref="rote-linsen" amount="200" >}}
-{{< ingredient ref="wasser" amount="600" >}}
-{{< ingredient ref="kurkuma" amount="3" note="gemahlen" >}}
-{{< ingredient ref="oel" amount="5" >}}
-{{< ingredient ref="salz" amount="9" >}}
+{{< ingredient ref="2040400.rote-linsen" amount="200" >}}
+{{< ingredient ref="3010000.wasser" amount="600" >}}
+{{< ingredient ref="2120200.kurkuma" amount="3" note="gemahlen" >}}
+{{< ingredient ref="2110100.oel" amount="5" >}}
+{{< ingredient ref="2120100.salz" amount="9" >}}
 {{< /ingredients >}}
 
 {{< steps >}}
 {{< step >}}
-{{< use id="rote-linsen" >}} gründlich unter fließendem Wasser waschen.
+{{< use id="2040400.rote-linsen" >}} gründlich unter fließendem Wasser waschen.
 {{< /step >}}
 {{< step >}}
-Linsen mit {{< use id="wasser" >}}, {{< use id="kurkuma" >}}, {{< use id="oel" >}} und {{< use id="salz" >}} in einen Topf geben.
+Linsen mit {{< use id="3010000.wasser" >}}, {{< use id="2120200.kurkuma" >}}, {{< use id="2110100.oel" >}} und {{< use id="2120100.salz" >}} in einen Topf geben.
 {{< /step >}}
 {{< step >}}
 Bei mittlerer Hitze ohne Deckel 15-20 Minuten köcheln lassen, bis die Linsen weich sind und das Wasser aufgesogen wurde.

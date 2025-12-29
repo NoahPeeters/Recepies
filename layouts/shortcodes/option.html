@@ -3,8 +3,25 @@
 {{- $constant := .Get "constant" | default 0 -}}
 {{- $default := .Get "default" | default "false" -}}
 
-{{- /* Look up ingredient from global data */ -}}
-{{- $ingredient := index site.Data.ingredients $ref -}}
+{{- /* Parse ref format: "8230201.champignons" -> category "8230201", key "champignons" */ -}}
+{{- $refParts := split $ref "." -}}
+{{- $categoryId := index $refParts 0 -}}
+
+{{- /* Convert category ID to folder path: 8230201 -> 08/23/02 */ -}}
+{{- $catNum := int $categoryId -}}
+{{- $l1Str := printf "%02d" (div $catNum 1000000) -}}
+{{- $l2Str := printf "%02d" (mod (div $catNum 10000) 100) -}}
+{{- $l3Str := printf "%02d" (mod (div $catNum 100) 100) -}}
+
+{{- /* Look up ingredient from nested data structure */ -}}
+{{- $ingredient := "" -}}
+{{- with index site.Data.ingredients $l1Str -}}
+  {{- with index . $l2Str -}}
+    {{- with index . $l3Str -}}
+      {{- $ingredient = index . $ref -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 {{- /* Get values from global data, with fallbacks */ -}}
 {{- $unit := "" -}}

@@ -19,18 +19,18 @@ Luftig-leichte Pfannkuchen nach einem einfachen Grundrezept. Ob süß mit Marmel
 {{< recipeinfo >}}
 
 {{< ingredients servings="5" >}}
-{{< ingredient ref="mehl" amount="150" >}}
-{{< ingredient ref="milch" amount="250" >}}
-{{< ingredient ref="ei" amount="3" id="eier" >}}
-{{< ingredient ref="mineralwasser" amount="1" id="sprudelwasser" >}}
-{{< ingredient ref="prise-salz" constant="1" id="salz" >}}
-{{< ingredient ref="oel" amount="25" id="oel" >}}
+{{< ingredient ref="2040202.mehl" amount="150" >}}
+{{< ingredient ref="1140100.milch" amount="250" >}}
+{{< ingredient ref="1180100.ei" amount="3" id="eier" >}}
+{{< ingredient ref="3010000.mineralwasser" amount="1" id="sprudelwasser" >}}
+{{< ingredient ref="2120100.prise-salz" constant="1" id="salz" >}}
+{{< ingredient ref="2110100.oel" amount="25" id="oel" >}}
 {{< /ingredients >}}
 
 {{< steps >}}
 
 {{< step >}}
-{{< use id="mehl" >}}, {{< use id="salz" >}} und {{< use id="milch" >}} mit den Quirlen des Handrührers oder der Küchenmaschine vermengen, bis alles gut vermischt ist und nahezu keine Klümpchen mehr vorhanden sind.
+{{< use id="2040202.mehl" >}}, {{< use id="salz" >}} und {{< use id="1140100.milch" >}} mit den Quirlen des Handrührers oder der Küchenmaschine vermengen, bis alles gut vermischt ist und nahezu keine Klümpchen mehr vorhanden sind.
 {{< /step >}}
 
 {{< step >}}

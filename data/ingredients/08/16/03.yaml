@@ -1,0 +1,13 @@
+# 8160300 - Knoblauch
+# Sub-categories:
+#   8160301: Knoblauch (trocken)
+#   8160302: Knoblauch (frisch)
+#   8160309: Sonstiger Knoblauch
+
+8160300.knoblauch:
+  name: Knoblauchzehe
+  plural: Knoblauchzehen
+  unit: g
+  altUnits:
+    Zehe: 5
+

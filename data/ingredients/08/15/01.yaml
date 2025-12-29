@@ -1,0 +1,17 @@
+# 8150100 - Möhren / Karotten / Gelbe Rüben
+# Sub-categories:
+#   8150101: Möhren (orange)
+#   8150102: Möhren (gelb)
+#   8150103: Möhren (rot)
+#   8150104: Möhren (lila, violett)
+#   8150105: Möhren (blau, schwarz)
+#   8150106: Möhren (weiß)
+#   8150107: Möhren (Mix, divers)
+
+8150100.karotte:
+  name: Karotte
+  plural: Karotten
+  unit: g
+  altUnits:
+    Stück: 80
+

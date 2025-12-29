@@ -5,8 +5,29 @@
 {{- $id := .Get "id" -}}
 {{- $optional := .Get "optional" | default false -}}
 
-{{- /* Look up ingredient from global data */ -}}
-{{- $ingredient := index site.Data.ingredients $ref -}}
+{{- /* Parse ref format: "8230201.champignons" -> category "8230201", key "champignons" */ -}}
+{{- $refParts := split $ref "." -}}
+{{- $categoryId := index $refParts 0 -}}
+{{- $ingredientKey := index $refParts 1 -}}
+
+{{- /* Convert category ID to folder path: 8230201 -> 08/23/02 */ -}}
+{{- $catNum := int $categoryId -}}
+{{- $l1 := div $catNum 1000000 -}}
+{{- $l2 := mod (div $catNum 10000) 100 -}}
+{{- $l3 := mod (div $catNum 100) 100 -}}
+{{- $l1Str := printf "%02d" $l1 -}}
+{{- $l2Str := printf "%02d" $l2 -}}
+{{- $l3Str := printf "%02d" $l3 -}}
+
+{{- /* Look up ingredient from nested data structure */ -}}
+{{- $ingredient := "" -}}
+{{- with index site.Data.ingredients $l1Str -}}
+  {{- with index . $l2Str -}}
+    {{- with index . $l3Str -}}
+      {{- $ingredient = index . $ref -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
 {{- /* Get values from global data, with fallbacks */ -}}
 {{- $unit := "" -}}
@@ -27,7 +48,7 @@
   {{- $alternatives = .alternatives | default slice -}}
 {{- end -}}
 
-{{- /* Use ref as local id if not specified */ -}}
+{{- /* Use full ref as local id if not specified */ -}}
 {{- if not $id -}}
   {{- $id = $ref -}}
 {{- end -}}
@@ -40,44 +61,60 @@
   <div class="ingredient-main">
     <span class="ingredient-amount"></span>
     <span class="ingredient-unit"></span>
-    <select class="ingredient-select" aria-label="Ingredient choice">
-      {{- /* Primary ingredient as first/default option */ -}}
-      <option
-        data-amount="{{ $amount }}"
-        data-constant="{{ $constant }}"
-        data-unit="{{ $unit }}"
-        data-name="{{ $name }}"
-        data-plural="{{ $plural }}"
-        {{ if $posthof }}data-posthof="{{ $posthof | jsonify }}"{{ end }}
-        {{ if $price }}data-price="{{ $price }}"{{ end }}
-        {{ if $altUnits }}data-alt-units="{{ $altUnits | jsonify }}"{{ end }}
-        selected>
-        {{- $name -}}
-      </option>
-      {{- /* Alternative ingredients */ -}}
-      {{- range $alternatives -}}
-        {{- $altRef := .ref -}}
-        {{- $factor := .factor | default 1.0 -}}
-        {{- $altIngredient := index site.Data.ingredients $altRef -}}
-        {{- if $altIngredient -}}
-          {{- $altAmount := mul (float $amount) (float $factor) -}}
-          {{- $altConstant := mul (float $constant) (float $factor) -}}
-          <option
-            data-amount="{{ $altAmount }}"
-            data-constant="{{ $altConstant }}"
-            data-unit="{{ $altIngredient.unit | default "" }}"
-            data-name="{{ $altIngredient.name | default $altRef }}"
-            data-plural="{{ $altIngredient.plural | default ($altIngredient.name | default $altRef) }}"
-            {{ with $altIngredient.posthof }}data-posthof="{{ . | jsonify }}"{{ end }}
-            {{ with $altIngredient.price }}data-price="{{ . }}"{{ end }}
-            {{ with $altIngredient.altUnits }}data-alt-units="{{ . | jsonify }}"{{ end }}>
-            {{- $altIngredient.name | default $altRef -}}
-          </option>
+    <span class="ingredient-name-wrapper">
+      <select class="ingredient-select" aria-label="Ingredient choice">
+        {{- /* Primary ingredient as first/default option */ -}}
+        <option
+          data-amount="{{ $amount }}"
+          data-constant="{{ $constant }}"
+          data-unit="{{ $unit }}"
+          data-name="{{ $name }}"
+          data-plural="{{ $plural }}"
+          {{ if $posthof }}data-posthof="{{ $posthof | jsonify }}"{{ end }}
+          {{ if $price }}data-price="{{ $price }}"{{ end }}
+          {{ if $altUnits }}data-alt-units="{{ $altUnits | jsonify }}"{{ end }}
+          selected>
+          {{- $name -}}
+        </option>
+        {{- /* Alternative ingredients */ -}}
+        {{- range $alternatives -}}
+          {{- $altRef := .ref -}}
+          {{- $factor := .factor | default 1.0 -}}
+          {{- /* Parse alt ref and look up ingredient */ -}}
+          {{- $altRefParts := split $altRef "." -}}
+          {{- $altCatId := index $altRefParts 0 -}}
+          {{- $altCatNum := int $altCatId -}}
+          {{- $altL1 := printf "%02d" (div $altCatNum 1000000) -}}
+          {{- $altL2 := printf "%02d" (mod (div $altCatNum 10000) 100) -}}
+          {{- $altL3 := printf "%02d" (mod (div $altCatNum 100) 100) -}}
+          {{- $altIngredient := "" -}}
+          {{- with index site.Data.ingredients $altL1 -}}
+            {{- with index . $altL2 -}}
+              {{- with index . $altL3 -}}
+                {{- $altIngredient = index . $altRef -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if $altIngredient -}}
+            {{- $altAmount := mul (float $amount) (float $factor) -}}
+            {{- $altConstant := mul (float $constant) (float $factor) -}}
+            <option
+              data-amount="{{ $altAmount }}"
+              data-constant="{{ $altConstant }}"
+              data-unit="{{ $altIngredient.unit | default "" }}"
+              data-name="{{ $altIngredient.name | default $altRef }}"
+              data-plural="{{ $altIngredient.plural | default ($altIngredient.name | default $altRef) }}"
+              {{ with $altIngredient.posthof }}data-posthof="{{ . | jsonify }}"{{ end }}
+              {{ with $altIngredient.price }}data-price="{{ . }}"{{ end }}
+              {{ with $altIngredient.altUnits }}data-alt-units="{{ . | jsonify }}"{{ end }}>
+              {{- $altIngredient.name | default $altRef -}}
+            </option>
+          {{- end -}}
         {{- end -}}
-      {{- end -}}
-    </select>
-    {{- if $note -}}<span class="ingredient-note">({{ $note }})</span>{{- end -}}
-    {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
+      </select>
+      <span class="ingredient-meta"><span class="ingredient-alt-units"></span>{{- if $note -}}<span class="ingredient-note">{{ $note }}</span>{{- end -}}</span>
+      {{- if $optional -}}<span class="ingredient-optional">(optional)</span>{{- end -}}
+    </span>
   </div>
   <div class="posthof-info posthof-choice-info"></div>
 </li>

@@ -1,0 +1,15 @@
+# 1140500 - Quark
+# Sub-categories:
+#   1140501: Naturquark
+#   1140502: Kräuterquark
+#   1140503: Fruchtquark
+
+1140500.quark:
+  name: Quark
+  unit: g
+  posthof:
+    - id: 44819
+      unit: 250
+    - id: 44811
+      unit: 250
+

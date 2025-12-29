@@ -1,0 +1,17 @@
+# 2100700 - Schokoladen
+# Sub-categories:
+#   2100701: Tafelschokolade, Minitafeln, Bruchschokolade
+#   2100702: Schokoriegel
+#   2100703: Schokofiguren
+
+2100700.zartbitterschokolade:
+  name: Zartbitterschokolade
+  unit: g
+  posthof:
+    - id: 55231
+      unit: 80
+    - id: 92533
+      unit: 80
+    - id: 92354
+      unit: 200
+

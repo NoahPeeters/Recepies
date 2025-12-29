@@ -1,0 +1,14 @@
+# 8040100 - Orangen
+# Sub-categories:
+#   8040101: Navelorangen
+#   8040102: Blondorangen
+#   8040103: Blut- / Halbblutorangen
+#   8040104: Bitterorangen
+
+8040100.orange:
+  name: Orange
+  plural: Orangen
+  unit: g
+  altUnits:
+    Stück: 150
+

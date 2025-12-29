@@ -1,0 +1,17 @@
+# 8160100 - Zwiebeln, Schalotten, Frühlingszwiebeln
+# Sub-categories:
+#   8160101: Zwiebeln (gelb)
+#   8160102: Zwiebeln (rot, rosé)
+#   8160103: Zwiebeln (weiß)
+#   8160104: Gemüsezwiebeln
+#   8160105: Lauch-, Bund-, Frühlingszwiebeln
+#   8160106: Schalotten
+#   8160107: Perlzwiebeln
+
+8160100.zwiebel:
+  name: Zwiebel
+  plural: Zwiebeln
+  unit: g
+  altUnits:
+    Stück: 80
+

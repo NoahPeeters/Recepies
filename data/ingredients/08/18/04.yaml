@@ -1,0 +1,14 @@
+# 8180400 - Zucchini
+# Sub-categories:
+#   8180401: Zucchini (grün)
+#   8180402: Zucchini (gelb)
+#   8180403: Zucchini (rund)
+#   8180404: Zucchini (Mix, divers)
+
+8180400.zucchini:
+  name: Zucchini
+  plural: Zucchini
+  unit: g
+  altUnits:
+    Stück: 200
+

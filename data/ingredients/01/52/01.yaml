@@ -1,0 +1,15 @@
+# 1520100 - Frischkäse, Milchmischerzeugnisse
+# Sub-categories:
+#   1520101: Frischkäse
+#   1520102: Milchmischerzeugnisse
+#   1520103: Zubereitung mit Käse
+
+1520101.frischkaese:
+  name: Frischkäse
+  unit: g
+  posthof:
+    - id: 45698
+      unit: 125
+    - id: 139403
+      unit: 125
+

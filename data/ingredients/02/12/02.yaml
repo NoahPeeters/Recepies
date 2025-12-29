@@ -1,0 +1,129 @@
+# 2120200 - Gewürze, Kräuter (mono)
+# Sub-categories:
+#   2120200: Gewürze, Kräuter (mono)
+
+2120200.vanilleschote:
+  name: Vanilleschote
+  plural: Vanilleschoten
+
+2120200.vanilleextrakt:
+  name: Tropfen Vanilleextrakt
+  plural: Tropfen Vanilleextrakt
+  posthof:
+    - id: 50225
+      unit: 200
+
+2120200.kurkuma:
+  name: Kurkuma
+  unit: g
+  posthof:
+    - id: 49907
+      unit: 40
+  altUnits:
+    TL: 3
+
+2120200.zimt:
+  name: Zimt
+  unit: g
+  altUnits:
+    TL: 3
+  posthof:
+    - id: 49991
+      unit: 40
+
+2120200.pfeffer:
+  name: Pfeffer
+  unit: g
+  posthof:
+    - id: 49952
+      unit: 50
+  altUnits:
+    TL: 3
+    Prise: 0.5
+
+2120200.paprika-geraeuchert:
+  name: Paprika geräuchert
+  unit: g
+  posthof:
+    - id: 49935
+      unit: 50
+  altUnits:
+    TL: 3
+
+2120200.muskatnuss:
+  name: Muskatnuss
+  unit: g
+  posthof:
+    - id: 49923
+      unit: 50
+    - id: 49920
+      unit: 25
+  altUnits:
+    TL: 2
+    Prise: 0.3
+
+2120200.oregano:
+  name: Oregano
+  unit: g
+  posthof:
+    - id: 49930
+      unit: 20
+  altUnits:
+    TL: 2
+
+2120200.thymian:
+  name: Thymian
+  unit: g
+  posthof:
+    - id: 49982
+      unit: 20
+  altUnits:
+    TL: 2
+
+2120200.rosmarin:
+  name: Rosmarin
+  unit: g
+  posthof:
+    - id: 49961
+      unit: 30
+  altUnits:
+    TL: 2
+
+2120200.basilikum:
+  name: Basilikum
+  unit: g
+  posthof:
+    - id: 49843
+      unit: 15
+  altUnits:
+    TL: 2
+
+2120200.kreuzkuemmel:
+  name: Kreuzkümmel
+  unit: g
+  posthof:
+    - id: 49897
+      unit: 40
+  altUnits:
+    TL: 3
+
+2120200.koriander:
+  name: Koriander
+  unit: g
+  posthof:
+    - id: 49892
+      unit: 40
+  altUnits:
+    TL: 3
+
+2120200.chiliflocken:
+  name: Chiliflocken
+  plural: Chiliflocken
+  unit: g
+  posthof:
+    - id: 49856
+      unit: 25
+  altUnits:
+    TL: 2
+    Prise: 0.5
+

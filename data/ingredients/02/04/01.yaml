@@ -1,0 +1,12 @@
+# 2040100 - Getreide, Getreideartige (Körner)
+# Sub-categories:
+#   2040100: Getreide, Getreideartige (Körner)
+
+2040100.quinoa:
+  name: Quinoa
+  plural: Quinoa
+  unit: g
+  posthof:
+    - id: 90921
+      unit: 500
+

@@ -1,0 +1,19 @@
+# 8230200 - Kultur-, Speisepilze
+# Sub-categories:
+#   8230201: Champignons
+#   8230202: Austernpilze
+#   8230203: Shiitake
+#   8230204: Seitlinge (Kräuter-Seitling, usw.)
+#   8230205: Buchenpilze
+#   8230206: Samthauben
+#   8230207: Pom-Pom Blanc
+#   8230208: Kultur-, Speisepilze (Mix, divers)
+#   8230219: Sonstige Kultur-, Speisepilze
+
+8230201.champignons:
+  name: Champignon
+  plural: Champignons
+  unit: g
+  altUnits:
+    Stück: 20
+

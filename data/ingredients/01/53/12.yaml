@@ -1,0 +1,16 @@
+# 1531200 - Frische Hefe
+# Sub-categories:
+#   1531200: Frische Hefe
+
+1531200.hefe:
+  name: frische Hefe
+  unit: g
+  posthof:
+    - id: 46041
+      unit: 42
+  altUnits:
+    Würfel: 42
+  alternatives:
+    - ref: 2130400.trockenhefe
+      factor: 0.33
+

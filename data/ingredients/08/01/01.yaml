@@ -1,0 +1,11 @@
+# 8010100 - Erdbeeren
+# Sub-categories:
+#   8010100: Erdbeeren
+
+8010100.erdbeeren:
+  name: Erdbeere
+  plural: Erdbeeren
+  unit: g
+  altUnits:
+    Stück: 18
+

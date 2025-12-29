@@ -1,0 +1,4036 @@
+# Product Category Index
+# Generated from Posthof ProductCategories.csv
+
+1000000:
+  name: "Frische"
+  children:
+    1010000:
+      name: "Theke, Großgebinde Backwaren"
+      children:
+        1010100:
+          name: "Brot"
+          children:
+            1010101:
+              name: "Brot (tiefgekühlt)"
+            1010102:
+              name: "Brot (Bäckerware)"
+        1010200:
+          name: "Toastbrot"
+          children:
+            1010201:
+              name: "Toastbrot (tiefgekühlt)"
+            1010202:
+              name: "Toastbrot (Bäckerware)"
+        1010300:
+          name: "Brötchen, Kleingebäck"
+          children:
+            1010301:
+              name: "Brötchen, Kleingebäck (tiefgekühlt)"
+            1010302:
+              name: "Brötchen, Kleingebäck (Bäckerware)"
+        1010400:
+          name: "Kuchen, Feingebäck"
+          children:
+            1010401:
+              name: "Kuchen, Feingebäck (tiefgekühlt)"
+            1010402:
+              name: "Kuchen, Feingebäck (Bäckerware)"
+    1020000:
+      name: "Theke, Großgebinde Käse"
+      children:
+        1020100:
+          name: "Frischkäse, Milchmischerzeugnisse"
+          children:
+            1020101:
+              name: "Frischkäse"
+            1020102:
+              name: "Milchmischerzeugnisse"
+            1020103:
+              name: "Zubereitung mit Käse"
+        1020200:
+          name: "Pasta Filata (Mozzarella, usw.)"
+          children:
+            1020200:
+              name: "Pasta Filata (Mozzarella, usw.)"
+        1020300:
+          name: "Käse in Lake, Feta"
+          children:
+            1020300:
+              name: "Käse in Lake, Feta"
+        1020400:
+          name: "Weichkäse"
+          children:
+            1020401:
+              name: "Weichkäse mit weißem Edelschimmel (Camembert, Brie, usw.)"
+            1020402:
+              name: "Weichkäse mit Rotkultur"
+            1020403:
+              name: "Weichkäse mit blauem Edelschimmel (Gorgonzola, usw.)"
+            1020404:
+              name: "Weichkäse (diverse Affinitäten)"
+        1020500:
+          name: "Halbfester Schnittkäse"
+          children:
+            1020500:
+              name: "Halbfester Schnittkäse"
+        1020600:
+          name: "Schnittkäse"
+          children:
+            1020600:
+              name: "Schnittkäse"
+        1020700:
+          name: "Hartkäse"
+          children:
+            1020700:
+              name: "Hartkäse"
+        1020800:
+          name: "Sauermilchkäse"
+          children:
+            1020800:
+              name: "Sauermilchkäse"
+        1020900:
+          name: "Schmelzkäse"
+          children:
+            1020900:
+              name: "Schmelzkäse"
+        1021000:
+          name: "Reibekäse, Pastakäse"
+          children:
+            1021000:
+              name: "Reibekäse, Pastakäse"
+        1021100:
+          name: "Brat-, Grillkäse"
+          children:
+            1021100:
+              name: "Brat-, Grillkäse"
+        1021200:
+          name: "Käsealternativen (vegan, vegetarisch)"
+          children:
+            1021200:
+              name: "Käsealternativen (vegan, vegetarisch)"
+        1021300:
+          name: "Käse (rechtlich ohne Käsegruppen-Zuordnung)"
+          children:
+            1021300:
+              name: "Käse (rechtlich ohne Käsegruppen-Zuordnung)"
+    1030000:
+      name: "Theke, Großgebinde Feinkost, Teige, Convenience"
+      children:
+        1030200:
+          name: "Frische Algen (Großgebinde)"
+          children:
+            1030200:
+              name: "Frische Algen (Großgebinde)"
+        1030300:
+          name: "Fermentiertes Gemüse (Sauerkraut, Kimchi, usw.)"
+          children:
+            1030300:
+              name: "Fermentiertes Gemüse (Sauerkraut, Kimchi, usw.)"
+        1030400:
+          name: "Feinkostsalate"
+          children:
+            1030401:
+              name: "Feinkostsalate (mit Fleisch)"
+            1030402:
+              name: "Feinkostsalate (mit Fisch)"
+            1030403:
+              name: "Feinkostsalate (vegetarisch, vegan)"
+            1030404:
+              name: "Feinkostsalate (mit Fleisch und Fisch)"
+        1030500:
+          name: "Antipasti (Oliven, Tofu, Seitan, Lopino, usw.)"
+          children:
+            1030500:
+              name: "Antipasti (Oliven, Tofu, Seitan, Lopino, usw.)"
+        1030600:
+          name: "Frische Teigwaren (Pasta, usw.)"
+          children:
+            1030600:
+              name: "Frische Teigwaren (Pasta, usw.)"
+        1030700:
+          name: "Frisches Pesto, Würzsaucen (gekühlt)"
+          children:
+            1030700:
+              name: "Frisches Pesto, Würzsaucen (gekühlt)"
+        1030800:
+          name: "Frische Suppen, Fertiggerichte (gekühlt)"
+          children:
+            1030800:
+              name: "Frische Suppen, Fertiggerichte (gekühlt)"
+        1030900:
+          name: "Frische Brotaufstriche"
+          children:
+            1030900:
+              name: "Frische Brotaufstriche"
+        1031000:
+          name: "Frische Dressings, Cremes, Dips (Meerrettich, usw.)"
+          children:
+            1031000:
+              name: "Frische Dressings, Cremes, Dips (Meerrettich, usw.)"
+        1031100:
+          name: "Frische Teige"
+          children:
+            1031100:
+              name: "Frische Teige"
+        1031200:
+          name: "Frische Hefe (Theke)"
+          children:
+            1031200:
+              name: "Frische Hefe (Theke)"
+    1040000:
+      name: "Theke, Großgebinde Wurst, Aufschnitt, Fleischerzeugnisse"
+      children:
+        1040100:
+          name: "Würstchen (Wiener, usw.) (am Stück)"
+          children:
+            1040100:
+              name: "Würstchen (Wiener, usw.) (am Stück)"
+        1040300:
+          name: "Bratwurst, Grillwurst"
+          children:
+            1040300:
+              name: "Bratwurst, Grillwurst"
+        1040400:
+          name: "Snackwurst (aus Rohwurst)"
+          children:
+            1040400:
+              name: "Snackwurst (aus Rohwurst)"
+        1040500:
+          name: "Rohschinken, Rohpökelwaren, Räucherschinken, Speck"
+          children:
+            1040501:
+              name: "THEKE (am Stück) - Rohschinken, Rohpökelwaren, Räucherschinken, Speck"
+            1040502:
+              name: "THEKE (Aufschnitt) - Rohschinken, Rohpökelwaren, Räucherschinken, Speck"
+        1040600:
+          name: "Garschinken, Garpökelware"
+          children:
+            1040601:
+              name: "THEKE (am Stück) - Kochschinken, Putenbrust, usw."
+            1040602:
+              name: "THEKE (Aufschnitt) - Kochschinken, Putenbrust, usw."
+            1040603:
+              name: "THEKE (am Stück) - Kasseler"
+            1040604:
+              name: "THEKE (Aufschnitt) - Kasseler"
+        1040700:
+          name: "Rohwurst (schnittfähig, streichfähig)"
+          children:
+            1040701:
+              name: "THEKE (am Stück) - Rohwurst schnittfähig (Salami, usw.)"
+            1040702:
+              name: "THEKE (Aufschnitt) - Rohwurst schnittfähig (Salami, usw.)"
+            1040703:
+              name: "THEKE (am Stück) - Rohwurst streichfähig (Teewurst, Zwiebelmett, usw.)"
+        1040800:
+          name: "Brühwurst (Fleischwurst, Jagdwurst, Bierschinken, usw.)"
+          children:
+            1040801:
+              name: "THEKE (am Stück) - Brühwurst (Fleischwurst, Jagdwurst, Bierschinken, usw.)"
+            1040802:
+              name: "THEKE (Aufschnitt) - Brühwurst (Fleischwurst, Jagdwurst, Bierschinken, usw.)"
+        1040900:
+          name: "Kochwurst"
+          children:
+            1040901:
+              name: "THEKE (am Stück) - Kochwurst (Leberwurst, Blutwurst, Sülzen, usw.)"
+            1040902:
+              name: "THEKE (Aufschnitt) - Kochwurst (Sülzen, Zungenwurst, usw.)"
+    1050000:
+      name: "Theke, Großgebinde Fleisch"
+      children:
+        1050100:
+          name: "Hackfleisch"
+          children:
+            1050100:
+              name: "Hackfleisch"
+        1050200:
+          name: "Schweinefleisch"
+          children:
+            1050201:
+              name: "Schweinefleisch (mariniert, zubereitet)"
+            1050202:
+              name: "Schweinefleisch (Natur)"
+        1050300:
+          name: "Rindfleisch"
+          children:
+            1050301:
+              name: "Rindfleisch (mariniert, zubereitet)"
+            1050302:
+              name: "Rindfleisch (Natur)"
+        1050400:
+          name: "Lammfleisch"
+          children:
+            1050401:
+              name: "Lammfleisch (mariniert, zubereitet)"
+            1050402:
+              name: "Lammfleisch (Natur)"
+        1050500:
+          name: "Geflügelfleisch"
+          children:
+            1050501:
+              name: "Geflügelfleisch (mariniert, zubereitet)"
+            1050502:
+              name: "Geflügelfleisch (Natur)"
+        1050600:
+          name: "Wild, Spezialitäten"
+          children:
+            1050601:
+              name: "Wild, Spezialitäten (mariniert, zubereitet)"
+            1050602:
+              name: "Wild, Spezialitäten (Natur)"
+    1060000:
+      name: "Theke, Großgebinde Frischfisch, Meeresfrüchte"
+      children:
+        1060100:
+          name: "Seefisch (Natur, mariniert, zubereitet)"
+          children:
+            1060100:
+              name: "Seefisch (Natur, mariniert, zubereitet)"
+        1060200:
+          name: "Süßwasserfisch (Natur, mariniert, zubereitet)"
+          children:
+            1060200:
+              name: "Süßwasserfisch (Natur, mariniert, zubereitet)"
+        1060300:
+          name: "Meeresfrüchte (Natur, mariniert, zubereitet)"
+          children:
+            1060300:
+              name: "Meeresfrüchte (Natur, mariniert, zubereitet)"
+        1060400:
+          name: "Räucherfisch"
+          children:
+            1060400:
+              name: "Räucherfisch"
+        1060500:
+          name: "Fischnebenerzeugnisse"
+          children:
+            1060500:
+              name: "Fischnebenerzeugnisse"
+    1140000:
+      name: "Mopro"
+      children:
+        1140100:
+          name: "Milch"
+          children:
+            1140101:
+              name: "Frischmilch"
+            1140102:
+              name: "ESL-Milch"
+            1140103:
+              name: "H-Milch"
+        1140200:
+          name: "Trinkmilch, Molkedrinks, Milchmischgetränke, Trinkjoghurt"
+          children:
+            1140200:
+              name: "Trinkmilch, Molkedrinks, Milchmischgetränke, Trinkjoghurt"
+        1140300:
+          name: "Rahmprodukte (Sahne, Sauerrahm, Crème fraîche)"
+          children:
+            1140300:
+              name: "Rahmprodukte (Sahne, Sauerrahm, Crème fraîche)"
+        1140400:
+          name: "Joghurt"
+          children:
+            1140401:
+              name: "Naturjoghurt"
+            1140402:
+              name: "Fruchtjoghurt (Obst, Vanille, Nüsse, Schokolade, usw.)"
+            1140403:
+              name: "Joghurt (Schaf, Ziege, usw.)"
+        1140500:
+          name: "Quark"
+          children:
+            1140501:
+              name: "Naturquark"
+            1140502:
+              name: "Kräuterquark"
+            1140503:
+              name: "Fruchtquark"
+        1140600:
+          name: "Dessert (Pudding, Milchreis, usw.)"
+          children:
+            1140600:
+              name: "Dessert (Pudding, Milchreis, usw.)"
+        1140700:
+          name: "Butter, Butterschmalz, usw."
+          children:
+            1140700:
+              name: "Butter, Butterschmalz, usw."
+    1150000:
+      name: "Margarine, Fette, Schmalz"
+      children:
+        1150100:
+          name: "Margarine"
+          children:
+            1150100:
+              name: "Margarine"
+        1150200:
+          name: "Fette"
+          children:
+            1150200:
+              name: "Fette"
+        1150300:
+          name: "Schmalz (weiterverarbeitetes Schlachtfett)"
+          children:
+            1150300:
+              name: "Schmalz (weiterverarbeitetes Schlachtfett)"
+    1160000:
+      name: "Tofu-, Seitan-, Lupinenprodukte, usw."
+      children:
+        1160100:
+          name: "Tofu, Seitan, Lopino, usw."
+          children:
+            1160100:
+              name: "Tofu, Seitan, Lopino, usw."
+        1160200:
+          name: "Rollen, Burger, Bratlinge, Snacks (Fleischalternativen)"
+          children:
+            1160200:
+              name: "Rollen, Burger, Bratlinge, Snacks (Fleischalternativen)"
+        1160300:
+          name: "Würstchen (vegan, vegetarisch)"
+          children:
+            1160300:
+              name: "Würstchen (vegan, vegetarisch)"
+        1160400:
+          name: "Fertiggerichte, Beilagen-Convenience (vegan, vegetarisch)"
+          children:
+            1160400:
+              name: "Fertiggerichte, Beilagen-Convenience (vegan, vegetarisch)"
+        1160500:
+          name: "Aufschnitt, Aufstrich (vegan, vegetarisch)"
+          children:
+            1160500:
+              name: "Aufschnitt, Aufstrich (vegan, vegetarisch)"
+    1170000:
+      name: "Milchalternativen (auch ungekühlt)"
+      children:
+        1170100:
+          name: "Drinks (Soja, Reis, Hafer, usw.)"
+          children:
+            1170100:
+              name: "Drinks (Soja, Reis, Hafer, usw.)"
+        1170200:
+          name: "Sahnealternativen"
+          children:
+            1170200:
+              name: "Sahnealternativen"
+        1170300:
+          name: "Joghurtalternativen"
+          children:
+            1170300:
+              name: "Joghurtalternativen"
+        1170400:
+          name: "Quarkalternativen"
+          children:
+            1170400:
+              name: "Quarkalternativen"
+        1170500:
+          name: "Pflanzliche Desserts"
+          children:
+            1170500:
+              name: "Pflanzliche Desserts"
+    1180000:
+      name: "Eier"
+      children:
+        1180100:
+          name: "Eier (abgepackt, auch gegarte Eier, bunte Eier)"
+          children:
+            1180100:
+              name: "Eier (abgepackt, auch gegarte Eier, bunte Eier)"
+        1180200:
+          name: "Eier (lose, auch gegarte Eier, bunte Eier)"
+          children:
+            1180200:
+              name: "Eier (lose, auch gegarte Eier, bunte Eier)"
+        1180300:
+          name: "Flüssigei"
+          children:
+            1180300:
+              name: "Flüssigei"
+    1200000:
+      name: "Tiefkühlprodukte (auch Großgebinde)"
+      children:
+        1200100:
+          name: "TK Gemüse, Kräuter, Obst"
+          children:
+            1200101:
+              name: "TK Gemüse"
+            1200102:
+              name: "TK Kräuter"
+            1200103:
+              name: "TK Obst"
+        1200200:
+          name: "TK Kartoffelprodukte"
+          children:
+            1200200:
+              name: "TK Kartoffelprodukte"
+        1200300:
+          name: "TK Pizza"
+          children:
+            1200301:
+              name: "TK Pizza (vegan, vegetarisch)"
+            1200302:
+              name: "TK Pizza mit Fisch"
+            1200303:
+              name: "TK Pizza mit Fleisch"
+            1200304:
+              name: "TK Pizza mit Fleisch und Fisch"
+        1200400:
+          name: "TK Backwaren, Teige"
+          children:
+            1200401:
+              name: "TK Teige (backfertig)"
+            1200402:
+              name: "TK Brot"
+            1200403:
+              name: "TK Klein-, Frühstücksgebäck (Brötchen, Brezeln, Laugengebäck, usw.)"
+            1200404:
+              name: "TK Torten, Kuchen"
+            1200405:
+              name: "TK Süßspeisen, Dessert"
+        1200500:
+          name: "TK Eis"
+          children:
+            1200501:
+              name: "Speiseeis (Familienpackungen)"
+            1200502:
+              name: "Speiseeis (Portionsware, Impulsware)"
+        1200600:
+          name: "TK Fisch, Meeresfrüchte, Schalentiere, usw."
+          children:
+            1200600:
+              name: "TK Fisch, Meeresfrüchte, Schalentiere, usw."
+        1200700:
+          name: "TK Fleisch"
+          children:
+            1200700:
+              name: "TK Fleisch"
+        1200800:
+          name: "TK Fertig-, Halbfertiggerichte"
+          children:
+            1200801:
+              name: "TK Fertig-, Halbfertiggerichte (vegan, vegetarisch)"
+            1200802:
+              name: "TK Fertig-, Halbfertiggerichte mit Fisch"
+            1200803:
+              name: "TK Fertig-, Halbfertiggerichte mit Fleisch"
+            1200804:
+              name: "TK Fertig-, Halbfertiggerichte mit Fleisch und Fisch"
+        1200900:
+          name: "TK Suppen, Eintöpfe"
+          children:
+            1200901:
+              name: "TK Suppen, Eintöpfe (vegan, vegetarisch)"
+            1200902:
+              name: "TK Suppen, Eintöpfe mit Fisch"
+            1200903:
+              name: "TK Suppen, Eintöpfe mit Fleisch"
+            1200904:
+              name: "TK Suppen, Eintöpfe mit Fleisch und Fisch"
+        1201000:
+          name: "TK Babykost"
+          children:
+            1201001:
+              name: "TK Babykost (vegan, vegetarisch)"
+            1201002:
+              name: "TK Babykost mit Fisch"
+            1201003:
+              name: "TK Babykost mit Fleisch"
+        1201100:
+          name: "TK Snacks"
+          children:
+            1201100:
+              name: "TK Snacks"
+        1201200:
+          name: "TK Eier, Eiprodukte (pur)"
+          children:
+            1201200:
+              name: "TK Eier, Eiprodukte (pur)"
+    1510000:
+      name: "SB Backwaren"
+      children:
+        1510100:
+          name: "Brot"
+          children:
+            1510101:
+              name: "Brot SB (tiefgekühlt)"
+            1510102:
+              name: "Brot SB (Bäckerware)"
+            1510103:
+              name: "Schnittbrot SB (Bäckerware)"
+            1510104:
+              name: "Meterbrot SB (Bäckerware)"
+            1510105:
+              name: "Glutenfreies Brot SB (Bäckerware)"
+        1510200:
+          name: "Toastbrot"
+          children:
+            1510201:
+              name: "Toastbrot SB (tiefgekühlt)"
+            1510202:
+              name: "Toastbrot SB (Bäckerware)"
+        1510300:
+          name: "Brötchen, Kleingebäck"
+          children:
+            1510301:
+              name: "Brötchen, Kleingebäck SB (tiefgekühlt)"
+            1510302:
+              name: "Brötchen, Kleingebäck SB (Bäckerware)"
+        1510400:
+          name: "Kuchen, Feingebäck"
+          children:
+            1510401:
+              name: "Kuchen, Feingebäck SB (tiefgekühlt)"
+            1510402:
+              name: "Kuchen, Feingebäck SB (Bäckerware)"
+    1520000:
+      name: "SB Käse"
+      children:
+        1520100:
+          name: "Frischkäse, Milchmischerzeugnisse"
+          children:
+            1520101:
+              name: "Frischkäse"
+            1520102:
+              name: "Milchmischerzeugnisse"
+            1520103:
+              name: "Zubereitung mit Käse"
+        1520200:
+          name: "Pasta Filata (Mozzarella, usw.)"
+          children:
+            1520200:
+              name: "Pasta Filata (Mozzarella, usw.)"
+        1520300:
+          name: "Käse in Lake, Feta"
+          children:
+            1080300:
+              name: "Käse in Lake, Feta"
+        1520400:
+          name: "Weichkäse"
+          children:
+            1520401:
+              name: "Weichkäse mit weißem Edelschimmel (Camembert, Brie, usw.)"
+            1520402:
+              name: "Weichkäse mit Rotkultur"
+            1520403:
+              name: "Weichkäse mit blauem Edelschimmel (Gorgonzola, usw.)"
+            1520404:
+              name: "Weichkäse (diverse Affinitäten)"
+        1520500:
+          name: "Halbfester Schnittkäse"
+          children:
+            1520500:
+              name: "Halbfester Schnittkäse"
+        1520600:
+          name: "Schnittkäse"
+          children:
+            1520600:
+              name: "Schnittkäse"
+        1520700:
+          name: "Hartkäse"
+          children:
+            1520700:
+              name: "Hartkäse"
+        1520800:
+          name: "Sauermilchkäse"
+          children:
+            1520800:
+              name: "Sauermilchkäse"
+        1520900:
+          name: "Schmelzkäse"
+          children:
+            1520900:
+              name: "Schmelzkäse"
+        1521000:
+          name: "Reibekäse, Pastakäse"
+          children:
+            1521000:
+              name: "Reibekäse, Pastakäse"
+        1521100:
+          name: "Brat-, Grillkäse"
+          children:
+            1521100:
+              name: "Brat-, Grillkäse"
+        1521200:
+          name: "Käsealternativen (vegan, vegetarisch)"
+          children:
+            1521200:
+              name: "Käsealternativen (vegan, vegetarisch)"
+        1521300:
+          name: "Käse (rechtlich ohne Käsegruppen-Zuordnung)"
+          children:
+            1521300:
+              name: "Käse (rechtlich ohne Käsegruppen-Zuordnung)"
+    1530000:
+      name: "SB Feinkost, Teige, Convenience"
+      children:
+        1530200:
+          name: "Frische Algen"
+          children:
+            1530200:
+              name: "Frische Algen"
+        1530300:
+          name: "Frisches Sauerkraut (SB)"
+          children:
+            1530300:
+              name: "Frisches Sauerkraut (SB)"
+        1530400:
+          name: "Feinkostsalate"
+          children:
+            1530401:
+              name: "Feinkostsalate (mit Fleisch)"
+            1530402:
+              name: "Feinkostsalate (mit Fisch)"
+            1530403:
+              name: "Feinkostsalate (vegetarisch, vegan)"
+            1530404:
+              name: "Feinkostsalate (mit Fleisch und Fisch)"
+        1530500:
+          name: "Antipasti, Oliven"
+          children:
+            1530500:
+              name: "Antipasti, Oliven"
+        1530600:
+          name: "Frische Teigwaren (Pasta, usw.)"
+          children:
+            1530600:
+              name: "Frische Teigwaren (Pasta, usw.)"
+        1530700:
+          name: "Frisches Pesto, Würzsaucen (gekühlt)"
+          children:
+            1530700:
+              name: "Frisches Pesto, Würzsaucen (gekühlt)"
+        1530800:
+          name: "Frische Suppen, Fertiggerichte"
+          children:
+            1530800:
+              name: "Frische Suppen, Fertiggerichte"
+        1530900:
+          name: "Frische Brotaufstriche"
+          children:
+            1530900:
+              name: "Frische Brotaufstriche"
+        1531000:
+          name: "Frische Dressings, Cremes, Dips (Meerrettich, usw.)"
+          children:
+            1531000:
+              name: "Frische Dressings, Cremes, Dips (Meerrettich, usw.)"
+        1531100:
+          name: "Frische Teige"
+          children:
+            1531100:
+              name: "Frische Teige"
+        1531200:
+          name: "Frische Hefe"
+          children:
+            1531200:
+              name: "Frische Hefe"
+    1540000:
+      name: "SB Wurst, Aufschnitt, Fleischerzeugnisse"
+      children:
+        1540100:
+          name: "Würstchen (Wiener, usw.) (am Stück)"
+          children:
+            1540100:
+              name: "Würstchen (Wiener, usw.) (am Stück)"
+        1540300:
+          name: "Bratwurst, Grillwurst"
+          children:
+            1540300:
+              name: "Bratwurst, Grillwurst"
+        1540400:
+          name: "Snackwurst (aus Rohwurst)"
+          children:
+            1540400:
+              name: "Snackwurst (aus Rohwurst)"
+        1540500:
+          name: "Rohschinken, Rohpökelwaren, Räucherschinken, Speck"
+          children:
+            1540501:
+              name: "Rohschinken, Rohpökelwaren, Räucherschinken, Speck (am Stück)"
+            1540502:
+              name: "Rohschinken, Rohpökelwaren, Räucherschinken, Speck (Aufschnitt)"
+        1540600:
+          name: "Garschinken, Garpökelware"
+          children:
+            1540601:
+              name: "Kochschinken, Putenbrust (am Stück)"
+            1540602:
+              name: "Kochschinken, Putenbrust (Aufschnitt)"
+            1540603:
+              name: "Kasseler (am Stück)"
+            1540604:
+              name: "Kasseler (Aufschnitt)"
+        1540700:
+          name: "Rohwurst (schnittfähig, streichfähig)"
+          children:
+            1540701:
+              name: "Rohwurst schnittfähig (Salami, usw.) (am Stück)"
+            1540702:
+              name: "Rohwurst schnittfähig (Salami, usw.) (Aufschnitt)"
+            1540703:
+              name: "Rohwurst streichfähig (Teewurst, Zwiebelmett, usw.)"
+        1540800:
+          name: "Brühwurst (Fleischwurst, Jagdwurst, Bierschinken, usw.)"
+          children:
+            1540801:
+              name: "Brühwurst (Fleischwurst, Jagdwurst, Bierschinken, usw.) (am Stück)"
+            1540802:
+              name: "Brühwurst (Fleischwurst, Jagdwurst, Bierschinken, usw.) (Aufschnitt)"
+        1540900:
+          name: "Kochwurst"
+          children:
+            1540901:
+              name: "Kochwurst (Leberwurst, Blutwurst, Sülzen, usw.) (am Stück)"
+            1540902:
+              name: "Kochwurst (Sülzen, Zungenwurst, usw.) (Aufschnitt)"
+    1550000:
+      name: "SB Fleisch"
+      children:
+        1550100:
+          name: "Hackfleisch"
+          children:
+            1550100:
+              name: "Hackfleisch"
+        1550200:
+          name: "Schweinefleisch"
+          children:
+            1550201:
+              name: "Schweinefleisch (mariniert, zubereitet)"
+            1550202:
+              name: "Schweinefleisch (Natur)"
+        1550300:
+          name: "Rindfleisch"
+          children:
+            1550301:
+              name: "Rindfleisch (mariniert, zubereitet)"
+            1550302:
+              name: "Rindfleisch (Natur)"
+        1550400:
+          name: "Lammfleisch"
+          children:
+            1550401:
+              name: "Lammfleisch (mariniert, zubereitet)"
+            1550402:
+              name: "Lammfleisch (Natur)"
+        1550500:
+          name: "Geflügelfleisch"
+          children:
+            1550501:
+              name: "Geflügelfleisch (mariniert, zubereitet)"
+            1550502:
+              name: "Geflügelfleisch (Natur)"
+        1550600:
+          name: "Wild, Spezialitäten"
+          children:
+            1550601:
+              name: "Wild, Spezialitäten (mariniert, zubereitet)"
+            1550602:
+              name: "Wild, Spezialitäten (Natur)"
+    1560000:
+      name: "SB Frischfisch, Meeresfrüchte"
+      children:
+        1560100:
+          name: "Seefisch (Natur, mariniert, zubereitet)"
+          children:
+            1560100:
+              name: "Seefisch (Natur, mariniert, zubereitet)"
+        1560200:
+          name: "Süßwasserfisch (Natur, mariniert, zubereitet)"
+          children:
+            1560200:
+              name: "Süßwasserfisch (Natur, mariniert, zubereitet)"
+        1560300:
+          name: "Meeresfrüchte (Natur, mariniert, zubereitet)"
+          children:
+            1560300:
+              name: "Meeresfrüchte (Natur, mariniert, zubereitet)"
+        1560400:
+          name: "SB Räucherfisch"
+          children:
+            1560400:
+              name: "SB Räucherfisch"
+        1560500:
+          name: "Fischnebenerzeugnisse"
+          children:
+            1560500:
+              name: "Fischnebenerzeugnisse"
+2000000:
+  name: "Trocken"
+  children:
+    2010000:
+      name: "Tee, Kaffee, Kakao, Heißgetränke"
+      children:
+        2010100:
+          name: "Tee"
+          children:
+            2010101:
+              name: "Schwarzer Tee, Pu Erh Tee"
+            2010102:
+              name: "Grüner Tee, Weißer Tee, Gelber Tee, Oolong"
+            2010103:
+              name: "Kräutertee"
+            2010104:
+              name: "Mate, Lapacho, Rooibusch, usw."
+            2010105:
+              name: "Früchtetee"
+            2010106:
+              name: "Gewürztee (auch Chai, Ayurdvedische Tees)"
+            2010107:
+              name: "Spezialtee (Stilltee, Indikationsandeutung - unterliegt nicht Arzneimittelgesetz, Basen-Ausgleichstee)"
+            2010108:
+              name: "Probier-, Geschenk-, Mischsets"
+        2010200:
+          name: "Trinkkakao, Carob, Kakaogetränkepulver"
+          children:
+            2010200:
+              name: "Trinkkakao, Carob, Kakaogetränkepulver"
+        2010300:
+          name: "Kaffee"
+          children:
+            2010301:
+              name: "Röstkaffee"
+            2010302:
+              name: "Espresso"
+            2010303:
+              name: "Instantkaffee, Cappuccino"
+            2010304:
+              name: "Grüner Kaffee"
+        2010400:
+          name: "Frucht-, Getreide-, Malzkaffee"
+          children:
+            2010400:
+              name: "Frucht-, Getreide-, Malzkaffee"
+        2010500:
+          name: "Kaffeeweißer, Kaffeesahne"
+          children:
+            2010500:
+              name: "Kaffeeweißer, Kaffeesahne"
+    2020000:
+      name: "Brotaufstrich, Honig"
+      children:
+        2020100:
+          name: "Brotaufstriche würzig (pikant, auch Schmalz)"
+          children:
+            2020100:
+              name: "Brotaufstriche würzig (pikant, auch Schmalz)"
+        2020200:
+          name: "Brotaufstriche, Fruchtaufstriche (süß)"
+          children:
+            2020200:
+              name: "Brotaufstriche, Fruchtaufstriche (süß)"
+        2020300:
+          name: "Nussnougatcreme, Schokoaufstriche, usw."
+          children:
+            2020300:
+              name: "Nussnougatcreme, Schokoaufstriche, usw."
+        2020400:
+          name: "Nussmuse, Tahin"
+          children:
+            2020400:
+              name: "Nussmuse, Tahin"
+        2020500:
+          name: "Honig, Honigprodukte"
+          children:
+            2020500:
+              name: "Honig, Honigprodukte"
+    2030000:
+      name: "Säuglings-, Kindernahrung"
+      children:
+        2030100:
+          name: "Säuglingsnahrung"
+          children:
+            2030100:
+              name: "Säuglingsnahrung"
+        2030200:
+          name: "Babynahrung (Brei)"
+          children:
+            2030200:
+              name: "Babynahrung (Brei)"
+        2030300:
+          name: "Säuglings-, Kindergläschen"
+          children:
+            2030300:
+              name: "Säuglings-, Kindergläschen"
+        2030400:
+          name: "Babygetränke"
+          children:
+            2030400:
+              name: "Babygetränke"
+        2030500:
+          name: "Quetschmus"
+          children:
+            2030500:
+              name: "Quetschmus"
+        2030600:
+          name: "Kinder-Knabberartikel, -Gebäck, -Riegel, usw."
+          children:
+            2030600:
+              name: "Kinder-Knabberartikel, -Gebäck, -Riegel, usw."
+        2030700:
+          name: "Kräuter- und Früchtetee für Säuglinge oder Kleinkinder"
+          children:
+            2030700:
+              name: "Kräuter- und Früchtetee für Säuglinge oder Kleinkinder"
+    2040000:
+      name: "Getreide, Saaten, Hülsenfrüchte"
+      children:
+        2040100:
+          name: "Getreide, Getreideartige (Körner)"
+          children:
+            2040100:
+              name: "Getreide, Getreideartige (Körner)"
+        2040200:
+          name: "Getreideprodukte"
+          children:
+            2040201:
+              name: "Schrote"
+            2040202:
+              name: "Mehle"
+            2040203:
+              name: "Flocken"
+            2040204:
+              name: "Grieß (Bulgur, Couscous, usw.)"
+        2040300:
+          name: "Reis"
+          children:
+            2040300:
+              name: "Reis"
+        2040400:
+          name: "Hülsenfrüchte"
+          children:
+            2040400:
+              name: "Hülsenfrüchte"
+        2040500:
+          name: "Ölsaaten"
+          children:
+            2040500:
+              name: "Ölsaaten"
+        2040600:
+          name: "Keimsaaten"
+          children:
+            2040600:
+              name: "Keimsaaten"
+    2050000:
+      name: "Cerealien (Müsli, Cornflakes, Crunchy)"
+      children:
+        2050100:
+          name: "Müsli"
+          children:
+            2050100:
+              name: "Müsli"
+        2050200:
+          name: "Crunchy"
+          children:
+            2050200:
+              name: "Crunchy"
+        2050300:
+          name: "Granola"
+          children:
+            2050300:
+              name: "Granola"
+        2050400:
+          name: "Frühstücksbreie, Porridge"
+          children:
+            2050400:
+              name: "Frühstücksbreie, Porridge"
+        2050500:
+          name: "Cornflakes, Pops"
+          children:
+            2050500:
+              name: "Cornflakes, Pops"
+        2050600:
+          name: "Toppings"
+          children:
+            2050600:
+              name: "Toppings"
+    2060000:
+      name: "Backerzeugnisse (Brot, Knäcke, Zwieback, gepuffte Waffeln)"
+      children:
+        2060100:
+          name: "Aufbackwaren"
+          children:
+            2060100:
+              name: "Aufbackwaren"
+        2060200:
+          name: "Pizzateig, Pita, Wraps, usw."
+          children:
+            2060200:
+              name: "Pizzateig, Pita, Wraps, usw."
+        2060300:
+          name: "Brot"
+          children:
+            2060301:
+              name: "SB-Brot (länger haltbar)"
+            2060302:
+              name: "Knäckebrot"
+            2060303:
+              name: "Zwieback"
+        2060400:
+          name: "gepuffte Waffeln (Reis-, Mais-, Dinkelwaffeln, usw.)"
+          children:
+            2060400:
+              name: "gepuffte Waffeln (Reis-, Mais-, Dinkelwaffeln, usw.)"
+        2060500:
+          name: "SB Kuchen, Kleingebäck, Tortenböden"
+          children:
+            2060500:
+              name: "SB Kuchen, Kleingebäck, Tortenböden"
+        2060600:
+          name: "Paniermehl, Semmelbrösel"
+          children:
+            2060600:
+              name: "Paniermehl, Semmelbrösel"
+    2070000:
+      name: "Nudeln, Teigwaren (ungekühlt)"
+      children:
+        2070100:
+          name: "Hartweizennudeln"
+          children:
+            2070100:
+              name: "Hartweizennudeln"
+        2070200:
+          name: "Dinkelnudeln"
+          children:
+            2070200:
+              name: "Dinkelnudeln"
+        2070300:
+          name: "gefüllte Nudeln"
+          children:
+            2070300:
+              name: "gefüllte Nudeln"
+        2070400:
+          name: "Nudeln (sonstiger Teig)"
+          children:
+            2070400:
+              name: "Nudeln (sonstiger Teig)"
+        2070500:
+          name: "Suppeneinlagen (Backerbsen, Markklößchen, usw.)"
+          children:
+            2070501:
+              name: "Backerbsen"
+            2070502:
+              name: "Markklößchen"
+            2070503:
+              name: "Sonstige Suppeneinlagen"
+    2080000:
+      name: "Convenience"
+      children:
+        2080100:
+          name: "Konserven"
+          children:
+            2080101:
+              name: "Wurst-, Fleischkonserven"
+            2080102:
+              name: "Vegetarische Fleischersatzkonserven"
+            2080103:
+              name: "Fisch-, Meeresfrüchtekonserven"
+            2080104:
+              name: "Algenkonserven"
+            2080105:
+              name: "Obstkonserven"
+            2080106:
+              name: "Gemüsekonserven"
+            2080107:
+              name: "Tomatenkonserven (pur)"
+            2080108:
+              name: "Pilzkonserven"
+            2080109:
+              name: "Kokoskonserven"
+            2080110:
+              name: "Nuss-, Maronenkonserven, usw."
+            2080111:
+              name: "Dessertsaucen"
+            2080112:
+              name: "Olivenkonserven"
+            2080113:
+              name: "Antipastikonserven (Bruschetta, usw.)"
+            2080114:
+              name: "Salatkonserven (ungekühlt)"
+        2080200:
+          name: "Fertiggerichte, Fertigsaucen"
+          children:
+            2080201:
+              name: "Fertigsaucen (herzhaft, ohne Tomatenbasis)"
+            2080202:
+              name: "Tomaten-, Pasta-, Pizzasaucen"
+            2080203:
+              name: "Suppen, Eintöpfe (Glas, Dose)"
+        2080300:
+          name: "Halbfertiggerichte"
+          children:
+            2080301:
+              name: "Kartoffel Püree, Knödel, Puffer"
+            2080302:
+              name: "Falafel, Taboule, Batirik"
+            2080303:
+              name: "Pfannengerichte"
+            2080304:
+              name: "Burgermischungen"
+        2080400:
+          name: "Fixprodukte, Instantprodukte"
+          children:
+            2080401:
+              name: "Tütensuppen"
+            2080402:
+              name: "Bechergerichte"
+            2080403:
+              name: "Fixe Küche"
+            2080404:
+              name: "Saucen, Saucenbinder"
+            2080405:
+              name: "Nachspeise (süß), Dessertpulver, Eispulver"
+        2080500:
+          name: "Würzsaucen, Grillsaucen, Ketchup, Pesto"
+          children:
+            2080501:
+              name: "Sojasaucen"
+            2080502:
+              name: "Grillsaucen, Würzsaucen"
+            2080503:
+              name: "Ketchup"
+            2080504:
+              name: "Mayonnaise, Salatcreme, Aioli"
+            2080505:
+              name: "Senf"
+            2080506:
+              name: "Pesto"
+            2080507:
+              name: "Chutneys"
+            2080508:
+              name: "Salatsaucen, Dressings"
+        2080600:
+          name: "Würzmittel (trocken, pastös, flüssig)"
+          children:
+            2080601:
+              name: "Brühwürfel"
+            2080602:
+              name: "Brühen (Pulver)"
+            2080603:
+              name: "Hefeextrakt, Hefeflocken"
+            2080604:
+              name: "Flüssigwürzen"
+            2080605:
+              name: "Würzpasten"
+            2080606:
+              name: "Fond, Brühen (flüssig)"
+            2080607:
+              name: "Essig"
+        2080700:
+          name: "Backmischungen"
+          children:
+            2080701:
+              name: "Brot, Brötchen"
+            2080702:
+              name: "Pizza, Quiche, usw. (herzhaft)"
+            2080703:
+              name: "Kuchen, Süßgebäck"
+        2080800:
+          name: "getrocknete Zutaten"
+          children:
+            2080801:
+              name: "getrocknete Algen"
+            2080802:
+              name: "getrocknete Pilze"
+            2080803:
+              name: "getrocknetes Gemüse"
+    2090000:
+      name: "Trockenfrüchte, Nüsse"
+      children:
+        2090100:
+          name: "Nusskerne, Mandeln"
+          children:
+            2090101:
+              name: "Nusskerne, Mandeln, usw. (ganz)"
+            2090102:
+              name: "Nusskerne, Mandeln, usw. (gemahlen, geraspelt, gestiftelt)"
+        2090200:
+          name: "Trockenfrüchte"
+          children:
+            2090200:
+              name: "Trockenfrüchte"
+        2090300:
+          name: "Nuss-, Trockenfruchtmischungen"
+          children:
+            2090300:
+              name: "Nuss-, Trockenfruchtmischungen"
+    2100000:
+      name: "Süßwaren, Knabberartikel"
+      children:
+        2100100:
+          name: "Waffeln, Kekse, Gebäck"
+          children:
+            2100101:
+              name: "Kekse, Gebäck"
+            2100102:
+              name: "Waffeln"
+            2100103:
+              name: "Schokokuss, Schaumwaffeln"
+            2100104:
+              name: "gepuffte Waffeln mit Überzug (Reis-, Mais-, Dinkelwaffeln, usw.)"
+        2100200:
+          name: "Süßwaren"
+          children:
+            2100201:
+              name: "Fruchtgummi, Lakritz, usw. (Kauware)"
+            2100202:
+              name: "Kaugummi"
+            2100203:
+              name: "Lutscher, Bonbons"
+        2100300:
+          name: "Popcorn"
+          children:
+            2100300:
+              name: "Popcorn"
+        2100400:
+          name: "süße Knabberartikel (z.B. schokolierte, kandierte Früchte, Nüsse, usw.)"
+          children:
+            2100400:
+              name: "süße Knabberartikel (z.B. schokolierte, kandierte Früchte, Nüsse, usw.)"
+        2100500:
+          name: "herzhafte Knabberartikel (nicht süß)"
+          children:
+            2100501:
+              name: "Salzgebäck"
+            2100502:
+              name: "Chips, Flips, usw."
+            2100503:
+              name: "würziges Gebäck (Olive, Käse), Cracker, Grissini"
+            2100504:
+              name: "Knabbermischungen (geröstete Erdnüsse, Mandeln, Kürbiskerne, usw.)"
+        2100600:
+          name: "Fruchtschnitten, Riegel (auch schokoliert)"
+          children:
+            2100600:
+              name: "Fruchtschnitten, Riegel (auch schokoliert)"
+        2100700:
+          name: "Schokoladen"
+          children:
+            2100701:
+              name: "Tafelschokolade, Minitafeln, Bruchschokolade"
+            2100702:
+              name: "Schokoriegel"
+            2100703:
+              name: "Schokofiguren"
+        2100800:
+          name: "Pralinen, Konfekt, Marzipankonfekt"
+          children:
+            2100801:
+              name: "Pralinen"
+            2100802:
+              name: "Konfekt"
+            2100803:
+              name: "Marzipan, usw. (Figuren, Brote, Eier, usw.)"
+    2110000:
+      name: "Fette, Öle"
+      children:
+        2110100:
+          name: "Speiseöle"
+          children:
+            2110100:
+              name: "Speiseöle"
+        2110200:
+          name: "Fette (auch Kokosöle)"
+          children:
+            2110200:
+              name: "Fette (auch Kokosöle)"
+    2120000:
+      name: "Gewürze, Salz"
+      children:
+        2120100:
+          name: "Salz, Kräutersalz, Gomasio"
+          children:
+            2120100:
+              name: "Salz, Kräutersalz, Gomasio"
+        2120200:
+          name: "Gewürze, Kräuter (mono)"
+          children:
+            2120200:
+              name: "Gewürze, Kräuter (mono)"
+        2120300:
+          name: "Gewürze, Kräuter (gemischt)"
+          children:
+            2120300:
+              name: "Gewürze, Kräuter (gemischt)"
+    2130000:
+      name: "Backzutaten, Süßungsmittel, Bindemittel"
+      children:
+        2130100:
+          name: "Zucker"
+          children:
+            2130100:
+              name: "Zucker"
+        2130200:
+          name: "Süßungsmittel (Ursüße, Ahornsirup, Agavendicksaft, usw.)"
+          children:
+            2130200:
+              name: "Süßungsmittel (Ursüße, Ahornsirup, Agavendicksaft, usw.)"
+        2130300:
+          name: "Zuckeraustauschstoffe"
+          children:
+            2130300:
+              name: "Zuckeraustauschstoffe"
+        2130400:
+          name: "Backzutaten, Backhilfsmittel"
+          children:
+            2130401:
+              name: "Backmarzipan"
+            2130402:
+              name: "Backfüllungen"
+            2130403:
+              name: "Couvertüre, Kakao, Carob"
+            2130404:
+              name: "Dekor"
+            2130405:
+              name: "Backzutaten, Backhilfsmittel"
+            2130406:
+              name: "Backaromen (z.B. Vanille)"
+        2130500:
+          name: "Geliermittel, Bindemittel"
+          children:
+            2130500:
+              name: "Geliermittel, Bindemittel"
+        2130600:
+          name: "Milchpulver, Milchersatzpulver"
+          children:
+            2130600:
+              name: "Milchpulver, Milchersatzpulver"
+    2140000:
+      name: "Gesundheitsmittel (Kur, Nahrungsergänzung)"
+      children:
+        2140100:
+          name: "Nahrungsergänzungsmittel (nach NEM-Verordnung)"
+          children:
+            2140101:
+              name: "Pulver, Granulate, Extrakte (NEM)"
+            2140102:
+              name: "Tonikas, Elixire, Weine, Sirupe (NEM)"
+            2140103:
+              name: "Kapseln, Tabletten, Dragees, Perlen (NEM)"
+        2140200:
+          name: "Extrakte, Proteinpulver, Gemüse-, Fruchtpulver, Elixire, usw."
+          children:
+            2140201:
+              name: "Pulver, Granulate, Extrakte"
+            2140202:
+              name: "Tonikas, Elixire, Weine, Sirupe"
+            2140203:
+              name: "Kapseln, Tabletten, Dragees, Perlen"
+        2140300:
+          name: "freiverkäufliche Arzneimittel"
+          children:
+            2140300:
+              name: "freiverkäufliche Arzneimittel"
+        2140400:
+          name: "Medizinprodukte (zum Einnehmen)"
+          children:
+            2140400:
+              name: "Medizinprodukte (zum Einnehmen)"
+        2140500:
+          name: "Pflanzensäfte"
+          children:
+            2140500:
+              name: "Pflanzensäfte"
+        2140600:
+          name: "Arzneitees"
+          children:
+            2140600:
+              name: "Arzneitees"
+        2140700:
+          name: "Heilwasser"
+          children:
+            2140700:
+              name: "Heilwasser"
+        2140800:
+          name: "Lebensmittel für besondere medizinische Zwecke"
+          children:
+            2140800:
+              name: "Lebensmittel für besondere medizinische Zwecke"
+        2140900:
+          name: "Tagesrationen für eine gewichtskontrollierende Ernährung"
+          children:
+            2140900:
+              name: "Tagesrationen für eine gewichtskontrollierende Ernährung"
+        2141000:
+          name: "Blütenpollen"
+          children:
+            2141000:
+              name: "Blütenpollen"
+3000000:
+  name: "Getränke"
+  children:
+    3010000:
+      name: "Wasser"
+      children:
+        3010000:
+          name: "Wasser"
+          children:
+            3010000:
+              name: "Wasser"
+    3020000:
+      name: "Saft, Nektare"
+      children:
+        3020100:
+          name: "Fruchtsäfte"
+          children:
+            3020100:
+              name: "Fruchtsäfte"
+        3020200:
+          name: "Nektare"
+          children:
+            3020200:
+              name: "Nektare"
+        3020300:
+          name: "Gemüsesäfte"
+          children:
+            3020300:
+              name: "Gemüsesäfte"
+        3020400:
+          name: "Gemüsemoste"
+          children:
+            3020400:
+              name: "Gemüsemoste"
+        3020500:
+          name: "Gemüsetrunke"
+          children:
+            3020500:
+              name: "Gemüsetrunke"
+        3020600:
+          name: "Mischgetränke (Obst-, Gemüsebasis)"
+          children:
+            3020600:
+              name: "Mischgetränke (Obst-, Gemüsebasis)"
+        3020700:
+          name: "Smoothies"
+          children:
+            3020700:
+              name: "Smoothies"
+        3020800:
+          name: "Sirupe, Dicksaft, Vollfrucht"
+          children:
+            3020800:
+              name: "Sirupe, Dicksaft, Vollfrucht"
+        3020900:
+          name: "100% Frucht-Muttersäfte"
+          children:
+            3020900:
+              name: "100% Frucht-Muttersäfte"
+    3030000:
+      name: "Erfrischungsgetränke"
+      children:
+        3030100:
+          name: "Limonade, Cola"
+          children:
+            3030100:
+              name: "Limonade, Cola"
+        3030200:
+          name: "Schorle, Fruchtsaftgetränke"
+          children:
+            3030200:
+              name: "Schorle, Fruchtsaftgetränke"
+        3030300:
+          name: "Kokosdrinks, Kokoswasser"
+          children:
+            3030300:
+              name: "Kokosdrinks, Kokoswasser"
+        3030400:
+          name: "Near-water-Getränke, Vitaminwasser, aromatisierte Mineralwasser"
+          children:
+            3030400:
+              name: "Near-water-Getränke, Vitaminwasser, aromatisierte Mineralwasser"
+        3030500:
+          name: "Energiedrinks"
+          children:
+            3030500:
+              name: "Energiedrinks"
+        3030600:
+          name: "Cocktails"
+          children:
+            3030600:
+              name: "Cocktails"
+    3040000:
+      name: "Wellnessgetränke"
+      children:
+        3040100:
+          name: "Gärgetränke, Enzymgetränke (Kwaz, Kombucha, usw.)"
+          children:
+            3040100:
+              name: "Gärgetränke, Enzymgetränke (Kwaz, Kombucha, usw.)"
+        3040900:
+          name: "Sonstige Wellnessgetränke (Aloe, Weizengras, Kurkumasaft, usw.)"
+          children:
+            3040900:
+              name: "Sonstige Wellnessgetränke (Aloe, Weizengras, Kurkumasaft, usw.)"
+    3050000:
+      name: "Kaffee-, Teegetränke"
+      children:
+        3050100:
+          name: "Kaffeegetränke (Soypresso, usw.)"
+          children:
+            3050100:
+              name: "Kaffeegetränke (Soypresso, usw.)"
+        3050200:
+          name: "Fertig-Teegetränke"
+          children:
+            3050200:
+              name: "Fertig-Teegetränke"
+    3060000:
+      name: "Bier, Biermixgetränke"
+      children:
+        3060100:
+          name: "Bier"
+          children:
+            3060100:
+              name: "Bier"
+        3060200:
+          name: "Mixgetränke (Radler, Malzgetränke, usw.)"
+          children:
+            3060200:
+              name: "Mixgetränke (Radler, Malzgetränke, usw.)"
+        3060300:
+          name: "Alkoholfreies Bier"
+          children:
+            3060300:
+              name: "Alkoholfreies Bier"
+        3060400:
+          name: "Alkoholfreie Mixgetränke (Radler, Malzgetränke, usw.)"
+          children:
+            3060400:
+              name: "Alkoholfreie Mixgetränke (Radler, Malzgetränke, usw.)"
+    3070000:
+      name: "Wein, Schaumwein"
+      children:
+        3070100:
+          name: "Wein aus Deutschland"
+          children:
+            3070100:
+              name: "Wein aus Deutschland"
+        3070200:
+          name: "Wein aus Frankreich"
+          children:
+            3070200:
+              name: "Wein aus Frankreich"
+        3070300:
+          name: "Wein aus Italien"
+          children:
+            3070300:
+              name: "Wein aus Italien"
+        3070400:
+          name: "Wein aus Österreich"
+          children:
+            3070400:
+              name: "Wein aus Österreich"
+        3070500:
+          name: "Wein aus Spanien"
+          children:
+            3070500:
+              name: "Wein aus Spanien"
+        3070600:
+          name: "Wein aus Griechenland"
+          children:
+            3070600:
+              name: "Wein aus Griechenland"
+        3070700:
+          name: "Wein aus Südafrika"
+          children:
+            3070700:
+              name: "Wein aus Südafrika"
+        3071900:
+          name: "Wein aus sonstigen Ländern"
+          children:
+            3071900:
+              name: "Wein aus sonstigen Ländern"
+        3072100:
+          name: "Sekt, Schaumwein"
+          children:
+            3072100:
+              name: "Sekt, Schaumwein"
+    3080000:
+      name: "Portwein, Sherry, usw. (aufgespritet)"
+      children:
+        3080000:
+          name: "Portwein, Sherry, usw. (aufgespritet)"
+          children:
+            3080000:
+              name: "Portwein, Sherry, usw. (aufgespritet)"
+    3090000:
+      name: "Spirituosen, Liköre"
+      children:
+        3090000:
+          name: "Spirituosen, Liköre"
+          children:
+            3090000:
+              name: "Spirituosen, Liköre"
+    3100000:
+      name: "Punsch, Glühwein"
+      children:
+        3100000:
+          name: "Punsch, Glühwein"
+          children:
+            3100000:
+              name: "Punsch, Glühwein"
+    3110000:
+      name: "weinähnliche Getränke"
+      children:
+        3110100:
+          name: "Obstwein"
+          children:
+            3110100:
+              name: "Obstwein"
+        3110200:
+          name: "Met (Honigwein)"
+          children:
+            3110200:
+              name: "Met (Honigwein)"
+        3110300:
+          name: "Cidre"
+          children:
+            3110300:
+              name: "Cidre"
+        3110400:
+          name: "Mixgetränke (Weinschorle, usw.)"
+          children:
+            3110400:
+              name: "Mixgetränke (Weinschorle, usw.)"
+        3110500:
+          name: "Wein-, Sekt-Alternativen (alkoholfrei)"
+          children:
+            3110500:
+              name: "Wein-, Sekt-Alternativen (alkoholfrei)"
+4000000:
+  name: "Drogerie"
+  children:
+    4010000:
+      name: "Kosmetik"
+      children:
+        4010100:
+          name: "Gesichtsprodukte"
+          children:
+            4010101:
+              name: "Gesichtsreinigung"
+            4010102:
+              name: "Gesichtslotion, -creme, -gel"
+            4010103:
+              name: "Toner, Seren, Gesichtswasser"
+            4010104:
+              name: "Masken, Kuren, Öle"
+            4010105:
+              name: "Augenpflege"
+            4010106:
+              name: "Lippenpflege"
+        4010200:
+          name: "Haarprodukte"
+          children:
+            4010201:
+              name: "Shampoo, Reinigung"
+            4010202:
+              name: "Spülung, Kur"
+            4010203:
+              name: "Haarfarben"
+            4010204:
+              name: "Haarstyling"
+        4010300:
+          name: "Körperprodukte"
+          children:
+            4010301:
+              name: "Körperlotion, -creme"
+            4010302:
+              name: "Körperöle, Massageöle"
+            4010303:
+              name: "Hand-, Nagelpflege"
+            4010304:
+              name: "Fuß-, Beinpflege"
+            4010305:
+              name: "Deodorantien"
+            4010306:
+              name: "Duschbad, Peeling"
+            4010307:
+              name: "Schaumbad, Badezusätze"
+            4010308:
+              name: "Seife, Waschlotionen"
+            4010309:
+              name: "Intimpflege"
+        4010400:
+          name: "Mundprodukte"
+          children:
+            4010401:
+              name: "Zahnpflege"
+            4010402:
+              name: "Mundpflege"
+        4010500:
+          name: "Dekorative Kosmetik"
+          children:
+            4010501:
+              name: "Make up, Puder, Rouge"
+            4010502:
+              name: "Lippen (deko)"
+            4010503:
+              name: "Augen (deko)"
+            4010504:
+              name: "Nagel (deko)"
+        4010600:
+          name: "Mutter-Kind Kosmetik (Baby)"
+          children:
+            4010601:
+              name: "Creme, Öle, Lotionen"
+            4010602:
+              name: "Baden, Waschen"
+            4010603:
+              name: "Schwangerschaft, Stillzeit"
+        4010700:
+          name: "Sonnenschutz"
+          children:
+            4010700:
+              name: "Sonnenschutz"
+        4010800:
+          name: "Insektenschutz"
+          children:
+            4010800:
+              name: "Insektenschutz"
+        4010900:
+          name: "Rasur, Haarentfernung"
+          children:
+            4010901:
+              name: "Rasur"
+            4010902:
+              name: "Aftershave"
+            4010903:
+              name: "Haarentfernung"
+        4011000:
+          name: "Parfum"
+          children:
+            4011001:
+              name: "Parfum"
+            4011002:
+              name: "Eau de Toilette"
+        4011100:
+          name: "Grund-, Rohstoffe, Basisöle"
+          children:
+            4011100:
+              name: "Grund-, Rohstoffe, Basisöle"
+        4011200:
+          name: "Kosmetik mit medizinischer Indikation (Wundsalben, therap. Hautschutz)"
+          children:
+            4011200:
+              name: "Kosmetik mit medizinischer Indikation (Wundsalben, therap. Hautschutz)"
+        4011300:
+          name: "Probier-, Reise-, Geschenksets (keine onpacks)"
+          children:
+            4011300:
+              name: "Probier-, Reise-, Geschenksets (keine onpacks)"
+    4020000:
+      name: "Hygiene"
+      children:
+        4020100:
+          name: "Toilettenpapier, Küchentücher, Kosmetiktücher, Taschentücher"
+          children:
+            4020100:
+              name: "Toilettenpapier, Küchentücher, Kosmetiktücher, Taschentücher"
+        4020200:
+          name: "Säuglings-, Kinderhygieneartikel"
+          children:
+            4020201:
+              name: "Windeln, Einmal-Wickelunterlagen"
+            4020202:
+              name: "Feucht-, Reinigungstücher"
+        4020300:
+          name: "Tampons, Binden, Inkontinenz, usw."
+          children:
+            4020300:
+              name: "Tampons, Binden, Inkontinenz, usw."
+        4020400:
+          name: "Zubehör Körperpflege, Kosmetik"
+          children:
+            4020401:
+              name: "Zahnbürsten, Zungenbürsten, Zahnseide, usw."
+            4020402:
+              name: "Rasurzubehör"
+            4020403:
+              name: "Schminkzubehör (Schwämmchen, Pinsel, Spatel, Nachfüllbehälter, usw.)"
+            4020404:
+              name: "Haarbürsten, Haarkämme"
+            4020405:
+              name: "Massagezubehör"
+            4020406:
+              name: "Seifensäckchen"
+            4020407:
+              name: "Körperpflege- und Kosmetikbürsten (Hand- und Nagelbürsten, usw.)"
+        4020500:
+          name: "Watte, Wattestäbchen, Wattepads"
+          children:
+            4020500:
+              name: "Watte, Wattestäbchen, Wattepads"
+        4020600:
+          name: "Verhütungsmittel"
+          children:
+            4020600:
+              name: "Verhütungsmittel"
+        4020700:
+          name: "Hautdesinfektion"
+          children:
+            4020700:
+              name: "Hautdesinfektion"
+    4030000:
+      name: "Medizin- und Medizinhilfsprodukte"
+      children:
+        4030000:
+          name: "Medizin- und Medizinhilfsprodukte"
+          children:
+            4030100:
+              name: "Medizinische Hilfsprodukte (z.B. Nasendusche, Ohrkerze, Pflaster)"
+            4030200:
+              name: "Medizinprodukte äußerlich"
+5000000:
+  name: "Nonfood"
+  children:
+    5020000:
+      name: "Spielwaren, Malen, Basteln"
+      children:
+        5020100:
+          name: "Spielwaren"
+          children:
+            5020101:
+              name: "Brettspiele"
+            5020102:
+              name: "Kartenspiele"
+            5020103:
+              name: "Plüschtiere, Puppen"
+            5020104:
+              name: "Holzspielzeug"
+            5020105:
+              name: "Outdoor"
+            5020109:
+              name: "Sonstige Spielwaren"
+        5020200:
+          name: "Malen"
+          children:
+            5020200:
+              name: "Malen"
+        5020300:
+          name: "Basteln"
+          children:
+            5020300:
+              name: "Basteln"
+    5030000:
+      name: "Schreibwaren"
+      children:
+        5030100:
+          name: "Geschenkpapier"
+          children:
+            5030100:
+              name: "Geschenkpapier"
+        5030200:
+          name: "Stifte, Radierer, Anspitzer"
+          children:
+            5030200:
+              name: "Stifte, Radierer, Anspitzer"
+        5030300:
+          name: "Hefte, Kladden, Schreibpapier"
+          children:
+            5030300:
+              name: "Hefte, Kladden, Schreibpapier"
+        5030400:
+          name: "Ansichtskarten, Glückwunschkarten"
+          children:
+            5030400:
+              name: "Ansichtskarten, Glückwunschkarten"
+    5040000:
+      name: "Verlagswaren"
+      children:
+        5040100:
+          name: "Zeitschriften, Zeitungen"
+          children:
+            5040100:
+              name: "Zeitschriften, Zeitungen"
+        5040200:
+          name: "Bücher"
+          children:
+            5040200:
+              name: "Bücher"
+        5040300:
+          name: "Landkarten"
+          children:
+            5040300:
+              name: "Landkarten"
+        5040400:
+          name: "Kalender"
+          children:
+            5040400:
+              name: "Kalender"
+    5050000:
+      name: "Medien"
+      children:
+        5050100:
+          name: "Audio"
+          children:
+            5050100:
+              name: "Audio"
+        5050200:
+          name: "Video"
+          children:
+            5050200:
+              name: "Video"
+    5060000:
+      name: "Textilien, Schuhe"
+      children:
+        5060100:
+          name: "Schuhe"
+          children:
+            5060100:
+              name: "Schuhe"
+        5060200:
+          name: "Bekleidung"
+          children:
+            5060201:
+              name: "Babybekleidung"
+            5060202:
+              name: "Kinderbekleidung"
+            5060203:
+              name: "Damenbekleidung"
+            5060204:
+              name: "Herrenbekleidung"
+            5060205:
+              name: "Socken"
+            5060206:
+              name: "Handschuhe"
+            5060207:
+              name: "Mützen, Kappen, Hüte"
+            5060208:
+              name: "Schals, Tücher, Gürtel"
+            5060209:
+              name: "Sonstige Bekleidung"
+        5060300:
+          name: "Heimtextilien"
+          children:
+            5060301:
+              name: "Kissen"
+            5060302:
+              name: "Decken"
+            5060303:
+              name: "Handtücher, Waschlappen"
+            5060304:
+              name: "Bettwäsche"
+            5060305:
+              name: "Felle"
+            5060306:
+              name: "Matratzen"
+            5060307:
+              name: "Matten, Badvorleger, Teppiche"
+            5060308:
+              name: "Stoffe, Garne, Nähbedarf"
+    5070000:
+      name: "Accessoires, Dekoration"
+      children:
+        5070100:
+          name: "Haarschmuck"
+          children:
+            5070100:
+              name: "Haarschmuck"
+        5070200:
+          name: "Schmuck"
+          children:
+            5070200:
+              name: "Schmuck"
+        5070300:
+          name: "Brillen"
+          children:
+            5070300:
+              name: "Brillen"
+        5070400:
+          name: "Taschen"
+          children:
+            5070400:
+              name: "Taschen"
+        5070500:
+          name: "Edelsteine"
+          children:
+            5070500:
+              name: "Edelsteine"
+    5080000:
+      name: "Haushaltswaren"
+      children:
+        5080100:
+          name: "Verpackungen, Taschen, Geschenkverpackungen"
+          children:
+            5080100:
+              name: "Verpackungen, Taschen, Geschenkverpackungen"
+        5080200:
+          name: "Vorratsbehälter"
+          children:
+            5080200:
+              name: "Vorratsbehälter"
+        5080300:
+          name: "Kerzen, Leuchter, Feuermittel"
+          children:
+            5080301:
+              name: "Stabkerzen"
+            5080302:
+              name: "Stumpenkerzen"
+            5080303:
+              name: "Teelichte"
+            5080304:
+              name: "Baumkerzen"
+            5080305:
+              name: "Duftkerzen"
+            5080306:
+              name: "Dekokerzen"
+            5080307:
+              name: "Leuchter"
+            5080308:
+              name: "Feuermittel"
+        5080400:
+          name: "Geschirr, Trinkgefäße"
+          children:
+            5080400:
+              name: "Geschirr, Trinkgefäße"
+        5080500:
+          name: "Putz-, Reinigungszubehör (Bürsten, Besen, Schwämme, Dosierhilfen)"
+          children:
+            5080500:
+              name: "Putz-, Reinigungszubehör (Bürsten, Besen, Schwämme, Dosierhilfen)"
+        5080600:
+          name: "Keimgeräte"
+          children:
+            5080600:
+              name: "Keimgeräte"
+        5080700:
+          name: "Mühlen"
+          children:
+            5080700:
+              name: "Mühlen"
+        5080800:
+          name: "Töpfe, Pfannen"
+          children:
+            5080800:
+              name: "Töpfe, Pfannen"
+        5080900:
+          name: "Wasserfilter-, Sprudelsysteme"
+          children:
+            5080900:
+              name: "Wasserfilter-, Sprudelsysteme"
+        5081000:
+          name: "Küchengeräte (z.B. Smoothie-Maker, Joghurtbereiter)"
+          children:
+            5081000:
+              name: "Küchengeräte (z.B. Smoothie-Maker, Joghurtbereiter)"
+        5081100:
+          name: "Korbwaren"
+          children:
+            5081100:
+              name: "Korbwaren"
+        5081200:
+          name: "Schädlingsbekämpfung"
+          children:
+            5081200:
+              name: "Schädlingsbekämpfung"
+        5081300:
+          name: "Zubehör Tee, Kaffee"
+          children:
+            5081300:
+              name: "Zubehör Tee, Kaffee"
+        5081400:
+          name: "Verbrauchsmaterialien (Müllbeutel, Servietten, Backpapier, Folien, usw.)"
+          children:
+            5081400:
+              name: "Verbrauchsmaterialien (Müllbeutel, Servietten, Backpapier, Folien, usw.)"
+        5081500:
+          name: "Mehrwegartikel (Brotbeutel, Mehrwegnetze, Eierboxen, Spender, Dosierhilfen, usw.)"
+          children:
+            5081500:
+              name: "Mehrwegartikel (Brotbeutel, Mehrwegnetze, Eierboxen, Spender, Dosierhilfen, usw.)"
+    5090000:
+      name: "Wasch-, Putz-, Reinigungsmittel (WPR)"
+      children:
+        5090100:
+          name: "Wasch-, Waschhilfsmittel, Wäschepflege"
+          children:
+            5090101:
+              name: "Colorwaschmittel"
+            5090102:
+              name: "Waschmittel, Vollwaschmittel"
+            5090103:
+              name: "Woll-, Feinwaschmittel"
+            5090104:
+              name: "Bleiche, Wasserenthärter, Fleckenentferner (Gallseife, usw.)"
+            5090105:
+              name: "Weichspüler"
+            5090106:
+              name: "Waschnüsse, Waschbälle"
+            5090107:
+              name: "Spezialwaschmittel (Funktionswäsche, usw.)"
+            5090108:
+              name: "Wäschepflege (Wollkur, Sprühstärke, Bügelhilfe, usw.)"
+            5090109:
+              name: "Wäschedesinfektion"
+        5090200:
+          name: "Geschirrspülmittel"
+          children:
+            5090201:
+              name: "Handspülmittel"
+            5090202:
+              name: "Maschinenspülmittel, Salz, Klarspüler"
+        5090300:
+          name: "Putz-, Pflegemittel"
+          children:
+            5090301:
+              name: "Universalreiniger"
+            5090302:
+              name: "Glasreiniger"
+            5090303:
+              name: "Boden-, Flächenreiniger"
+            5090304:
+              name: "WC Reiniger"
+            5090305:
+              name: "Badreiniger"
+            5090306:
+              name: "Entkalker"
+            5090307:
+              name: "Küchenreiniger"
+            5090308:
+              name: "Schuhpflege"
+            5090309:
+              name: "Möbelpflege"
+            5090310:
+              name: "Reinigungsartikel (Außenbereich)"
+            5090311:
+              name: "Spezialreinigungsmittel (Anti-Schimmel, usw.)"
+            5090312:
+              name: "Flächendesinfektion"
+    5100000:
+      name: "Ätherische Öle, Lampen, Räuchern"
+      children:
+        5100100:
+          name: "Ätherische Öle"
+          children:
+            5100100:
+              name: "Ätherische Öle"
+        5100200:
+          name: "Duftlampen, -steine, -brunnen"
+          children:
+            5100200:
+              name: "Duftlampen, -steine, -brunnen"
+        5100300:
+          name: "Räucherwerk, Räucherzubehör"
+          children:
+            5100300:
+              name: "Räucherwerk, Räucherzubehör"
+        5100400:
+          name: "Lufterfrischer, Raumspray, Raumdüfte"
+          children:
+            5100400:
+              name: "Lufterfrischer, Raumspray, Raumdüfte"
+        5100500:
+          name: "Hydrolate"
+          children:
+            5100500:
+              name: "Hydrolate"
+        5100600:
+          name: "Duftgeschenke"
+          children:
+            5100600:
+              name: "Duftgeschenke"
+        5100700:
+          name: "Saunamischung"
+          children:
+            5100700:
+              name: "Saunamischung"
+    5110000:
+      name: "Hobby, Haus, Garten"
+      children:
+        5110100:
+          name: "Saaten"
+          children:
+            5110100:
+              name: "Saaten"
+        5110200:
+          name: "Gartenbedarf, Blumenerde"
+          children:
+            5110200:
+              name: "Gartenbedarf, Blumenerde"
+        5110300:
+          name: "Pflanzen"
+          children:
+            5110301:
+              name: "Zierpflanzen (im Topf)"
+            5110302:
+              name: "Jungpflanzen (Obst, Gemüse)"
+            5110303:
+              name: "Pflanzzwiebeln"
+            5110304:
+              name: "Solosträuße (nur Rosen, nur Tulpen, usw.)"
+            5110305:
+              name: "gemischte Sträuße"
+        5110400:
+          name: "Naturfarben, Lacke, Öle (auch Anti-Schimmel-Farben)"
+          children:
+            5110400:
+              name: "Naturfarben, Lacke, Öle (auch Anti-Schimmel-Farben)"
+        5110500:
+          name: "Düngemittel, Pflanzenschutz"
+          children:
+            5110500:
+              name: "Düngemittel, Pflanzenschutz"
+        5110600:
+          name: "Baustoffe"
+          children:
+            5110600:
+              name: "Baustoffe"
+        5110700:
+          name: "Naturmöbel"
+          children:
+            5110700:
+              name: "Naturmöbel"
+        5110800:
+          name: "Grillbedarf"
+          children:
+            5110800:
+              name: "Grillbedarf"
+    5120000:
+      name: "Baby-, Kleinkindbedarf"
+      children:
+        5120100:
+          name: "Schnuller, Sauger"
+          children:
+            5120100:
+              name: "Schnuller, Sauger"
+        5120200:
+          name: "Fläschchen, Becher, Schüsseln, Löffel, Tassen"
+          children:
+            5120200:
+              name: "Fläschchen, Becher, Schüsseln, Löffel, Tassen"
+        5120300:
+          name: "Zahnhilfen (Beißringe, Veilchenwurzel, Fingerbürste)"
+          children:
+            5120300:
+              name: "Zahnhilfen (Beißringe, Veilchenwurzel, Fingerbürste)"
+        5120400:
+          name: "Töpfchen, Toilettensitze"
+          children:
+            5120400:
+              name: "Töpfchen, Toilettensitze"
+    5130000:
+      name: "Zigaretten, Tabak"
+      children:
+        5130100:
+          name: "Zigaretten"
+          children:
+            5130100:
+              name: "Zigaretten"
+        5130200:
+          name: "Tabak (lose)"
+          children:
+            5130200:
+              name: "Tabak (lose)"
+        5130300:
+          name: "Blättchen, Filter, Stopfer, usw."
+          children:
+            5130300:
+              name: "Blättchen, Filter, Stopfer, usw."
+    5140000:
+      name: "Verkaufszubehör"
+      children:
+        5140100:
+          name: "Tragetaschen, Tragehilfen"
+          children:
+            5140101:
+              name: "Papier, Karton"
+            5140102:
+              name: "Kunststoff"
+            5140103:
+              name: "Stoff"
+        5140200:
+          name: "Verpackungsmaterial, Verbrauchsmaterial"
+          children:
+            5140201:
+              name: "Käsepapier, Einpackpapier"
+            5140202:
+              name: "Tüten, Bodenbeutel aus Papier"
+            5140203:
+              name: "Tüten, Bodenbeutel aus Kunststoff"
+            5140204:
+              name: "Verschlussmaterialien"
+            5140205:
+              name: "Antipasti-Becher (Deckel)"
+            5140206:
+              name: "Verkostungshilfen (Piker, Länderfähnchen, usw.)"
+            5140208:
+              name: "Einwegbecher, Mitnahmeboxen (ToGo, Getränke, Speisen)"
+            5140209:
+              name: "Eierkartons"
+            5140210:
+              name: "Etiketten, Bonrollen, Preisauszeichnungen"
+            5140211:
+              name: "Kühlakkus"
+        5140300:
+          name: "Werbematerialien, Werbegeschenke (Prospekte, Flyer, Plakate, usw.)"
+          children:
+            5140300:
+              name: "Werbematerialien, Werbegeschenke (Prospekte, Flyer, Plakate, usw.)"
+    5150000:
+      name: "Geschäftsausstattung"
+      children:
+        5150100:
+          name: "Bistro, Verkostung, Thekenzubehör"
+          children:
+            5150101:
+              name: "Mehrweg-Besteck (Löffel, Gabeln, Messer)"
+            5150102:
+              name: "Mehrweg-Geschirr (Kaffee-, Teetassen, Teller, Gläser)"
+            5150103:
+              name: "Serviceartikel (Tabletts, usw.)"
+            5150104:
+              name: "Aufsteller, Schilder"
+            5150105:
+              name: "Geräte (Folienroller, Abschneider, usw.)"
+            5150106:
+              name: "Schalen, Geschirr (Platten, Präsentationsgeschirr, Drehteller, Bretter, usw.)"
+            5150107:
+              name: "Thekenwerkzeug (Griffzangen, Fleischgabeln, Schneidwerkzeuge, Schneidbretter, usw.)"
+        5150200:
+          name: "Obst-, Gemüse-Zubehör"
+          children:
+            5150200:
+              name: "Obst-, Gemüse-Zubehör"
+        5150300:
+          name: "Kassenzubehör"
+          children:
+            5150300:
+              name: "Kassenzubehör"
+        5150400:
+          name: "Verkaufs-, Präsentationshilfen"
+          children:
+            5150401:
+              name: "Scannerschienen"
+            5150402:
+              name: "Fachteilersysteme"
+            5150403:
+              name: "Präsentationshilfen (Korbwaren, Bäckerbleche, usw.)"
+            5150404:
+              name: "Preistafeln, Beschriftungsmaterial"
+            5150405:
+              name: "Prospekthalter, Aufsteller"
+            5150406:
+              name: "Regalstopper, Aktionssterne"
+            5150407:
+              name: "Außenwerbung (z.B. Blowflag, Plakataußenständer)"
+        5150500:
+          name: "Warenträger (Regale, usw.)"
+          children:
+            5150500:
+              name: "Warenträger (Regale, usw.)"
+        5150600:
+          name: "Büro, Verwaltung (auch Geräte, Preisauszeichner)"
+          children:
+            5150600:
+              name: "Büro, Verwaltung (auch Geräte, Preisauszeichner)"
+        5150700:
+          name: "Einkaufskörbe, -wagen"
+          children:
+            5150700:
+              name: "Einkaufskörbe, -wagen"
+6000000:
+  name: "Tiernahrung, Tierbedarf"
+  children:
+    6010000:
+      name: "Tiernahrung"
+      children:
+        6010100:
+          name: "Trockenfutter"
+          children:
+            6010100:
+              name: "Trockenfutter"
+        6010200:
+          name: "Nassfutter"
+          children:
+            6010200:
+              name: "Nassfutter"
+        6010300:
+          name: "Snacks"
+          children:
+            6010300:
+              name: "Snacks"
+        6010400:
+          name: "SB Heimtiernahrung (gekühlt)"
+          children:
+            6010400:
+              name: "SB Heimtiernahrung (gekühlt)"
+        6010500:
+          name: "TK Heimtiernahrung"
+          children:
+            6010500:
+              name: "TK Heimtiernahrung"
+    6020000:
+      name: "Tierzubehör"
+      children:
+        6020000:
+          name: "Tierzubehör"
+          children:
+            6020000:
+              name: "Tierzubehör"
+    6030000:
+      name: "Tierpflege"
+      children:
+        6030000:
+          name: "Tierpflege"
+          children:
+            6030000:
+              name: "Tierpflege"
+7000000:
+  name: "Bistro, Gastro, Imbiss"
+  children:
+    7010000:
+      name: "Heißgetränke"
+    7020000:
+      name: "Kaltgetränke"
+    7030000:
+      name: "Smoothies"
+    7040000:
+      name: "trockene Backwaren"
+    7050000:
+      name: "belegte Backwaren"
+    7060000:
+      name: "Kuchen, Torten, Desserts"
+    7070000:
+      name: "warme Gerichte"
+    7080000:
+      name: "Snacks (herzhaft)"
+    7090000:
+      name: "Snacks (süß)"
+    7100000:
+      name: "Salate, Buffet (Portionsartikel)"
+    7110000:
+      name: "Salate, Buffet (Wiegeartikel)"
+    7120000:
+      name: "Menüs, Kombinationen"
+8000000:
+  name: "Obst, Gemüse, Kräuter, Pflanzen"
+  children:
+    8010000:
+      name: "Beerenobst"
+      children:
+        8010100:
+          name: "Erdbeeren"
+          children:
+            8010100:
+              name: "Erdbeeren"
+        8010200:
+          name: "Heidelbeeren"
+          children:
+            8010200:
+              name: "Heidelbeeren"
+        8010300:
+          name: "Himbeeren"
+          children:
+            8010300:
+              name: "Himbeeren"
+        8010400:
+          name: "Brombeeren"
+          children:
+            8010400:
+              name: "Brombeeren"
+        8010500:
+          name: "Johannisbeeren"
+          children:
+            8010501:
+              name: "Johannisbeeren (schwarz)"
+            8010502:
+              name: "Johannisbeeren (rot)"
+            8010503:
+              name: "Johannisbeeren (weiß)"
+            8010504:
+              name: "Johannisbeeren (Mix, divers)"
+        8010600:
+          name: "Stachelbeeren"
+          children:
+            8010601:
+              name: "Stachelbeeren (grün)"
+            8010602:
+              name: "Stachelbeeren (rot)"
+        8010700:
+          name: "Preiselbeeren"
+          children:
+            8010700:
+              name: "Preiselbeeren"
+        8010800:
+          name: "Beeren-Mix"
+          children:
+            8010800:
+              name: "Beeren-Mix"
+        8010900:
+          name: "Sonstiges Beerenobst"
+          children:
+            8010901:
+              name: "Walderdbeeren"
+            8010902:
+              name: "Gojibeeren"
+            8010903:
+              name: "Maulbeeren"
+            8010904:
+              name: "Cranberries"
+            8010905:
+              name: "Aronia Apfelbeeren"
+            8010906:
+              name: "Boysenbeeren"
+            8010909:
+              name: "Sonstiges Beerenobst"
+    8020000:
+      name: "Kernobst"
+      children:
+        8020100:
+          name: "Äpfel"
+          children:
+            8020101:
+              name: "Lagersorten"
+            8020102:
+              name: "Frühe Sorten (nicht lagerfähig)"
+        8020200:
+          name: "Birnen"
+          children:
+            8020201:
+              name: "Birnen (grün)"
+            8020202:
+              name: "Birnen (rot)"
+            8020203:
+              name: "Birnen (Nashi)"
+        8020900:
+          name: "Sonstiges Kernobst"
+          children:
+            8020901:
+              name: "Quitten"
+            8020902:
+              name: "Mispeln"
+            8020903:
+              name: "Speierlinge"
+            8020909:
+              name: "Sonstiges Kernobst"
+    8030000:
+      name: "Steinobst"
+      children:
+        8030100:
+          name: "Kirschen"
+          children:
+            8030101:
+              name: "Süßkirschen"
+            8030102:
+              name: "Sauerkirschen"
+        8030200:
+          name: "Pflaumen"
+          children:
+            8030201:
+              name: "Pflaumen (rot)"
+            8030202:
+              name: "Pflaumen (gelb)"
+            8030203:
+              name: "Pflaumen (schwarz)"
+            8030204:
+              name: "Pflaumen (Mix, divers)"
+            8030205:
+              name: "Zwetschgen / Zwetschen"
+            8030206:
+              name: "Mirabellen"
+            8030207:
+              name: "Reneclauden / Renekloden"
+        8030300:
+          name: "Pfirsiche, Nektarinen"
+          children:
+            8030301:
+              name: "Nektarinen (gelbfleischig)"
+            8030302:
+              name: "Nektarinen (weißfleischig)"
+            8030303:
+              name: "Plattnektarinen (weißfleischig)"
+            8030304:
+              name: "Plattnektarinen (gelbfleischig)"
+            8030305:
+              name: "Pfirsiche (gelbfleischig)"
+            8030306:
+              name: "Pfirsiche (weißfleischig)"
+            8030307:
+              name: "Pfirsiche (rotfleischig)"
+            8030308:
+              name: "Pfirsiche (orangefleischig)"
+            8030309:
+              name: "Plattpfirsiche (gelbfleischig)"
+            8030310:
+              name: "Plattpfirsiche (weißfleischig)"
+            8030311:
+              name: "Weinbergpfirsiche"
+        8030400:
+          name: "Aprikosen / Marille"
+          children:
+            8030400:
+              name: "Aprikosen / Marille"
+        8030900:
+          name: "Sonstiges Steinobst (Nectacot, usw.)"
+          children:
+            8030900:
+              name: "Sonstiges Steinobst (Nectacot, usw.)"
+    8040000:
+      name: "Zitrusfrüchte"
+      children:
+        8040100:
+          name: "Orangen"
+          children:
+            8040101:
+              name: "Navelorangen"
+            8040102:
+              name: "Blondorangen"
+            8040103:
+              name: "Blut- / Halbblutorangen"
+            8040104:
+              name: "Bitterorangen"
+        8040200:
+          name: "Clementinen, Mandarinen, usw."
+          children:
+            8040201:
+              name: "Mandarinen"
+            8040202:
+              name: "Clementinen"
+            8040203:
+              name: "Blutclementinen"
+            8040204:
+              name: "Satsumas"
+            8040205:
+              name: "Minneolas (Tangelos)"
+        8040300:
+          name: "Zitronen, Limetten"
+          children:
+            8040301:
+              name: "Zitronen"
+            8040302:
+              name: "Limetten"
+            8040303:
+              name: "Zitronat-Zitronen"
+            8040304:
+              name: "Kaviarlimetten"
+        8040400:
+          name: "Grapefruits, Pampelmusen"
+          children:
+            8040401:
+              name: "Grapefruits (rot)"
+            8040402:
+              name: "Grapefruits (rosa, pink)"
+            8040403:
+              name: "Grapefruits (weiß)"
+            8040404:
+              name: "Sweeties"
+            8040405:
+              name: "Pomelos"
+            8040406:
+              name: "Pampelmusen"
+        8040900:
+          name: "Sonstige Zitrusfrüchte"
+          children:
+            8040901:
+              name: "Kumquats"
+            8040902:
+              name: "Limquats"
+            8040903:
+              name: "Bergamotte"
+            8040909:
+              name: "Sonstige Zitrusfrüchte"
+    8050000:
+      name: "Tafeltrauben / Weintrauben"
+      children:
+        8050100:
+          name: "Tafeltrauben / Weintrauben (mit Kernen)"
+          children:
+            8050101:
+              name: "Trauben (mit Kernen, weiß)"
+            8050102:
+              name: "Trauben (mit Kernen, rosa)"
+            8050103:
+              name: "Trauben (mit Kernen, rot)"
+            8050104:
+              name: "Trauben (mit Kernen, blau/schwarz)"
+            8050105:
+              name: "Trauben (mit Kernen, Mix, divers)"
+        8050200:
+          name: "Tafeltrauben / Weintrauben (kernarm, kernlos)"
+          children:
+            8050201:
+              name: "Trauben (kernarm, kernlos, weiß)"
+            8050202:
+              name: "Trauben (kernarm, kernlos, rosa)"
+            8050203:
+              name: "Trauben (kernarm, kernlos, rot)"
+            8050204:
+              name: "Trauben (kernarm, kernlos, blau/schwarz)"
+            8050205:
+              name: "Trauben (kernarm, kernlos, Mix, divers)"
+    8060000:
+      name: "Kiwis"
+      children:
+        8060100:
+          name: "Kiwi (grün)"
+          children:
+            8060100:
+              name: "Kiwi (grün)"
+        8060200:
+          name: "Kiwi (gelb, gold)"
+          children:
+            8060200:
+              name: "Kiwi (gelb, gold)"
+        8060300:
+          name: "Kiwi (rot)"
+          children:
+            8060300:
+              name: "Kiwi (rot)"
+        8060400:
+          name: "Mini-Kiwi (Kiwai, Weiki, usw.)"
+          children:
+            8060400:
+              name: "Mini-Kiwi (Kiwai, Weiki, usw.)"
+        8060900:
+          name: "Sonstige Kiwis"
+          children:
+            8060900:
+              name: "Sonstige Kiwis"
+    8070000:
+      name: "Bananen"
+      children:
+        8070100:
+          name: "Bananen"
+          children:
+            8070100:
+              name: "Bananen"
+        8070200:
+          name: "Bananen (rot)"
+          children:
+            8070200:
+              name: "Bananen (rot)"
+        8070300:
+          name: "Baby-/Apfel- oder Zuckerbananen"
+          children:
+            8070300:
+              name: "Baby-/Apfel- oder Zuckerbananen"
+        8070400:
+          name: "Kochbananen"
+          children:
+            8070400:
+              name: "Kochbananen"
+    8080000:
+      name: "Melonen"
+      children:
+        8080100:
+          name: "Wassermelonen"
+          children:
+            8080101:
+              name: "Wassermelonen (mit Kernen, rot)"
+            8080102:
+              name: "Wassermelonen (kernarm, kernlos, rot)"
+            8080103:
+              name: "Wassermelonen (mit Kernen, gelb)"
+            8080104:
+              name: "Wassermelonen (kernarm, kernlos, gelb)"
+            8080105:
+              name: "Mini Wassermelonen (mit Kernen, rot)"
+            8080106:
+              name: "Mini Wassermelonen (kernarm, kernlos, rot)"
+            8080107:
+              name: "Mini Wassermelonen (mit Kernen, gelb)"
+            8080108:
+              name: "Mini Wassermelonen (kernarm, kernlos, gelb)"
+        8080200:
+          name: "Zuckermelonen"
+          children:
+            8080201:
+              name: "Honigmelonen"
+            8080202:
+              name: "Cantaloupe"
+            8080203:
+              name: "Netzmelonen"
+            8080204:
+              name: "Wintermelonen"
+        8080900:
+          name: "Sonstige Melonen"
+          children:
+            8080900:
+              name: "Sonstige Melonen"
+    8090000:
+      name: "Exoten"
+      children:
+        8090100:
+          name: "Mangos"
+          children:
+            8090100:
+              name: "Mangos"
+        8090200:
+          name: "Avocados"
+          children:
+            8090200:
+              name: "Avocados"
+        8090300:
+          name: "Ananas"
+          children:
+            8090301:
+              name: "Ananas"
+            8090302:
+              name: "Babyananas"
+            8090309:
+              name: "Sonstige Ananas (Zuckerhutananas, usw.)"
+        8090400:
+          name: "Feigen (frisch)"
+          children:
+            8090401:
+              name: "Feigen (blau, schwarz)"
+            8090402:
+              name: "Feigen (rotbraun/blau-grün)"
+            8090403:
+              name: "Feigen (grün)"
+            8090404:
+              name: "Kaktusfeigen"
+            8090405:
+              name: "Feigen (Mix, divers)"
+            8090409:
+              name: "Sonstige Feigen"
+        8090500:
+          name: "Datteln (trocken, halbfrisch)"
+          children:
+            8090500:
+              name: "Datteln (trocken, halbfrisch)"
+        8090600:
+          name: "Physalis (Kapstachelbeere)"
+          children:
+            8090600:
+              name: "Physalis (Kapstachelbeere)"
+        8090700:
+          name: "Papayas"
+          children:
+            8090700:
+              name: "Papayas"
+        8090800:
+          name: "Kakis (Kaki, Sharon, Persimone, usw.)"
+          children:
+            8090800:
+              name: "Kakis (Kaki, Sharon, Persimone, usw.)"
+        8090900:
+          name: "Granatäpfel"
+          children:
+            8090900:
+              name: "Granatäpfel"
+        8091900:
+          name: "Sonstige Exoten"
+          children:
+            8091901:
+              name: "Passionsfrüchte, Maracujas, Grenadillas"
+            8091902:
+              name: "Pitahayas, Drachenfrucht"
+            8091903:
+              name: "Litschi, Rambutan, Longan"
+            8091904:
+              name: "Cherimoyas"
+            8091905:
+              name: "Guaven"
+            8091906:
+              name: "Karambola (Sternfrucht)"
+            8091907:
+              name: "Pepino (Melonen-Birne)"
+            8091919:
+              name: "Sonstige Exoten"
+    8100000:
+      name: "Nüsse, Erdnüsse, Maronen, Kerne, usw. (in der Schale)"
+      children:
+        8100100:
+          name: "Erdnüsse"
+          children:
+            8100100:
+              name: "Erdnüsse"
+        8100200:
+          name: "Haselnüsse"
+          children:
+            8100200:
+              name: "Haselnüsse"
+        8100300:
+          name: "Walnüsse"
+          children:
+            8100300:
+              name: "Walnüsse"
+            8100301:
+              name: "Kokosnüsse"
+            8100302:
+              name: "Trink-Kokosnüsse"
+        8100400:
+          name: "Maronen, Esskastanien"
+          children:
+            8100303:
+              name: "Maronen"
+            8100304:
+              name: "Esskastanien"
+        8100900:
+          name: "Sonstige Nüsse"
+          children:
+            8100901:
+              name: "Paranüsse"
+            8100902:
+              name: "Macadamianüsse"
+            8100909:
+              name: "Sonstige Nüsse"
+        8101000:
+          name: "Sonstige Kerne"
+          children:
+            8101001:
+              name: "Mandeln"
+            8101002:
+              name: "Pistazien"
+            8101003:
+              name: "Pecannüsse / Pekannüsse"
+            8101009:
+              name: "Sonstige Kerne"
+    8110000:
+      name: "Salate"
+      children:
+        8110100:
+          name: "Blattsalate"
+          children:
+            8110101:
+              name: "Kopfsalat (grün)"
+            8110102:
+              name: "Kopfsalat (rot)"
+            8110103:
+              name: "Kopfsalat (Mix, divers)"
+            8110104:
+              name: "Bataviasalat, Gentile (grün)"
+            8110105:
+              name: "Bataviasalat, Gentile (rot)"
+            8110106:
+              name: "Bataviasalat, Gentile (Mix, divers)"
+            8110107:
+              name: "Krull-, Eichblattsalat (grün)"
+            8110108:
+              name: "Krull-, Eichblattsalat (rot)"
+            8110109:
+              name: "Krull-, Eichblattsalat (Mix, divers)"
+            8110110:
+              name: "Römersalat (grün)"
+            8110111:
+              name: "Römersalat (rot)"
+            8110112:
+              name: "Eisbergsalat (Eissalat, Frillice)"
+            8110113:
+              name: "Lollosalat (grün, blond)"
+            8110114:
+              name: "Lollosalat (rot)"
+            8110115:
+              name: "Lollosalat (Mix, divers)"
+            8110119:
+              name: "Sonstige Blattsalate (auch Sortenmix-Kisten)"
+        8110200:
+          name: "Asiasalate"
+          children:
+            8110200:
+              name: "Asiasalate"
+        8110300:
+          name: "Feldsalate"
+          children:
+            8110301:
+              name: "Feldsalat (grün)"
+            8110302:
+              name: "Feldsalat (rot)"
+        8110400:
+          name: "Rucola"
+          children:
+            8110400:
+              name: "Rucola"
+        8110500:
+          name: "Zicchorien (Radicchio, Endivie, Frisée, Chicoree, Zuckerhutsalate)"
+          children:
+            8110501:
+              name: "Chicoree"
+            8110502:
+              name: "Endiviensalat"
+            8110503:
+              name: "Friséesalat"
+            8110504:
+              name: "Löwenzahnsalat, Puntarelle"
+            8110505:
+              name: "Radicchio"
+            8110506:
+              name: "Zuckerhutsalate"
+            8110509:
+              name: "Sonstige Zicchorien"
+        8110900:
+          name: "Sonstige Salate"
+          children:
+            8110901:
+              name: "Postelein"
+            8110902:
+              name: "Portulak"
+            8110903:
+              name: "Wildkräutersalate"
+            8110904:
+              name: "Essbare Blüten"
+            8110905:
+              name: "Pflücksalate"
+            8110909:
+              name: "Mix-Salate"
+            8110910:
+              name: "Sonstige Salate"
+    8120000:
+      name: "Stiel-, Blatt-, Blütengemüse"
+      children:
+        8120100:
+          name: "Spinat"
+          children:
+            8120101:
+              name: "Blatt-, Wurzelspinat"
+            8120102:
+              name: "Babyspinat"
+        8120200:
+          name: "Rhabarber"
+          children:
+            8120200:
+              name: "Rhabarber"
+        8120300:
+          name: "Staudensellerie / Stangensellerie"
+          children:
+            8120300:
+              name: "Staudensellerie / Stangensellerie"
+        8120400:
+          name: "Mangold"
+          children:
+            8120401:
+              name: "Mangold (weiß, grün)"
+            8120402:
+              name: "Mangold (rot)"
+            8120403:
+              name: "Mangold (gelb)"
+            8120404:
+              name: "Mangold (Mix, divers)"
+        8120500:
+          name: "Pak Choi"
+          children:
+            8120500:
+              name: "Pak Choi"
+        8120600:
+          name: "Artischocken"
+          children:
+            8120600:
+              name: "Artischocken"
+        8120900:
+          name: "Sonstige Stiel-, Blatt-, Blütengemüse"
+          children:
+            8120901:
+              name: "Stielmus, Rübstiel"
+            8120909:
+              name: "Sonstige Stiel-, Blatt-, Blütengemüse"
+    8130000:
+      name: "Spargel"
+      children:
+        8130100:
+          name: "Spargel (weiß)"
+          children:
+            8130100:
+              name: "Spargel (weiß)"
+        8130200:
+          name: "Spargel (grün)"
+          children:
+            8130200:
+              name: "Spargel (grün)"
+        8130300:
+          name: "Spargel (lila, violett)"
+          children:
+            8130300:
+              name: "Spargel (lila, violett)"
+        8130900:
+          name: "Sonstige Spargel (Wildspargel, Waldspargel, usw.)"
+          children:
+            8130900:
+              name: "Sonstige Spargel (Wildspargel, Waldspargel, usw.)"
+    8140000:
+      name: "Kohlgemüse"
+      children:
+        8140100:
+          name: "Weißkohl / Weißkraut, Spitzkohl / Spitzkraut"
+          children:
+            8140101:
+              name: "Weißkohl"
+            8140102:
+              name: "Spitzkohl (weiß)"
+            8140103:
+              name: "Spitzkohl (rot, violett)"
+        8140200:
+          name: "Rotkohl / Blaukraut"
+          children:
+            8140200:
+              name: "Rotkohl / Blaukraut"
+        8140300:
+          name: "Chinakohl"
+          children:
+            8140301:
+              name: "Chinakohl (weiß-grün)"
+            8140302:
+              name: "Chinakohl (rot, violett)"
+        8140400:
+          name: "Grünkohl / Kale / Braunkohl, Schwarzkohl"
+          children:
+            8140401:
+              name: "Grünkohl / Braunkohl (grün)"
+            8140402:
+              name: "Grünkohl / Braunkohl (rot, violett)"
+            8140403:
+              name: "Schwarzkohl"
+        8140500:
+          name: "Blumenkohl, Romanesco"
+          children:
+            8140501:
+              name: "Blumenkohl (weiß)"
+            8140502:
+              name: "Blumenkohl (grün)"
+            8140503:
+              name: "Blumenkohl (lila, violett)"
+            8140504:
+              name: "Blumenkohl (gelb, orange)"
+            8140505:
+              name: "Blumenkohl (Mix, divers)"
+            8140506:
+              name: "Romanesco"
+        8140600:
+          name: "Rosenkohl"
+          children:
+            8140601:
+              name: "Rosenkohl (grün)"
+            8140602:
+              name: "Rosenkohl (rot, violett)"
+        8140700:
+          name: "Brokkoli"
+          children:
+            8140701:
+              name: "Brokkoli"
+            8140702:
+              name: "Sprossen-Brokkoli / Wilder Brokkoli"
+        8140800:
+          name: "Wirsing"
+          children:
+            8140800:
+              name: "Wirsing"
+        8140900:
+          name: "Kohlrabi"
+          children:
+            8140901:
+              name: "Kohlrabi (weiß)"
+            8140902:
+              name: "Kohlrabi (blau)"
+            8140903:
+              name: "Schmelzkohlrabi / Riesenkohlrabi"
+        8141900:
+          name: "Sonstiges Kohlgemüse"
+          children:
+            8141901:
+              name: "Stängelkohl"
+            8141902:
+              name: "Butterkohl"
+            8141903:
+              name: "Kohlröschen / Kalettes / Flower Sprouts"
+            8141909:
+              name: "Sonstiges Kohlgemüse"
+    8150000:
+      name: "Wurzel-, Knollengemüse"
+      children:
+        8150100:
+          name: "Möhren / Karotten / Gelbe Rüben"
+          children:
+            8150101:
+              name: "Möhren (orange)"
+            8150102:
+              name: "Möhren (gelb)"
+            8150103:
+              name: "Möhren (rot)"
+            8150104:
+              name: "Möhren (lila, violett)"
+            8150105:
+              name: "Möhren (blau, schwarz)"
+            8150106:
+              name: "Möhren (weiß)"
+            8150107:
+              name: "Möhren (Mix, divers)"
+        8150200:
+          name: "Schwarzwurzeln"
+          children:
+            8150200:
+              name: "Schwarzwurzeln"
+        8150300:
+          name: "Bete (rot, gelb, usw.)"
+          children:
+            8150301:
+              name: "Rote Bete"
+            8150302:
+              name: "Gelbe Bete"
+            8150303:
+              name: "Weiße Bete"
+            8150309:
+              name: "Sonstige Bete (Ringelbete, divers)"
+        8150400:
+          name: "Radieschen"
+          children:
+            8150401:
+              name: "Radieschen (rot)"
+            8150402:
+              name: "Radieschen (violett)"
+            8150403:
+              name: "Radieschen (gelb)"
+            8150404:
+              name: "Radieschen (weiß)"
+            8150405:
+              name: "Radieschen (Mix, divers)"
+        8150500:
+          name: "Pastinaken"
+          children:
+            8150500:
+              name: "Pastinaken"
+        8150600:
+          name: "Rettiche"
+          children:
+            8150601:
+              name: "Rettich (weiß)"
+            8150602:
+              name: "Rettich (rot)"
+            8150603:
+              name: "Rettich (lila)"
+            8150604:
+              name: "Rettich (schwarz)"
+            8150605:
+              name: "Rettich (Mix, divers)"
+        8150700:
+          name: "Fenchel"
+          children:
+            8150700:
+              name: "Fenchel"
+        8150800:
+          name: "Knollensellerie"
+          children:
+            8150800:
+              name: "Knollensellerie"
+        8150900:
+          name: "Steckrüben / Kohlrüben, Rübchen"
+          children:
+            8150901:
+              name: "Steckrüben (weiß)"
+            8150902:
+              name: "Steckrüben (rot, violett)"
+            8150903:
+              name: "Steckrüben (gelb)"
+            8150904:
+              name: "Steckrüben (Mix, divers)"
+            8150905:
+              name: "Rübchen / Speiserüben"
+            8150909:
+              name: "Sonstige Rüben / Rübchen"
+        8151000:
+          name: "Ingwer"
+          children:
+            8151001:
+              name: "Ingwer (frisch)"
+            8151002:
+              name: "Ingwer (trocken)"
+            8151003:
+              name: "Galangawurzel (Galgant), Thai-Ingwer"
+        8151100:
+          name: "Kurkuma"
+          children:
+            8151101:
+              name: "Kurkuma (frisch)"
+            8151102:
+              name: "Kurkuma (trocken)"
+        8151900:
+          name: "Sonstiges Wurzel-, Knollengemüse"
+          children:
+            8151901:
+              name: "Petersilienwurzeln / Wurzelpetersilie"
+            8151902:
+              name: "Topinambur"
+            8151903:
+              name: "Yacon Wurzel / Inkawurzel"
+            8151904:
+              name: "Lichtwurzel / Yamswurzel"
+            8151905:
+              name: "Knolliger Sauerklee"
+            8151906:
+              name: "Meerrettich / Kren, Wasabi"
+            8151909:
+              name: "Sonstige Wurzel-, Knollengemüse"
+    8160000:
+      name: "Zwiebelgemüse"
+      children:
+        8160100:
+          name: "Zwiebeln, Schalotten, Frühlingszwiebeln"
+          children:
+            8160101:
+              name: "Zwiebeln (gelb)"
+            8160102:
+              name: "Zwiebeln (rot, rosé)"
+            8160103:
+              name: "Zwiebeln (weiß)"
+            8160104:
+              name: "Gemüsezwiebeln"
+            8160105:
+              name: "Lauch-, Bund-, Frühlingszwiebeln"
+            8160106:
+              name: "Schalotten"
+            8160107:
+              name: "Perlzwiebeln"
+        8160200:
+          name: "Lauch, Porree"
+          children:
+            8160200:
+              name: "Lauch, Porree"
+        8160300:
+          name: "Knoblauch"
+          children:
+            8160301:
+              name: "Knoblauch (trocken)"
+            8160302:
+              name: "Knoblauch (frisch)"
+            8160309:
+              name: "Sonstiger Knoblauch"
+        8160900:
+          name: "Sonstiges Zwiebelgemüse"
+          children:
+            8160900:
+              name: "Sonstiges Zwiebelgemüse"
+    8170000:
+      name: "Kartoffeln, Süßkartoffeln"
+      children:
+        8170100:
+          name: "Kartoffeln (festkochend)"
+          children:
+            8170100:
+              name: "Kartoffeln (festkochend)"
+        8170200:
+          name: "Kartoffeln (vorwiegend festkochend)"
+          children:
+            8170100:
+              name: "Kartoffeln (vorwiegend festkochend)"
+        8170300:
+          name: "Kartoffeln (mehligkochend)"
+          children:
+            8170100:
+              name: "Kartoffeln (mehligkochend)"
+        8170400:
+          name: "Süßkartoffeln"
+          children:
+            8170401:
+              name: "Süßkartoffeln (orange)"
+            8170402:
+              name: "Süßkartoffeln (violett)"
+            8170403:
+              name: "Süßkartoffeln (weiß)"
+        8170900:
+          name: "Sonstige Kartoffeln (Mix, divers)"
+          children:
+            8170900:
+              name: "Sonstige Kartoffeln (Mix, divers)"
+    8180000:
+      name: "Fruchtgemüse"
+      children:
+        8180100:
+          name: "Tomaten"
+          children:
+            8180101:
+              name: "Tomaten rund / Salattomaten (rot)"
+            8180102:
+              name: "Tomaten rund / Salattomaten (Mix, divers)"
+            8180103:
+              name: "Eier- / Romatomaten (rot)"
+            8180104:
+              name: "Eier- / Romatomaten (Mix, divers)"
+            8180105:
+              name: "Fleischtomaten (rot)"
+            8180106:
+              name: "Fleischtomaten (Mix, divers)"
+            8180107:
+              name: "Cocktailtomaten (rot)"
+            8180108:
+              name: "Cocktailtomaten (Mix, divers)"
+            8180109:
+              name: "Cherrytomaten (rot)"
+            8180110:
+              name: "Cherrytomaten (Mix, divers)"
+            8180119:
+              name: "Sonstige Tomaten"
+        8180200:
+          name: "Paprikas, Chilis, Peperoni"
+          children:
+            8180201:
+              name: "Paprika (block, rot)"
+            8180202:
+              name: "Paprika (block, gelb)"
+            8180203:
+              name: "Paprika (block, grün)"
+            8180204:
+              name: "Paprika (block, Mix, divers)"
+            8180205:
+              name: "Paprika (spitz, rot)"
+            8180206:
+              name: "Paprika (spitz, gelb)"
+            8180207:
+              name: "Paprika (spitz, grün)"
+            8180208:
+              name: "Paprika (spitz, Mix, divers)"
+            8180209:
+              name: "Chili"
+            8180210:
+              name: "Peperoni / Gewürzpaprika"
+            8180219:
+              name: "Sonstige Paprikas, Chilis, Peperoni (Bratpaprika, Mini-Paprika)"
+        8180300:
+          name: "Kürbisse"
+          children:
+            8180301:
+              name: "Speisekürbisse"
+            8180302:
+              name: "Dekokürbisse (Zier-, Halloweenkürbisse)"
+            8180309:
+              name: "Sonstige Kürbisse"
+        8180400:
+          name: "Zucchini"
+          children:
+            8180401:
+              name: "Zucchini (grün)"
+            8180402:
+              name: "Zucchini (gelb)"
+            8180403:
+              name: "Zucchini (rund)"
+            8180404:
+              name: "Zucchini (Mix, divers)"
+        8180500:
+          name: "Auberginen"
+          children:
+            8180501:
+              name: "Auberginen (länglich)"
+            8180502:
+              name: "Auberginen (rund)"
+            8180509:
+              name: "Sonstige Auberginen (Mini-, Thai-Auberginen)"
+        8180600:
+          name: "Gurken"
+          children:
+            8180601:
+              name: "Schlangengurken"
+            8180602:
+              name: "Minigurken"
+            8180603:
+              name: "Landgurken"
+            8180604:
+              name: "Einlege- / Schmor- / Gewürzgurken"
+            8180609:
+              name: "Sonstige Gurken"
+        8180900:
+          name: "Sonstiges Fruchtgemüse"
+          children:
+            8180901:
+              name: "Chayote"
+            8180902:
+              name: "Okraschote"
+            8180909:
+              name: "Sonstiges Fruchtgemüse"
+    8190000:
+      name: "Zuckermais (frisch)"
+      children:
+        8190000:
+          name: "Zuckermais (frisch)"
+          children:
+            8190000:
+              name: "Zuckermais (frisch)"
+    8200000:
+      name: "Hülsenfrüchte"
+      children:
+        8200100:
+          name: "Erbsen"
+          children:
+            8200100:
+              name: "Erbsen"
+        8200200:
+          name: "Bohnen"
+          children:
+            8200201:
+              name: "Busch-, Wachs-, Brechbohnen"
+            8200202:
+              name: "Stangenbohnen, Grüne Bohnen"
+            8200203:
+              name: "Dicke Bohnen, Sau-, Ackerbohnen"
+            8200204:
+              name: "Feuerbohnen"
+            8200205:
+              name: "Sojabohnen"
+            8200206:
+              name: "Spaghetti-, Spargelbohnen"
+            8200209:
+              name: "Sonstige Bohnen"
+        8200300:
+          name: "Kaiser-, Zuckerschoten"
+          children:
+            8200300:
+              name: "Kaiser-, Zuckerschoten"
+        8200900:
+          name: "Sonstige Hülsenfrüchte"
+          children:
+            8200900:
+              name: "Sonstige Hülsenfrüchte"
+    8210000:
+      name: "Kräuter (Schnittkräuter), Gräser"
+      children:
+        8210100:
+          name: "Krause Petersilie"
+          children:
+            8210100:
+              name: "Krause Petersilie"
+        8210200:
+          name: "Glatte Petersilie"
+          children:
+            8210200:
+              name: "Glatte Petersilie"
+        8210300:
+          name: "Basilikum"
+          children:
+            8210300:
+              name: "Basilikum"
+        8210400:
+          name: "Schnittlauch"
+          children:
+            8210400:
+              name: "Schnittlauch"
+        8210500:
+          name: "Dill"
+          children:
+            8210500:
+              name: "Dill"
+        8210600:
+          name: "Rosmarin"
+          children:
+            8210600:
+              name: "Rosmarin"
+        8210700:
+          name: "Salbei"
+          children:
+            8210700:
+              name: "Salbei"
+        8210800:
+          name: "Thymian"
+          children:
+            8210800:
+              name: "Thymian"
+        8210900:
+          name: "Koriander"
+          children:
+            8210900:
+              name: "Koriander"
+        8211000:
+          name: "Estragon"
+          children:
+            8211000:
+              name: "Estragon"
+        8211100:
+          name: "Minze"
+          children:
+            8211100:
+              name: "Minze"
+        8211200:
+          name: "Majoran"
+          children:
+            8211200:
+              name: "Majoran"
+        8211300:
+          name: "Oregano"
+          children:
+            8211300:
+              name: "Oregano"
+        8211400:
+          name: "Bärlauch"
+          children:
+            8211400:
+              name: "Bärlauch"
+        8211500:
+          name: "Kerbel"
+          children:
+            8211500:
+              name: "Kerbel"
+        8211600:
+          name: "Lorbeer"
+          children:
+            8211600:
+              name: "Lorbeer"
+        8211700:
+          name: "Sauerampfer"
+          children:
+            8211700:
+              name: "Sauerampfer"
+        8211800:
+          name: "Liebstöckel"
+          children:
+            8211800:
+              name: "Liebstöckel"
+        8211900:
+          name: "Bohnenkraut"
+          children:
+            8211900:
+              name: "Bohnenkraut"
+        8212000:
+          name: "Zitronengras"
+          children:
+            8212000:
+              name: "Zitronengras"
+        8212100:
+          name: "Melisse"
+          children:
+            8212100:
+              name: "Melisse"
+        8212200:
+          name: "Zitronenverbene"
+          children:
+            8212200:
+              name: "Zitronenverbene"
+        8212300:
+          name: "Mönchsbart, Salzkraut"
+          children:
+            8212300:
+              name: "Mönchsbart, Salzkraut"
+        8212400:
+          name: "Borretsch"
+          children:
+            8212400:
+              name: "Borretsch"
+        8212500:
+          name: "Pimpinelle"
+          children:
+            8212500:
+              name: "Pimpinelle"
+        8212600:
+          name: "Giersch"
+          children:
+            8212600:
+              name: "Giersch"
+        8212700:
+          name: "Ampfer"
+          children:
+            8212700:
+              name: "Ampfer"
+        8212800:
+          name: "Wermut"
+          children:
+            8212800:
+              name: "Wermut"
+        8212900:
+          name: "Ysop"
+          children:
+            8212900:
+              name: "Ysop"
+        8213000:
+          name: "Schnittknoblauch"
+          children:
+            8213000:
+              name: "Schnittknoblauch"
+        8213100:
+          name: "Lavendel"
+          children:
+            8213100:
+              name: "Lavendel"
+        8213200:
+          name: "Kräuter (Mix, divers)"
+          children:
+            8213200:
+              name: "Kräuter (Mix, divers)"
+        8213900:
+          name: "Sonstige Kräuter (Schnittkräuter), Gräser"
+          children:
+            8213900:
+              name: "Sonstige Kräuter (Schnittkräuter), Gräser"
+    8220000:
+      name: "Keime, Sprossen (Sämlinge)"
+      children:
+        8220100:
+          name: "Keimsprossen (Soja-, Mungobohnen-, Gerstensprossen, usw.)"
+          children:
+            8220101:
+              name: "Sojasprossen"
+            8220102:
+              name: "Alfalfasprossen"
+            8220103:
+              name: "Brokkolisprossen"
+            8220104:
+              name: "Mungobohnensprossen"
+            8220105:
+              name: "Radieschensprossen"
+            8220106:
+              name: "Rettichsprossen"
+            8220107:
+              name: "Zwiebelsprossen"
+            8220108:
+              name: "Erbsensprossen"
+            8220109:
+              name: "Linsensprossen"
+            8220110:
+              name: "Rote Bete-Sprossen"
+            8220111:
+              name: "Lauchsprossen"
+            8220112:
+              name: "Kohlrabisprossen"
+            8220113:
+              name: "Bambussprossen"
+            8220114:
+              name: "Knoblauchsprossen"
+            8220115:
+              name: "Gerstensprossen"
+            8220116:
+              name: "Weizensprossen"
+            8220117:
+              name: "Sprossen (Mix, divers)"
+            8220119:
+              name: "Sonstige Keimsprossen"
+        8220200:
+          name: "Kressen (Gartenkresse, Rettich, Radieschen, usw.)"
+          children:
+            8220201:
+              name: "Gartenkresse / Kresse"
+            8220202:
+              name: "Radieschen-Kresse"
+            8220203:
+              name: "Rucola-Kresse"
+            8220204:
+              name: "Brunnenkresse"
+            8220205:
+              name: "Winterkresse"
+            8220206:
+              name: "Kresse (Mix, divers)"
+            8220209:
+              name: "Sonstige Kressen"
+    8230000:
+      name: "Pilze"
+      children:
+        8230100:
+          name: "Wild-, Waldpilze"
+          children:
+            8230101:
+              name: "Pfifferlinge"
+            8230102:
+              name: "Steinpilze"
+            8230109:
+              name: "Sonstige Wild-, Waldpilze"
+        8230200:
+          name: "Kultur-, Speisepilze"
+          children:
+            8230201:
+              name: "Champignons"
+            8230202:
+              name: "Austernpilze"
+            8230203:
+              name: "Shiitake"
+            8230204:
+              name: "Seitlinge (Kräuter-Seitling, usw.)"
+            8230205:
+              name: "Buchenpilze"
+            8230206:
+              name: "Samthauben"
+            8230207:
+              name: "Pom-Pom Blanc"
+            8230208:
+              name: "Kultur-, Speisepilze (Mix, divers)"
+            8230219:
+              name: "Sonstige Kultur-, Speisepilze"
+    8240000:
+      name: "Mischprodukte (Suppengrün, Ratatouille-Mix, usw.)"
+      children:
+        8240000:
+          name: "Mischprodukte (Suppengrün, Ratatouille-Mix, usw.)"
+          children:
+            8240000:
+              name: "Mischprodukte (Suppengrün, Ratatouille-Mix, usw.)"
+    8250000:
+      name: "verarbeitete Produkte (SB)"
+      children:
+        8250100:
+          name: "verarbeitete Kartoffeln"
+          children:
+            8250101:
+              name: "Kartoffeln (roh)"
+            8250102:
+              name: "Kartoffen (vorgegart)"
+        8250200:
+          name: "verarbeitetes Gemüse (gewürfelt, geschnitten, vorgegart, vakuumiert, usw.)"
+          children:
+            8250201:
+              name: "Kohlgemüse"
+            8250202:
+              name: "Wurzel-, Knollengemüse (Rote Bete, usw.)"
+            8250203:
+              name: "Zwiebeln"
+            8250204:
+              name: "Fruchtgemüse"
+            8250205:
+              name: "Zuckermais"
+            8250206:
+              name: "Sprossen"
+            8250207:
+              name: "Pilze"
+            8250208:
+              name: "verarbeitetes Gemüse (Mix, divers)"
+            8250219:
+              name: "Sonstiges verarbeitetes Gemüse"
+        8250300:
+          name: "verarbeitetes Obst (gekochte Maronen, Kastanien, usw.)"
+          children:
+            8250300:
+              name: "verarbeitetes Obst (gekochte Maronen, Kastanien, usw.)"
+    8260000:
+      name: "verarbeitete Produkte (Großverbraucher, Gastro)"
+      children:
+        8260100:
+          name: "verarbeitete Kartoffeln"
+          children:
+            8260101:
+              name: "Kartoffeln (roh)"
+            8260102:
+              name: "Kartoffen (vorgegart)"
+        8260200:
+          name: "verarbeitetes Gemüse (gewürfelt, geschnitten, vorgegart, vakuumiert, usw.)"
+          children:
+            8260201:
+              name: "Kohlgemüse"
+            8260202:
+              name: "Wurzel-, Knollengemüse (Rote Bete, usw.)"
+            8260203:
+              name: "Zwiebeln"
+            8260204:
+              name: "Fruchtgemüse"
+            8260205:
+              name: "Zuckermais"
+            8260206:
+              name: "Sprossen"
+            8260207:
+              name: "Pilze"
+            8260208:
+              name: "verarbeitetes Gemüse (Mix, divers)"
+            8260219:
+              name: "Sonstiges verarbeitetes Gemüse"
+        8260300:
+          name: "verarbeitetes Obst (gekochte Maronen, Kastanien, usw.)"
+          children:
+            8260300:
+              name: "verarbeitetes Obst (gekochte Maronen, Kastanien, usw.)"
+    8270000:
+      name: "Pflanzen (Lebensmittel im Topf, z.B. Kräuter)"
+      children:
+        8270100:
+          name: "Kräuter, essbare Gräser im Topf"
+          children:
+            8270101:
+              name: "Krause Petersilie"
+            8270102:
+              name: "Glatte Petersilie"
+            8270103:
+              name: "Basilikum"
+            8270104:
+              name: "Schnittlauch"
+            8270105:
+              name: "Dill"
+            8270106:
+              name: "Rosmarin"
+            8270107:
+              name: "Salbei"
+            8270108:
+              name: "Thymian"
+            8270109:
+              name: "Koriander"
+            8270110:
+              name: "Estragon"
+            8270111:
+              name: "Minze"
+            8270112:
+              name: "Majoran"
+            8270113:
+              name: "Oregano"
+            8270114:
+              name: "Kerbel"
+            8270115:
+              name: "Stevia"
+            8270116:
+              name: "Gräser"
+            8270117:
+              name: "Liebstöckel"
+            8270118:
+              name: "Bohnenkraut"
+            8270119:
+              name: "Melisse"
+            8270120:
+              name: "Zitronenverbene"
+            8270121:
+              name: "Mönchsbart, Salzkraut"
+            8270122:
+              name: "Waldmeister"
+            8270123:
+              name: "Kümmel"
+            8270124:
+              name: "Rucola"
+            8270125:
+              name: "Wasabi"
+            8270126:
+              name: "Borretsch"
+            8270127:
+              name: "Pimpinelle"
+            8270128:
+              name: "Ampfer"
+            8270129:
+              name: "Ysop"
+            8270130:
+              name: "Lavendel"
+            8270131:
+              name: "Kräuter (Mix, divers)"
+            8270139:
+              name: "Sonstige Kräuter, essbare Gräser im Topf"
+        8270200:
+          name: "Gemüsepflanzen im Topf"
+          children:
+            8270201:
+              name: "Tomaten"
+            8270202:
+              name: "Gurken"
+            8270203:
+              name: "Paprika"
+            8270204:
+              name: "Chili"
+            8270205:
+              name: "Peperoni"
+            8270209:
+              name: "Sonstige Gemüsepflanzen im Topf"
+        8270300:
+          name: "Obstpflanzen im Topf"
+          children:
+            8270301:
+              name: "Erdbeeren"
+            8270302:
+              name: "Walderdbeeren"
+            8270303:
+              name: "Himbeeren"
+            8270304:
+              name: "Brombeeren"
+            8270305:
+              name: "Stachelbeeren"
+            8270306:
+              name: "Zitronenbäumchen"
+            8270307:
+              name: "Orangenbäumchen"
+            8270309:
+              name: "Sonstige Obstpflanzen im Topf"
+        8270900:
+          name: "Sonstige essbare Pflanzen im Topf (Aloe Vera, usw.)"
+          children:
+            8270900:
+              name: "Sonstige essbare Pflanzen im Topf (Aloe Vera, usw.)"
+99000000:
+  name: "Sonstiges"
+  children:
+    99010000:
+      name: "Mitgliedschaft"
+      children:
+        99010100:
+          name: "Mitgliedsbeitrag"
+        99010200:
+          name: "Einlage"
+    99020000:
+      name: "Gutscheine"
+    99030000:
+      name: "Pfand"
+    99040000:
+      name: "Generische Artikel"

@@ -1,0 +1,13 @@
+# 1140400 - Joghurt
+# Sub-categories:
+#   1140401: Naturjoghurt
+#   1140402: Fruchtjoghurt (Obst, Vanille, Nüsse, Schokolade, usw.)
+#   1140403: Joghurt (Schaf, Ziege, usw.)
+
+1140400.joghurt:
+  name: Joghurt
+  unit: g
+  posthof:
+    - id: 44790
+      unit: 500
+

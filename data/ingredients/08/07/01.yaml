@@ -1,0 +1,11 @@
+# 8070100 - Bananen
+# Sub-categories:
+#   8070100: Bananen
+
+8070100.banane:
+  name: Banane
+  plural: Bananen
+  unit: g
+  altUnits:
+    Stück: 120
+

@@ -1,0 +1,21 @@
+# 8180200 - Paprikas, Chilis, Peperoni
+# Sub-categories:
+#   8180201: Paprika (block, rot)
+#   8180202: Paprika (block, gelb)
+#   8180203: Paprika (block, grün)
+#   8180204: Paprika (block, Mix, divers)
+#   8180205: Paprika (spitz, rot)
+#   8180206: Paprika (spitz, gelb)
+#   8180207: Paprika (spitz, grün)
+#   8180208: Paprika (spitz, Mix, divers)
+#   8180209: Chili
+#   8180210: Peperoni / Gewürzpaprika
+#   8180219: Sonstige Paprikas, Chilis, Peperoni (Bratpaprika, Mini-Paprika)
+
+8180200.paprika:
+  name: Paprika
+  plural: Paprikas
+  unit: g
+  altUnits:
+    Stück: 150
+

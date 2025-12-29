@@ -1,0 +1,11 @@
+# 8170100 - Kartoffeln (festkochend)
+# Sub-categories:
+#   8170100: Kartoffeln (festkochend)
+
+8170100.kartoffel:
+  name: Kartoffel
+  plural: Kartoffeln
+  unit: g
+  altUnits:
+    Stück: 150
+

@@ -1,0 +1,20 @@
+# 2020500 - Honig, Honigprodukte
+# Sub-categories:
+#   2020500: Honig, Honigprodukte
+
+2020500.honig:
+  name: Honig
+  unit: g
+  posthof:
+    - id: 54620
+      unit: 250
+    - id: 47036
+      unit: 500
+    - id: 46993
+      unit: 500
+  altUnits:
+    EL: 20
+  alternatives:
+    - ref: 2130200.ahornsirup
+      factor: 1.0
+

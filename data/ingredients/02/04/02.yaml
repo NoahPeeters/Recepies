@@ -1,0 +1,49 @@
+# 2040200 - Getreideprodukte
+# Sub-categories:
+#   2040201: Schrote
+#   2040202: Mehle
+#   2040203: Flocken
+#   2040204: Grieß (Bulgur, Couscous, usw.)
+
+2040202.mehl:
+  name: Mehl
+  unit: g
+  posthof:
+    - id: 47267
+      unit: 1000
+    - id: 47260
+      unit: 1000
+
+2040202.vollkornmehl:
+  name: Vollkornmehl
+  unit: g
+  posthof:
+    - id: 47158
+      unit: 500
+
+2040204.bulgur:
+  name: Bulgur
+  plural: Bulgur
+  unit: g
+  posthof:
+    - id: 91211
+      unit: 500
+
+2040204.couscous:
+  name: Couscous
+  plural: Couscous
+  unit: g
+  posthof:
+    - id: 43667
+      unit: 500
+
+2040203.haferflocken:
+  name: Haferflocken
+  plural: Haferflocken
+  unit: g
+  posthof:
+    - id: 47170
+      unit: 500
+    - id: 47177
+      unit: 500
+

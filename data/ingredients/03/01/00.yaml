@@ -1,0 +1,15 @@
+# 3010000 - Wasser
+# Sub-categories:
+#   3010000: Wasser
+
+3010000.wasser:
+  name: Wasser
+  unit: ml
+
+3010000.mineralwasser:
+  name: EL Mineralwasser
+  plural: EL Mineralwasser
+  posthof:
+    - id: 50335
+      unit: 1000
+

@@ -1,0 +1,13 @@
+# 8020200 - Birnen
+# Sub-categories:
+#   8020201: Birnen (grün)
+#   8020202: Birnen (rot)
+#   8020203: Birnen (Nashi)
+
+8020200.birne:
+  name: Birne
+  plural: Birnen
+  unit: g
+  altUnits:
+    Stück: 180
+

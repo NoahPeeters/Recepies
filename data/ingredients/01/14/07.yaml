@@ -1,0 +1,13 @@
+# 1140700 - Butter, Butterschmalz, usw.
+# Sub-categories:
+#   1140700: Butter, Butterschmalz, usw.
+
+1140700.butter:
+  name: Butter
+  unit: g
+  posthof:
+    - id: 53549
+      unit: 250
+    - id: 53558
+      unit: 250
+

@@ -1,0 +1,21 @@
+# 8180100 - Tomaten
+# Sub-categories:
+#   8180101: Tomaten rund / Salattomaten (rot)
+#   8180102: Tomaten rund / Salattomaten (Mix, divers)
+#   8180103: Eier- / Romatomaten (rot)
+#   8180104: Eier- / Romatomaten (Mix, divers)
+#   8180105: Fleischtomaten (rot)
+#   8180106: Fleischtomaten (Mix, divers)
+#   8180107: Cocktailtomaten (rot)
+#   8180108: Cocktailtomaten (Mix, divers)
+#   8180109: Cherrytomaten (rot)
+#   8180110: Cherrytomaten (Mix, divers)
+#   8180119: Sonstige Tomaten
+
+8180100.tomate:
+  name: Tomate
+  plural: Tomaten
+  unit: g
+  altUnits:
+    Stück: 120
+

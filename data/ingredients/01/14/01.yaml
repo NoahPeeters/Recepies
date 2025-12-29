@@ -1,0 +1,15 @@
+# 1140100 - Milch
+# Sub-categories:
+#   1140101: Frischmilch
+#   1140102: ESL-Milch
+#   1140103: H-Milch
+
+1140100.milch:
+  name: Milch
+  unit: ml
+  posthof:
+    - id: 44576
+      unit: 1000
+    - id: 53451
+      unit: 1000
+

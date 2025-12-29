@@ -1,0 +1,11 @@
+# 8010200 - Heidelbeeren
+# Sub-categories:
+#   8010200: Heidelbeeren
+
+8010200.blaubeeren:
+  name: Blaubeere
+  plural: Blaubeeren
+  unit: g
+  altUnits:
+    Stück: 1.5
+

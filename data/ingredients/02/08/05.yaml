@@ -1,0 +1,43 @@
+# 2080500 - Würzsaucen, Grillsaucen, Ketchup, Pesto
+# Sub-categories:
+#   2080501: Sojasaucen
+#   2080502: Grillsaucen, Würzsaucen
+#   2080503: Ketchup
+#   2080504: Mayonnaise, Salatcreme, Aioli
+#   2080505: Senf
+#   2080506: Pesto
+#   2080507: Chutneys
+#   2080508: Salatsaucen, Dressings
+
+2080500.balsamico:
+  name: Balsamico
+  unit: ml
+  posthof:
+    - id: 48605
+      unit: 500
+    - id: 48607
+      unit: 500
+  altUnits:
+    EL: 15
+    TL: 5
+
+2080500.apfelessig:
+  name: Apfelessig
+  unit: ml
+  posthof:
+    - id: 54625
+      unit: 500
+  altUnits:
+    EL: 15
+    TL: 5
+
+2080500.weissweinessig:
+  name: Weißweinessig
+  unit: ml
+  posthof:
+    - id: 48622
+      unit: 500
+  altUnits:
+    EL: 15
+    TL: 5
+

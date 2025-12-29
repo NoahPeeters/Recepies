@@ -1,0 +1,51 @@
+# 2130400 - Backzutaten, Backhilfsmittel
+# Sub-categories:
+#   2130401: Backmarzipan
+#   2130402: Backfüllungen
+#   2130403: Couvertüre, Kakao, Carob
+#   2130404: Dekor
+#   2130405: Backzutaten, Backhilfsmittel
+#   2130406: Backaromen (z.B. Vanille)
+
+2130400.vanillezucker:
+  name: Päckchen Bourbon-Vanillezucker
+  plural: Päckchen Bourbon-Vanillezucker
+  posthof:
+    - id: 50165
+  alternatives:
+    - ref: 2120200.vanilleschote
+      factor: 0.5
+    - ref: 2120200.vanilleextrakt
+      factor: 2.0
+
+2130400.trockenhefe:
+  name: Trockenhefe
+  unit: g
+  posthof:
+    - id: 137289
+      unit: 21
+  altUnits:
+    Päckchen: 21
+  alternatives:
+    - ref: 1531200.hefe
+      factor: 3.0
+
+2130400.backpulver:
+  name: Backpulver
+  unit: g
+  posthof:
+    - id: 50189
+      unit: 17
+  altUnits:
+    TL: 4
+    Päckchen: 17
+
+2130400.natron:
+  name: Natron
+  unit: g
+  posthof:
+    - id: 50191
+      unit: 250
+  altUnits:
+    TL: 5
+

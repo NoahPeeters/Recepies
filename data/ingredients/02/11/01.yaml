@@ -1,0 +1,58 @@
+# 2110100 - Speiseöle
+# Sub-categories:
+#   2110100: Speiseöle
+
+2110100.oel:
+  name: Öl
+  unit: g
+  posthof:
+    - id: 49764
+      unit: 500
+    - id: 49790
+      unit: 500
+  altUnits:
+    TL: 5
+
+2110100.olivenoel:
+  name: Olivenöl
+  unit: ml
+  posthof:
+    - id: 49746
+      unit: 500
+    - id: 91843
+      unit: 500
+  altUnits:
+    EL: 15
+    TL: 5
+
+2110100.sonnenblumenoel:
+  name: Sonnenblumenöl
+  unit: ml
+  posthof:
+    - id: 49790
+      unit: 500
+  altUnits:
+    EL: 15
+    TL: 5
+
+2110100.rapsoel:
+  name: Rapsöl
+  unit: ml
+  posthof:
+    - id: 91822
+      unit: 500
+  altUnits:
+    EL: 15
+    TL: 5
+
+2110100.frittierfett:
+  name: Frittierfett
+  unit: ml
+  posthof:
+    - id: 49670
+      unit: 500
+    - id: 49688
+      unit: 1000
+    - id: 49790
+      unit: 500
+

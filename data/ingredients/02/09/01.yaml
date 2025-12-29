@@ -1,0 +1,69 @@
+# 2090100 - Nusskerne, Mandeln
+# Sub-categories:
+#   2090101: Nusskerne, Mandeln, usw. (ganz)
+#   2090102: Nusskerne, Mandeln, usw. (gemahlen, geraspelt, gestiftelt)
+
+2090100.mandeln:
+  name: Mandel
+  plural: Mandeln
+  unit: g
+  posthof:
+    - id: 54265
+      unit: 200
+    - id: 132150
+      unit: 200
+
+2090100.mandeln-gemahlen:
+  name: gemahlene Mandeln
+  plural: gemahlene Mandeln
+  unit: g
+  posthof:
+    - id: 48770
+      unit: 125
+
+2090100.mandeln-gehobelt:
+  name: gehobelte Mandeln
+  plural: gehobelte Mandeln
+  unit: g
+  posthof:
+    - id: 48769
+      unit: 100
+
+2090100.walnuesse:
+  name: Walnuss
+  plural: Walnüsse
+  unit: g
+  posthof:
+    - id: 43652
+      unit: 100
+
+2090100.haselnuesse:
+  name: Haselnuss
+  plural: Haselnüsse
+  unit: g
+  posthof:
+    - id: 90406
+      unit: 200
+    - id: 90405
+      unit: 500
+
+2090100.haselnuesse-gemahlen:
+  name: gemahlene Haselnüsse
+  plural: gemahlene Haselnüsse
+  unit: g
+  posthof:
+    - id: 43605
+      unit: 200
+
+2090100.cashews:
+  name: Cashew
+  plural: Cashews
+  unit: g
+  posthof:
+    - id: 43710
+      unit: 500
+    - id: 90398
+      unit: 200
+    - id: 90399
+      unit: 500
+

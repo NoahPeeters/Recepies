@@ -1,0 +1,12 @@
+# 8020100 - Äpfel
+# Sub-categories:
+#   8020101: Lagersorten
+#   8020102: Frühe Sorten (nicht lagerfähig)
+
+8020100.apfel:
+  name: Apfel
+  plural: Äpfel
+  unit: g
+  altUnits:
+    Stück: 180
+

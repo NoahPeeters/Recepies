@@ -1,0 +1,13 @@
+# 8180500 - Auberginen
+# Sub-categories:
+#   8180501: Auberginen (länglich)
+#   8180502: Auberginen (rund)
+#   8180509: Sonstige Auberginen (Mini-, Thai-Auberginen)
+
+8180500.aubergine:
+  name: Aubergine
+  plural: Auberginen
+  unit: g
+  altUnits:
+    Stück: 300
+

@@ -1,0 +1,23 @@
+# 2130200 - Süßungsmittel (Ursüße, Ahornsirup, Agavendicksaft, usw.)
+# Sub-categories:
+#   2130200: Süßungsmittel (Ursüße, Ahornsirup, Agavendicksaft, usw.)
+
+2130200.agavendicksaft:
+  name: Agavendicksaft
+  unit: g
+  posthof:
+    - id: 50130
+      unit: 700
+
+2130200.ahornsirup:
+  name: Ahornsirup
+  unit: g
+  posthof:
+    - id: 92374
+      unit: 250
+  altUnits:
+    EL: 20
+  alternatives:
+    - ref: 2020500.honig
+      factor: 1.0
+

@@ -1,0 +1,14 @@
+# 2130500 - Geliermittel, Bindemittel
+# Sub-categories:
+#   2130500: Geliermittel, Bindemittel
+
+2130500.speisestaerke:
+  name: Speisestärke
+  unit: g
+  posthof:
+    - id: 50214
+      unit: 250
+  altUnits:
+    EL: 10
+    TL: 3
+

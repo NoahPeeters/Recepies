@@ -1,0 +1,23 @@
+# 2040300 - Reis
+# Sub-categories:
+#   2040300: Reis
+
+2040300.milchreis:
+  name: Milchreis
+  unit: g
+  posthof:
+    - id: 47293
+      unit: 500
+
+2040300.basmati-reis:
+  name: Basmati Reis
+  plural: Basmati Reis
+  unit: g
+  posthof:
+    - id: 43802
+      unit: 1000
+    - id: 43694
+      unit: 500
+    - id: 47274
+      unit: 500
+

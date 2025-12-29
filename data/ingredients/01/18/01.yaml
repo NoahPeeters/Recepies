@@ -1,0 +1,11 @@
+# 1180100 - Eier (abgepackt, auch gegarte Eier, bunte Eier)
+# Sub-categories:
+#   1180100: Eier (abgepackt, auch gegarte Eier, bunte Eier)
+
+1180100.ei:
+  name: Ei
+  plural: Eier
+  posthof:
+    - id: 136922
+      unit: 1
+

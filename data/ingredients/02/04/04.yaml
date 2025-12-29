@@ -1,0 +1,40 @@
+# 2040400 - Hülsenfrüchte
+# Sub-categories:
+#   2040400: Hülsenfrüchte
+
+2040400.rote-linsen:
+  name: Rote Linsen
+  plural: Rote Linsen
+  unit: g
+  posthof:
+    - id: 43713
+      unit: 500
+
+2040400.kichererbsen:
+  name: Kichererbsen
+  plural: Kichererbsen
+  unit: g
+  posthof:
+    - id: 47326
+      unit: 500
+
+2040400.kidneybohnen:
+  name: Kidneybohnen
+  plural: Kidneybohnen
+  unit: g
+  posthof:
+    - id: 47340
+      unit: 500
+    - id: 47982
+      unit: 240
+
+2040400.weisse-bohnen:
+  name: Weiße Bohnen
+  plural: Weiße Bohnen
+  unit: g
+  posthof:
+    - id: 48176
+      unit: 240
+    - id: 91883
+      unit: 240
+

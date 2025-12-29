@@ -1,0 +1,22 @@
+# 2120100 - Salz, Kräutersalz, Gomasio
+# Sub-categories:
+#   2120100: Salz, Kräutersalz, Gomasio
+
+2120100.salz:
+  name: Salz
+  unit: g
+  posthof:
+    - id: 54664
+      unit: 500
+    - id: 43622
+      unit: 500
+  altUnits:
+    TL: 6
+
+2120100.prise-salz:
+  name: Salz
+  plural: Salz
+  unit: g
+  altUnits:
+    Prise: 0.4
+

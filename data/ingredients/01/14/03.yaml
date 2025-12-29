@@ -1,0 +1,50 @@
+# 1140300 - Rahmprodukte (Sahne, Sauerrahm, Crème fraîche)
+# Sub-categories:
+#   1140300: Rahmprodukte (Sahne, Sauerrahm, Crème fraîche)
+
+1140300.sahne:
+  name: Sahne
+  unit: ml
+  posthof:
+    - id: 53472
+      unit: 200
+    - id: 53473
+      unit: 200
+
+1140300.schmand:
+  name: Schmand
+  unit: g
+  posthof:
+    - id: 44642
+      unit: 200
+  alternatives:
+    - ref: 1140300.creme-fraiche
+      factor: 1.0
+    - ref: 1140300.sauerrahm
+      factor: 1.0
+
+1140300.sauerrahm:
+  name: Sauerrahm
+  unit: g
+  posthof:
+    - id: 44642
+      unit: 200
+  alternatives:
+    - ref: 1140300.schmand
+      factor: 1.0
+    - ref: 1140300.creme-fraiche
+      factor: 1.0
+
+1140300.creme-fraiche:
+  name: Crème fraîche
+  plural: Crème fraîche
+  unit: g
+  posthof:
+    - id: 44609
+      unit: 200
+  alternatives:
+    - ref: 1140300.schmand
+      factor: 1.0
+    - ref: 1140300.sauerrahm
+      factor: 1.0
+

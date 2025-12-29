@@ -1,0 +1,16 @@
+# 2010200 - Trinkkakao, Carob, Kakaogetränkepulver
+# Sub-categories:
+#   2010200: Trinkkakao, Carob, Kakaogetränkepulver
+
+2010200.kakaopulver:
+  name: Kakaopulver
+  unit: g
+  posthof:
+    - id: 43172
+      unit: 125
+    - id: 137073
+      unit: 125
+  altUnits:
+    EL: 8
+    TL: 3
+

@@ -1,0 +1,31 @@
+# 2130100 - Zucker
+# Sub-categories:
+#   2130100: Zucker
+
+2130100.zucker:
+  name: Zucker
+  unit: g
+  posthof:
+    - id: 50118
+      unit: 1000
+  alternatives:
+    - ref: 2130200.agavendicksaft
+      factor: 1.0
+
+2130100.puderzucker:
+  name: Puderzucker
+  unit: g
+  posthof:
+    - id: 43035
+      unit: 200
+
+2130100.brauner-zucker:
+  name: Brauner Zucker
+  plural: Brauner Zucker
+  unit: g
+  posthof:
+    - id: 43020
+      unit: 500
+  altUnits:
+    EL: 15
+

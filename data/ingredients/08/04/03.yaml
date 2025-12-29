@@ -1,0 +1,14 @@
+# 8040300 - Zitronen, Limetten
+# Sub-categories:
+#   8040301: Zitronen
+#   8040302: Limetten
+#   8040303: Zitronat-Zitronen
+#   8040304: Kaviarlimetten
+
+8040300.zitrone:
+  name: Zitrone
+  plural: Zitronen
+  unit: g
+  altUnits:
+    Stück: 80
+
