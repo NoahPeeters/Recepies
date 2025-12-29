@@ -427,6 +427,7 @@
 }
 
 .ingredient-select {
+  width: fit-content;
   height: 2rem;
   padding: 0 0.5rem;
   border: none;
