@@ -49,8 +49,6 @@
   name: Frittierfett
   unit: ml
   posthof:
-    - id: 49670
-      unit: 500
     - id: 49688
       unit: 1000
     - id: 49790
