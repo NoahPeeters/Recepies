@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Lint script to verify that ingredient refs in recipes actually exist.
-Checks that all ref="X.Y" references point to valid ingredients in the data files.
+Lint script for recipe validation:
+- Verifies ingredient refs point to valid ingredients in data files
+- Checks that use shortcodes reference defined ingredients
+- Validates that all taxonomy values have cover images
 """
 
 import os
@@ -118,6 +120,76 @@ def find_refs_in_file(filepath: Path) -> list[tuple[int, str]]:
             refs.append((i, match.group(1)))
 
     return refs
+
+
+TAXONOMIES = ["cuisines", "categories", "proteins", "diets", "methods", "carbs"]
+
+
+def slugify(text: str) -> str:
+    """Convert text to URL-friendly slug."""
+    text = text.lower()
+    replacements = {
+        "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss",
+        "Ä": "ae", "Ö": "oe", "Ü": "ue"
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    text = re.sub(r'[^a-z0-9\s-]', '', text)
+    text = re.sub(r'[\s_]+', '-', text)
+    return text.strip('-')
+
+
+def extract_taxonomy_values(recipe_path: Path) -> dict[str, set[str]]:
+    """Extract taxonomy values from a recipe's frontmatter."""
+    content = recipe_path.read_text(encoding='utf-8')
+
+    match = re.search(r'\+\+\+(.+?)\+\+\+', content, re.DOTALL)
+    if not match:
+        return {}
+
+    frontmatter = match.group(1)
+    values = {tax: set() for tax in TAXONOMIES}
+
+    for taxonomy in TAXONOMIES:
+        pattern = rf"{taxonomy}\s*=\s*\[([^\]]+)\]"
+        match = re.search(pattern, frontmatter)
+        if match:
+            items = re.findall(r"'([^']+)'", match.group(1))
+            values[taxonomy].update(items)
+
+    return values
+
+
+def check_taxonomy_images(content_dir: Path) -> list[tuple[str, str, str, Path]]:
+    """
+    Check all taxonomy values used in recipes have cover images.
+    Returns list of (taxonomy, value, slug, expected_path) for missing images.
+    """
+    recipes_dir = content_dir / "recipes"
+    all_values = {tax: set() for tax in TAXONOMIES}
+
+    # Collect all taxonomy values from recipes
+    for recipe_dir in recipes_dir.iterdir():
+        if not recipe_dir.is_dir():
+            continue
+        index_file = recipe_dir / "index.md"
+        if not index_file.exists():
+            continue
+
+        values = extract_taxonomy_values(index_file)
+        for tax, vals in values.items():
+            all_values[tax].update(vals)
+
+    # Check for missing cover images
+    missing = []
+    for taxonomy, values in all_values.items():
+        for value in values:
+            slug = slugify(value)
+            cover_path = content_dir / taxonomy / slug / "cover.webp"
+            if not cover_path.exists():
+                missing.append((taxonomy, value, slug, cover_path))
+
+    return missing
 
 
 def find_use_errors_in_file(filepath: Path, verbose: bool = False) -> list[tuple[int, str]]:
@@ -261,6 +333,20 @@ def main():
         for filepath, line_num, use_id in use_errors:
             print(f"  {filepath}:{line_num}")
             print(f"    use id=\"{use_id}\" - no ingredient with this id defined in recipe")
+            print()
+
+    # Check taxonomy cover images
+    print("Checking taxonomy images...")
+    missing_images = check_taxonomy_images(project_dir / "content")
+
+    if missing_images:
+        has_errors = True
+        print(f"\n❌ Found {len(missing_images)} missing taxonomy cover image(s):\n")
+        for taxonomy, value, slug, expected_path in missing_images:
+            rel_path = expected_path.relative_to(project_dir)
+            print(f"  {taxonomy}/{slug} (\"{value}\")")
+            print(f"    Missing: {rel_path}")
+            print(f"    Fix: ./scripts/unsplash-image.py download \"{value}\" {rel_path}")
             print()
 
     if has_errors:

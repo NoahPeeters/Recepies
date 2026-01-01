@@ -126,7 +126,18 @@ content/cuisines/deutsch/
 └── cover.webp
 ```
 
-If the folder or image is missing, create it following the [Taxonomy Cover Images](#taxonomy-cover-images) section.
+If the folder or image is missing, create the folder and download an image:
+
+```bash
+# Create folder and _index.md
+mkdir -p content/cuisines/neu
+echo -e '---\ntitle: "Neu"\n---' > content/cuisines/neu/_index.md
+
+# Download cover image from Unsplash
+./scripts/unsplash-image.py download "search term" content/cuisines/neu/cover.webp
+```
+
+See [Finding Images on Unsplash](#finding-images-on-unsplash) for more details.
 
 ### Step 5: Write the Recipe
 
@@ -542,33 +553,44 @@ description: "Traditionelle deutsche Küche"
 
 ### Finding Images on Unsplash
 
-Unsplash provides free images. To find and download images:
+Unsplash provides free images. Use the helper script to search and download:
 
-1. **Search for a specific Unsplash photo ID** if you know it:
+#### Using the Script (Recommended)
+
+```bash
+# Search for images by keyword
+./scripts/unsplash-image.py search schnitzel
+
+# Search with more results
+./scripts/unsplash-image.py search curry --limit 10
+
+# Download first result directly to WebP
+./scripts/unsplash-image.py download pasta content/cuisines/italienisch/cover.webp
+
+# Download a specific URL
+./scripts/unsplash-image.py download --url "https://images.unsplash.com/photo-xxx" output.webp
+```
+
+#### Manual Method (curl)
+
+1. **Search by topic**:
    ```bash
-   curl -L -o /tmp/image.jpg "https://images.unsplash.com/photo-PHOTO_ID?w=800&q=80"
+   curl -s "https://unsplash.com/napi/search/photos?query=curry&per_page=5" | \
+     python3 -c "import sys,json; d=json.load(sys.stdin); [print(r['urls']['raw'].split('?')[0] + '?w=800&q=80') for r in d['results'][:5]]"
    ```
 
-2. **Known working photo IDs for food:**
-   - Schnitzel: `photo-1599921841143-819065a55cc6`
-   - Burger: `photo-1568901346375-23c9450c58cd`
-   - Curry/Indian: `photo-1585937421612-70a008356fbe`
-   - Meatballs/Nordic: `photo-1529042410759-befb1204b468`
-
-3. **Convert to WebP:**
+2. **Download and convert**:
    ```bash
+   curl -L -o /tmp/image.jpg "https://images.unsplash.com/photo-PHOTO_ID?w=800&q=80"
    cwebp -q 80 /tmp/image.jpg -o content/cuisines/deutsch/cover.webp
    ```
 
-### Full Example
+#### Known Working Photo IDs
 
-```bash
-# Download image
-curl -L -o /tmp/german.jpg "https://images.unsplash.com/photo-1599921841143-819065a55cc6?w=800&q=80"
-
-# Convert to WebP
-cwebp -q 80 /tmp/german.jpg -o content/cuisines/deutsch/cover.webp
-```
+- Schnitzel: `photo-1599921841143-819065a55cc6`
+- Burger: `photo-1568901346375-23c9450c58cd`
+- Curry/Indian: `photo-1585937421612-70a008356fbe`
+- Meatballs/Nordic: `photo-1529042410759-befb1204b468`
 
 ### Image Guidelines
 

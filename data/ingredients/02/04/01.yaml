@@ -10,3 +10,11 @@
     - id: 90921
       unit: 500
 
+2040100.popcornmais:
+  name: Popcornmais
+  plural: Popcornmais
+  unit: g
+  posthof:
+    - id: 90920
+      unit: 500
+
