@@ -22,7 +22,7 @@ Letzings Geheimtrick - so gelingt Popcorn wirklich wie im Kino! Das Geheimnis li
 {{< ingredients servings="2" >}}
 {{< ingredient ref="2040100.popcornmais" amount="50" id="mais" >}}
 {{< ingredient ref="2130100.zucker" amount="45" id="zucker" note="3 EL" >}}
-{{< ingredient ref="2110100.oel" amount="60" id="oel" note="4 EL" >}}
+{{< ingredient ref="2110100.oel" amount="24" id="oel" >}}
 {{< /ingredients >}}
 
 {{< steps >}}

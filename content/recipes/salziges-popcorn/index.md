@@ -21,7 +21,7 @@ Letzings Geheimtrick - so gelingt salziges Popcorn wirklich wie im Kino! Der Tri
 
 {{< ingredients servings="2" >}}
 {{< ingredient ref="2040100.popcornmais" amount="50" id="mais" >}}
-{{< ingredient ref="2110100.oel" amount="60" id="oel" note="4 EL" >}}
+{{< ingredient ref="2110100.oel" amount="24" id="oel" >}}
 {{< ingredient ref="2120100.salz" amount="6" id="salz" note="1 TL" >}}
 {{< /ingredients >}}
 

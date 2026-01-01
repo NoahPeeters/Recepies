@@ -11,7 +11,8 @@
     - id: 49790
       unit: 500
   altUnits:
-    TL: 5
+    EL: 6
+    TL: 2
 
 2110100.olivenoel:
   name: Olivenöl
