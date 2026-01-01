@@ -200,7 +200,29 @@ Reference global ingredients with `ref` using the format `{category_id}.{key}`:
 - Inherits name, unit, posthof, altUnits automatically
 - Use `id` parameter if the same ingredient appears multiple times
 
-### Step 7: Ingredient Sections
+### Step 7: Convert Volume to Grams
+
+**When a recipe specifies amounts in volume (TL, EL, etc.), always convert to grams using `altUnits`.**
+
+1. Check the ingredient's `altUnits` in the data file
+2. Multiply the volume amount by the altUnit value to get grams
+3. Use the gram value in the `amount` parameter
+
+Example: Recipe says "3 EL Öl"
+```yaml
+# In data/ingredients/02/11/01.yaml
+2110100.oel:
+  altUnits:
+    EL: 6    # 1 EL = 6g
+```
+→ 3 EL × 6g = **18g** → `amount="18"`
+
+Common conversions (check altUnits for exact values):
+- Öl: 1 EL ≈ 6g, 1 TL ≈ 2g
+- Salz: 1 TL ≈ 5g
+- Zucker: 1 EL ≈ 15g
+
+### Step 8: Ingredient Sections
 
 Group ingredients with section headers:
 
