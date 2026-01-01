@@ -287,7 +287,7 @@ The ingredients system provides an interactive serving selector that automatical
 | `name`     | Yes      | -              | Ingredient name (singular form)                       |
 | `plural`   | No       | name           | Plural form of the name                               |
 | `id`       | No       | urlized name   | Unique identifier for referencing in steps            |
-| `note`     | No       | ""             | Additional info (e.g., "room temperature", "diced")   |
+| `note`     | No       | ""             | Preparation info (e.g., "zimmerwarm", "gewürfelt"). **NEVER for amounts** - use `altUnits` instead! |
 | `optional` | No       | false          | Mark ingredient as optional                           |
 | `posthof`  | No       | ""             | Posthof Food Coop products (see Posthof Integration)  |
 
